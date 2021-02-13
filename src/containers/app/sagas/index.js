@@ -1,5 +1,8 @@
 /*
  * @flow
  */
+import * as AppSagas from './initializeApplication';
 
-export * from './initializeApplication';
+export {
+  AppSagas
+};

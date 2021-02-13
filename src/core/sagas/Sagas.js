@@ -6,7 +6,7 @@ import { all, fork } from '@redux-saga/core/effects';
 import { AuthSagas } from 'lattice-auth';
 import type { Saga } from '@redux-saga/core';
 
-import { AppSagas } from '../../containers/app';
+import { AppSagas } from '../../containers/app/sagas';
 import { EDMSagas } from '../edm';
 import { RoutingSagas } from '../router';
 
