@@ -5,6 +5,8 @@
 import { ReduxConstants } from 'lattice-utils';
 import { RequestStates } from 'redux-reqseq';
 
+const ACCESS = 'access';
+
 export const {
   APP,
   AUTH,
@@ -23,4 +25,8 @@ export const {
 export const RS_INITIAL_STATE = {
   [ERROR]: false,
   [REQUEST_STATE]: RequestStates.STANDBY,
+};
+
+export {
+  ACCESS
 };
