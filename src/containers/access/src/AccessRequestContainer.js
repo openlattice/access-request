@@ -3,6 +3,8 @@
 import type { UUID } from 'lattice';
 import type { Match } from 'react-router';
 
+import AccessRequestSwitch from './AccessRequestSwitch';
+
 import ModuleProvider from '../../../core/provider/ModuleProvider';
 
 type Props = {
@@ -20,7 +22,10 @@ const AccessRequestContainer = (props :Props) => {
 
   return (
     <ModuleProvider>
-      <div>test</div>
+      <AccessRequestSwitch
+          match={match}
+          organizationId={organizationId}
+          root={root} />
     </ModuleProvider>
   );
 };

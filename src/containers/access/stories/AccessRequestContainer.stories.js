@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+
+import { configure } from 'lattice';
+
 import AccessRequestContainer from '../src/AccessRequestContainer';
 
 export default {
@@ -5,6 +9,21 @@ export default {
   component: AccessRequestContainer
 };
 
-const Template = (args) => <AccessRequestContainer {...args}>test</AccessRequestContainer>;
+const Template = (args) => {
+  const { jwt } = args;
+  useEffect(() => {
+    configure({
+      baseUrl: 'production',
+      authToken: jwt
+    });
+  }, [jwt]);
+  return <AccessRequestContainer {...args} />;
+};
 
-export const test = Template.bind({});
+export const Live = Template.bind({});
+Live.args = {
+  jwt: '123',
+  organizationId: '00000000-0000-0000-0000-000000000000',
+  match: {},
+  root: '/'
+};
