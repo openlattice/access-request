@@ -1,7 +1,9 @@
 // @flow
 
+import CommonApplicationForm from '../../../forms/common/CommonApplicationForm';
+
 const NewRequestContainer = () => {
-  return <div>all requests</div>;
+  return <CommonApplicationForm />;
 };
 
 export default NewRequestContainer;
