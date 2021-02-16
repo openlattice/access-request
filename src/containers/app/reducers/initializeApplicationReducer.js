@@ -2,7 +2,7 @@
  * @flow
  */
 
-import { Map, fromJS } from 'immutable';
+import { Map } from 'immutable';
 import { ReduxConstants } from 'lattice-utils';
 import { RequestStates } from 'redux-reqseq';
 import type { SequenceAction } from 'redux-reqseq';
@@ -15,14 +15,7 @@ import {
 
 const { REQUEST_STATE } = ReduxConstants;
 
-const INITIAL_STATE :Map = fromJS({
-  [INITIALIZE_APPLICATION]: { [REQUEST_STATE]: RequestStates.STANDBY },
-  appConfig: {},
-  root: '',
-  match: {},
-});
-
-export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object) {
+export default function reducer(state :Map<*, *>, action :Object) {
 
   switch (action.type) {
 
