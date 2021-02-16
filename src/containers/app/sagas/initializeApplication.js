@@ -3,6 +3,7 @@
  */
 
 import {
+  all,
   call,
   put,
   takeEvery,
@@ -15,6 +16,8 @@ import { LangUtils, Logger, ValidationUtils } from 'lattice-utils';
 import type { Saga } from '@redux-saga/core';
 import type { SequenceAction } from 'redux-reqseq';
 
+import { getEntityDataModelTypes } from '../../../core/edm/actions';
+import { getEntityDataModelTypesWorker } from '../../../core/edm/sagas';
 import { ERR_ACTION_VALUE_TYPE } from '../../../utils/Errors';
 import { INITIALIZE_APPLICATION, initializeApplication } from '../actions';
 
@@ -41,14 +44,20 @@ function* initializeApplicationWorker(action :SequenceAction) :Saga<*> {
     /*
      * 1. load App
      */
-    const response :any = yield call(getAppWorker, getApp(APP_NAME));
-    if (response.error) throw response.error;
+
+    const responses :Object[] = yield all([
+      call(getEntityDataModelTypesWorker, getEntityDataModelTypes()),
+      call(getAppWorker, getApp(APP_NAME))
+      // ...any other required requests
+    ]);
+    if (responses[0].error) throw responses[0].error;
+    if (responses[1].error) throw responses[1].error;
 
     /*
      * 2. load AppConfig, AppTypes
      */
 
-    const app = response.data;
+    const app = responses[1].data;
     const appConfigsResponse = yield call(getAppConfigsWorker, getAppConfigs(app.id));
     if (appConfigsResponse.error) throw appConfigsResponse.error;
     const appConfig = appConfigsResponse.data.reduce((acc, config) => {

@@ -4,6 +4,8 @@
 
 import { ReduxUtils } from 'lattice-utils';
 
+export { default as selectPropertyTypeIDsByFQN } from './selectPropertyTypeIDsByFQN';
+
 export const {
   selectEntitySets,
   selectEntityTypes,
