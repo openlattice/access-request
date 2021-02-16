@@ -18,6 +18,14 @@ const INITIAL_STATE :Map = fromJS({
   match: {},
 });
 
+const APP_PATHS = {
+  APP_CONFIG: ['app', 'appConfig', 'config'],
+  ROOT: ['app', 'root'],
+  MATCH: ['app', 'match'],
+};
+
+export { APP_PATHS };
+
 export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object) {
 
   switch (action.type) {
