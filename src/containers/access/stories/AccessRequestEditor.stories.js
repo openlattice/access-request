@@ -1,4 +1,4 @@
-import { fromJS } from 'immutable'
+import { fromJS } from 'immutable';
 
 import AccessRequestEditor from '../src/AccessRequestEditor';
 import ModuleProvider from '../../../core/provider/ModuleProvider';
@@ -13,7 +13,7 @@ const {
 } = PropertyTypes;
 
 export default {
-  title: 'Access Request/Access Request Editor',
+  title: 'Access Request/AccessRequestEditor',
   component: AccessRequestEditor
 };
 

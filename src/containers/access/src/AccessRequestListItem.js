@@ -26,7 +26,7 @@ type Props = {
 
 const AccessRequestListItem = ({ data, to } :Props) => {
   const dispatch = useDispatch();
-  const type = getPropertyValue(data, TYPE);
+  const type = getPropertyValue(data, TYPE) || '';
   const requestDateTime = getPropertyValue(data, REQUEST_DATE_TIME);
   const lastWrite = getPropertyValue(data, OPENLATTICE_LAST_WRITE_FQN);
   const requestDT = DateTime.fromISO(requestDateTime);
