@@ -7,6 +7,7 @@ import { List, Map, fromJS } from 'immutable';
 import getAllAccessRequestsReducer from './getAllAccessRequestsReducer';
 import getFormsReducer from './getFormsReducer';
 import submitAccessRequestReducer from './submitAccessRequestReducer';
+import updateAccessRequestReducer from './updateAccessRequestReducer';
 
 import { RESET_REQUEST_STATE } from '../../../../core/redux/actions';
 import { RS_INITIAL_STATE } from '../../../../core/redux/constants';
@@ -17,17 +18,20 @@ import {
   GET_FORMS,
   SELECT_ACCESS_REQUEST,
   SUBMIT_ACCESS_REQUEST,
+  UPDATE_ACCESS_REQUEST,
   getAllAccessRequests,
   getForms,
   submitAccessRequest,
+  updateAccessRequest,
 } from '../actions';
 
 const INITIAL_STATE :Map = fromJS({
   [GET_ALL_ACCESS_REQUESTS]: RS_INITIAL_STATE,
   [GET_FORMS]: RS_INITIAL_STATE,
   [SUBMIT_ACCESS_REQUEST]: RS_INITIAL_STATE,
-  hits: List([]),
+  [UPDATE_ACCESS_REQUEST]: RS_INITIAL_STATE,
   accessRequest: Map(),
+  hits: List([]),
 });
 
 export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object) {
@@ -56,6 +60,10 @@ export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object
 
     case submitAccessRequest.case(action.type): {
       return submitAccessRequestReducer(state, action);
+    }
+
+    case updateAccessRequest.case(action.type): {
+      return updateAccessRequestReducer(state, action);
     }
 
     default:

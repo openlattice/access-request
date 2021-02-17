@@ -6,6 +6,7 @@ import {
   select,
   takeEvery,
 } from '@redux-saga/core/effects';
+import { fromJS } from 'immutable';
 import { Types } from 'lattice';
 import {
   DataApiActions,
@@ -49,10 +50,11 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<void> {
     const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([FORM_DATA]));
 
     const formDataPTID = propertyTypesByFQN.get(FORM_DATA);
+    const formDataStr = JSON.stringify(formData);
 
     const entities = {
       [entityKeyId]: {
-        [formDataPTID]: [JSON.stringify(formData)],
+        [formDataPTID]: [formDataStr],
       },
     };
 
@@ -67,7 +69,10 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<void> {
 
     if (updateAccessResponse.error) throw updateAccessResponse.error;
 
-    yield put(updateAccessRequest.success(action.id));
+    yield put(updateAccessRequest.success(action.id, {
+      path: ['accessRequest', FORM_DATA.toString(), 0],
+      formData: formDataStr
+    }));
 
   }
   catch (error) {

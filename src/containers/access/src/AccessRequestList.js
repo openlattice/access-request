@@ -22,7 +22,7 @@ const AccessRequestList = () => {
 
   useEffect(() => {
     dispatch(getAllAccessRequests());
-  });
+  }, [dispatch]);
 
   return (
     <List>

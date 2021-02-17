@@ -33,5 +33,6 @@ export default function* sagas() :Saga<*> {
 
     fork(AcccessSagas.getAllAccessRequestsWatcher),
     fork(AcccessSagas.submitAccessRequestWatcher),
+    fork(AcccessSagas.updateAccessRequestWatcher),
   ]);
 }
