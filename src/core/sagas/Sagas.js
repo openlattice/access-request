@@ -31,6 +31,7 @@ export default function* sagas() :Saga<*> {
     fork(RoutingSagas.goToRootWatcher),
     fork(RoutingSagas.goToRouteWatcher),
 
+    fork(AcccessSagas.getAllAccessRequestsWatcher),
     fork(AcccessSagas.submitAccessRequestWatcher),
   ]);
 }

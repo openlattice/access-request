@@ -2,7 +2,7 @@
  * @flow
  */
 
-import { Map, fromJS } from 'immutable';
+import { List, Map, fromJS } from 'immutable';
 
 import getAllAccessRequestsReducer from './getAllAccessRequestsReducer';
 import getFormsReducer from './getFormsReducer';
@@ -24,6 +24,8 @@ const INITIAL_STATE :Map = fromJS({
   [GET_ALL_ACCESS_REQUESTS]: RS_INITIAL_STATE,
   [GET_FORMS]: RS_INITIAL_STATE,
   [SUBMIT_ACCESS_REQUEST]: RS_INITIAL_STATE,
+  hits: List([]),
+  accessRequest: Map(),
 });
 
 export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object) {
