@@ -11,6 +11,7 @@ export default {
   }
 };
 
+/* eslint-disable-next-line react/jsx-props-no-spreading */
 const Template = (args) => <Form {...args} />;
 
 export const CommonApplication = Template.bind({});

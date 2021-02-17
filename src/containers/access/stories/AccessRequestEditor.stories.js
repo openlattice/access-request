@@ -17,6 +17,7 @@ export default {
   component: AccessRequestEditor
 };
 
+/* eslint-disable react/jsx-props-no-spreading */
 const Template = (args) => (
   <ModuleProvider>
     <AccessRequestEditor {...args} />
