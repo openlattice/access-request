@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Button, Typography } from 'lattice-ui-kit';
 import { Link } from 'react-router-dom';
 
+import AccessRequestList from './AccessRequestList';
+
 import { useSelector } from '../../../core/redux';
 import { getRelativeRoot } from '../../../utils/RouteUtils';
 
@@ -28,6 +30,7 @@ const AllRequestsContainer = () => {
           New Request
         </Button>
       </HeaderRow>
+      <AccessRequestList />
     </div>
   );
 };
