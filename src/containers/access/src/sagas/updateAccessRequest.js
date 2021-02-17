@@ -40,17 +40,19 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<void> {
   try {
     const { value } = action;
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
-    yield put(updateAccessRequest.request(action.id));
+    const { formData, entityKeyId } = value;
+    const formDataStr = JSON.stringify(formData);
+    yield put(updateAccessRequest.request(action.id, {
+      path: ['accessRequest', FORM_DATA.toString(), 0],
+      formData: formDataStr
+    }));
 
     const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
     const entitySetId = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
 
-    const { formData, entityKeyId } = value;
-
     const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([FORM_DATA]));
 
     const formDataPTID = propertyTypesByFQN.get(FORM_DATA);
-    const formDataStr = JSON.stringify(formData);
 
     const entities = {
       [entityKeyId]: {
@@ -69,10 +71,7 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<void> {
 
     if (updateAccessResponse.error) throw updateAccessResponse.error;
 
-    yield put(updateAccessRequest.success(action.id, {
-      path: ['accessRequest', FORM_DATA.toString(), 0],
-      formData: formDataStr
-    }));
+    yield put(updateAccessRequest.success(action.id));
 
   }
   catch (error) {
