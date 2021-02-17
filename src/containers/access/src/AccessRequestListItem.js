@@ -23,7 +23,11 @@ const AccessRequestListItem = ({ data } :Props) => {
   const requestDateTime = getPropertyValue(data, REQUEST_DATE_TIME);
   const formattedDT = DateTime.fromISO(requestDateTime).toLocaleString(DateTime.DATE_SHORT);
 
-  const initials = type.split(' ').map((word) => word.charAt(0).toUpperCase()).join('');
+  const initials = type
+    .split(' ')
+    .slice(0, 2)
+    .map((word) => word.charAt(0).toUpperCase())
+    .join('');
 
   return (
     <ListItem button component={Link}>
