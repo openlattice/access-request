@@ -9,12 +9,16 @@ import { getAllAccessRequests } from './actions';
 
 import { useDispatch, useSelector } from '../../../core/redux';
 import { selectAccessHits } from '../../../core/redux/selectors';
+import { getRelativeRoot } from '../../../utils/RouteUtils';
 
 const { getEntityKeyId } = DataUtils;
 
 const AccessRequestList = () => {
   const dispatch = useDispatch();
   const hits = useSelector(selectAccessHits());
+  const root = useSelector((store) => store.getIn(['app', 'root']));
+  const match = useSelector((store) => store.getIn(['app', 'match']));
+  const relRoot = getRelativeRoot(root, match);
 
   useEffect(() => {
     dispatch(getAllAccessRequests());
@@ -25,7 +29,12 @@ const AccessRequestList = () => {
       {
         hits.map((accessRequest) => {
           const id = getEntityKeyId(accessRequest);
-          return <AccessRequestListItem data={accessRequest} key={id} />;
+          return (
+            <AccessRequestListItem
+                data={accessRequest}
+                to={`${relRoot}/request/${id}`}
+                key={id} />
+          );
         })
       }
     </List>

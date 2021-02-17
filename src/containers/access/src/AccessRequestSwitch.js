@@ -9,6 +9,7 @@ import type { UUID } from 'lattice';
 import type { Match } from 'react-router';
 
 import AllRequestsContainer from './AllRequestsContainer';
+import EditAccessRequestContainer from './EditAccessRequestContainer';
 import NewRequestContainer from './NewRequestContainer';
 import { CenterWrapper } from './styled';
 
@@ -46,6 +47,7 @@ const AccessRequestSwitch = ({
   return (
     <Switch>
       <Route path={`${root}/new`} render={() => <NewRequestContainer />} />
+      <Route path={`${root}/request/:accessId`} render={() => <EditAccessRequestContainer />} />
       <Route render={() => <AllRequestsContainer />} />
     </Switch>
   );

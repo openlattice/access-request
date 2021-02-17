@@ -12,8 +12,10 @@ import { RESET_REQUEST_STATE } from '../../../../core/redux/actions';
 import { RS_INITIAL_STATE } from '../../../../core/redux/constants';
 import { resetRequestStateReducer } from '../../../../core/redux/reducers';
 import {
+  CLEAR_ACCESS_REQUEST,
   GET_ALL_ACCESS_REQUESTS,
   GET_FORMS,
+  SELECT_ACCESS_REQUEST,
   SUBMIT_ACCESS_REQUEST,
   getAllAccessRequests,
   getForms,
@@ -34,6 +36,14 @@ export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object
 
     case RESET_REQUEST_STATE: {
       return resetRequestStateReducer(state, action);
+    }
+
+    case SELECT_ACCESS_REQUEST: {
+      return state.set('accessRequest', action.value);
+    }
+
+    case CLEAR_ACCESS_REQUEST: {
+      return state.set('accessRequest', INITIAL_STATE.get('accessRequest'));
     }
 
     case getForms.case(action.type): {
