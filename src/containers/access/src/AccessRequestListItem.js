@@ -29,9 +29,18 @@ const AccessRequestListItem = ({ data, to } :Props) => {
   const type = getPropertyValue(data, TYPE);
   const requestDateTime = getPropertyValue(data, REQUEST_DATE_TIME);
   const lastWrite = getPropertyValue(data, OPENLATTICE_LAST_WRITE_FQN);
-  const formattedDT = DateTime.fromISO(requestDateTime).toLocaleString(DateTime.DATE_SHORT);
+  const requestDT = DateTime.fromISO(requestDateTime);
+  const updateDT = DateTime.fromISO(lastWrite);
 
-  const formattedLastWrite = DateTime.fromISO(lastWrite).toRelative({ style: 'short' });
+  const formattedDT = requestDT.toLocaleString(DateTime.DATE_SHORT);
+  let secondaryText = `Created: ${formattedDT}`;
+
+  const diff = updateDT.diff(requestDT, 'seconds');
+  const { seconds } = diff.toObject();
+  if (seconds > 1) {
+    const relativeUpdateTime = updateDT.toRelative({ style: 'short' });
+    secondaryText = secondaryText.concat(` · Updated: ${relativeUpdateTime}`);
+  }
 
   const handleClick = () => {
     dispatch(selectAccessRequest(data));
@@ -47,12 +56,13 @@ const AccessRequestListItem = ({ data, to } :Props) => {
     <ListItem
         button
         component={Link}
+        disableGutters
         onClick={handleClick}
         to={to}>
       <ListItemAvatar>
         <Avatar>{initials}</Avatar>
       </ListItemAvatar>
-      <ListItemText primary={type} secondary={`Created: ${formattedDT} - Updated ${formattedLastWrite}`} />
+      <ListItemText primary={type} secondary={secondaryText} />
     </ListItem>
   );
 };
