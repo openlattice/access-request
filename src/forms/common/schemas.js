@@ -1,66 +1,131 @@
 export const schema = {
-  type: 'object',
-  title: 'Common Application',
-  properties: {
-    personSection: {
+  definitions: {
+    person: {
       type: 'object',
-      title: 'Personal Information',
       properties: {
         firstName: {
           type: 'string',
-          title: 'First name',
-        },
-        middleName: {
-          type: 'string',
-          title: 'Middle name'
+          title: 'First Name',
         },
         lastName: {
           type: 'string',
-          title: 'Last name',
+          title: 'Last Name',
         },
-        dob: {
+        title: {
           type: 'string',
-          format: 'date',
-          title: 'Date of Birth',
+          title: 'Title',
         },
-        phone: {
+        address: {
           type: 'string',
-          title: 'Phone #',
+          title: 'Address',
         },
-      },
-      required: [
-        'firstName',
-        'lastName',
-        'dob'
-      ],
+        phoneNumber: {
+          type: 'string',
+          title: 'Phone Number',
+        },
+        email: {
+          type: 'string',
+          title: 'Email'
+        }
+      }
+    }
+  },
+  type: 'object',
+  title: 'Common Application',
+  properties: {
+    projectAdministrativeInformation: {
+      type: 'object',
+      title: 'Project Administration Information',
+      properties: {
+        projectTitle: {
+          type: 'string',
+          title: 'Project Title',
+        },
+        principalInvestigator: {
+          title: 'Principal Investigator',
+          $ref: '#/definitions/person',
+        },
+        coPrincipalInvestigator: {
+          title: 'Co-Principal Investigator',
+          $ref: '#/definitions/person',
+        },
+        projectContact: {
+          title: 'Project Contact',
+          $ref: '#/definitions/person',
+        },
+      }
     },
   }
 };
 
 export const uiSchema = {
-  personSection: {
+  projectAdministrativeInformation: {
     classNames: 'column-span-12 grid-container',
-    firstName: {
-      classNames: 'column-span-4'
+    projectTitle: {
+      classNames: 'column-span-12',
     },
-    middleName: {
-      classNames: 'column-span-4'
+    principalInvestigator: {
+      classNames: 'column-span-12 grid-container',
+      firstName: {
+        classNames: 'column-span-6',
+      },
+      lastName: {
+        classNames: 'column-span-6',
+      },
+      title: {
+        classNames: 'column-span-12',
+      },
+      address: {
+        classNames: 'column-span-12',
+      },
+      phoneNumber: {
+        classNames: 'column-span-6',
+      },
+      email: {
+        classNames: 'column-span-6',
+      },
     },
-    lastName: {
-      classNames: 'column-span-4'
+    coPrincipalInvestigator: {
+      classNames: 'column-span-12 grid-container',
+      firstName: {
+        classNames: 'column-span-6',
+      },
+      lastName: {
+        classNames: 'column-span-6',
+      },
+      title: {
+        classNames: 'column-span-12',
+      },
+      address: {
+        classNames: 'column-span-12',
+      },
+      phoneNumber: {
+        classNames: 'column-span-6',
+      },
+      email: {
+        classNames: 'column-span-6',
+      },
     },
-    dob: {
-      classNames: 'column-span-4',
-      'ui:widget': 'DateWidget',
-    },
-    sex: {
-      classNames: 'column-span-4'
-    },
-    phone: {
-      classNames: 'column-span-4'
-    },
-    ssn: {
-      classNames: 'column-span-4'
+    projectContact: {
+      classNames: 'column-span-12 grid-container',
+      firstName: {
+        classNames: 'column-span-6',
+      },
+      lastName: {
+        classNames: 'column-span-6',
+      },
+      title: {
+        classNames: 'column-span-12',
+      },
+      address: {
+        classNames: 'column-span-12',
+      },
+      phoneNumber: {
+        classNames: 'column-span-6',
+      },
+      email: {
+        classNames: 'column-span-6',
+      },
     },
   },
 };
