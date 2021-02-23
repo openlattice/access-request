@@ -1,10 +1,10 @@
 // @flow
-import { useEffect } from 'react';
 
 import { Map } from 'immutable';
 import { Form } from 'lattice-fabricate';
+import type { UUID } from 'lattice';
 
-import { clearAccessRequest, updateAccessRequest } from './actions';
+import { updateAccessRequest } from './actions';
 
 import { PropertyTypes } from '../../../core/edm/constants';
 import { useDispatch } from '../../../core/redux';

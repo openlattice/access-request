@@ -24,6 +24,7 @@ const Template = (args) => (
   </ModuleProvider>
 );
 
+/* eslint-disable max-len */
 export const Editor = Template.bind({});
 Editor.args = {
   data: fromJS({

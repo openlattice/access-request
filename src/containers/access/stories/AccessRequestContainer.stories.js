@@ -9,6 +9,7 @@ export default {
   component: AccessRequestContainer
 };
 
+/* eslint-disable react/jsx-props-no-spreading */
 const Template = (args) => {
   const { jwt } = args;
   useEffect(() => {

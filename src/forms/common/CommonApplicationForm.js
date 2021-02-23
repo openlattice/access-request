@@ -9,8 +9,7 @@ import { schema, uiSchema } from './schemas';
 import { SUBMIT_ACCESS_REQUEST, submitAccessRequest } from '../../containers/access/src/actions';
 import { useDispatch, useSelector } from '../../core/redux';
 import { resetRequestState } from '../../core/redux/actions';
-import { ACCESS, APP, REQUEST_STATE } from '../../core/redux/constants';
-import { ROOT } from '../../core/router/Routes';
+import { ACCESS, REQUEST_STATE } from '../../core/redux/constants';
 import { goToRoot } from '../../core/router/actions';
 
 const { isPending, isSuccess } = ReduxUtils;
