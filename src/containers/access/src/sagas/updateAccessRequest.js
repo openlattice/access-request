@@ -6,7 +6,6 @@ import {
   select,
   takeEvery,
 } from '@redux-saga/core/effects';
-import { fromJS } from 'immutable';
 import { Types } from 'lattice';
 import {
   DataApiActions,
