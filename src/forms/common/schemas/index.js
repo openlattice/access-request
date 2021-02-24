@@ -1,4 +1,4 @@
-import { page1Schema, page1UiSchema } from './page1schemas';
+import { page1Schema, page1UiSchema } from './page1Schemas';
 
 const schemas = [
   page1Schema,
