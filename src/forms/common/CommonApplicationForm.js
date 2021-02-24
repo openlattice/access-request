@@ -1,10 +1,10 @@
 // @flow
 import { useEffect } from 'react';
 
-import { Form } from 'lattice-fabricate';
+import { Form, Paged } from 'lattice-fabricate';
 import { ReduxUtils } from 'lattice-utils';
 
-import { schema, uiSchema } from './schemas';
+import { schemas, uiSchemas } from './schemas';
 
 import { SUBMIT_ACCESS_REQUEST, submitAccessRequest } from '../../containers/access/src/actions';
 import { useDispatch, useSelector } from '../../core/redux';
@@ -34,12 +34,37 @@ const CommonApplicationForm = () => {
     dispatch(submitAccessRequest(payload));
   };
 
+  console.log(schemas[0]);
+
   return (
-    <Form
-        isSubmitting={pending}
-        onSubmit={handleSubmit}
-        schema={schema}
-        uiSchema={uiSchema} />
+    <Paged
+        render={(props) => {
+          const {
+            formRef,
+            pagedData,
+            page,
+            onBack,
+            onNext,
+            validateAndSubmit,
+          } = props;
+
+          const totalPages = schemas.length;
+          const isLastPage = page === totalPages - 1;
+
+          const handleNext = isLastPage
+            ? handleSubmit
+            : validateAndSubmit;
+
+          return (
+            <Form
+                ref={formRef}
+                isSubmitting={pending}
+                formData={pagedData}
+                onSubmit={handleSubmit}
+                schema={schemas[page]}
+                uiSchema={uiSchemas[page]} />
+          );
+        }} />
   );
 };
 

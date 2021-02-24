@@ -1,4 +1,4 @@
-export const schema = {
+export const page1Schema = {
   definitions: {
     person: {
       type: 'object',
@@ -58,7 +58,7 @@ export const schema = {
   }
 };
 
-export const uiSchema = {
+export const page1UiSchema = {
   projectAdministrativeInformation: {
     classNames: 'column-span-12 grid-container',
     projectTitle: {
