@@ -4,6 +4,7 @@ import { page1Schema, page1UiSchema } from './schemas/page1Schemas';
 import { page2Schema, page2UiSchema } from './schemas/page2Schemas';
 import { page3Schema, page3UiSchema } from './schemas/page3Schemas';
 import { page4Schema, page4UiSchema } from './schemas/page4Schemas';
+import { page5Schema, page5UiSchema } from './schemas/page5Schemas';
 
 export default {
   title: 'Pages',
@@ -39,4 +40,10 @@ export const Page4 = Template.bind({});
 Page4.args = {
   schema: page4Schema,
   uiSchema: page4UiSchema,
+};
+
+export const Page5 = Template.bind({});
+Page5.args = {
+  schema: page5Schema,
+  uiSchema: page5UiSchema,
 };
