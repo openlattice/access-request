@@ -51,12 +51,12 @@ export const page4Schema = {
     },
     irbRequestingCPHSReview: {
       type: 'boolean',
-      title: "Is the institution’s IRB requesting to rely upon CPHS review? If Yes, upload a signed copy of the form available on the CPHS website.",
+      title: "Is the institution's IRB requesting to rely upon CPHS review? If Yes, upload a signed copy of the form available on the CPHS website.",
       enumNames: ['Yes', 'No'],
     },
     cphsRequestingIRBReview: {
       type: 'boolean',
-      title: "Is the CPHS being requested to rely upon the institution’s IRB or another IRB? If Yes, please specify the IRB and the justification.",
+      title: "Is the CPHS being requested to rely upon the institution's IRB or another IRB? If Yes, please specify the IRB and the justification.",
       enumNames: ['Yes', 'No'],
     },
   },
