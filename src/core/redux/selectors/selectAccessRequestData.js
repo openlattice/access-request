@@ -1,5 +1,5 @@
 // @flow
-import { List } from 'immutable';
+import { List, Map } from 'immutable';
 
 import { ACCESS } from '../constants';
 
