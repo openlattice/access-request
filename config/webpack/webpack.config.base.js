@@ -2,6 +2,7 @@
 
 const path = require('path');
 const Webpack = require('webpack');
+const externals = require('webpack-node-externals');
 
 const APP_CONFIG = require('../app/app.config.js');
 const APP_PATHS = require('../app/paths.config.js');
@@ -68,6 +69,10 @@ module.exports = (env) => {
     bail: true,
     entry: [
       APP_PATHS.ABS.APP,
+    ],
+    externals: [
+      // https://github.com/liady/webpack-node-externals
+      externals(),
     ],
     mode: env.production ? ENV_PROD : ENV_DEV,
     module: {
