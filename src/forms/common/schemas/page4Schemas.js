@@ -20,7 +20,7 @@ export const page4Schema = {
         ],
       },
       minItems: 1,
-      uniqueItems: true
+      uniqueItems: true,
     },
     responsibleOfficial: {
       type: 'object',
