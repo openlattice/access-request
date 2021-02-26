@@ -11,6 +11,9 @@ import { page17Schema, page17UiSchema } from './schemas/page17Schemas';
 import { page18Schema, page18UiSchema } from './schemas/page18Schemas';
 import { page19Schema, page19UiSchema } from './schemas/page19Schemas';
 import { page1Schema, page1UiSchema } from './schemas/page1Schemas';
+import { page20Schema, page20UiSchema } from './schemas/page20Schemas';
+import { page21Schema, page21UiSchema } from './schemas/page21Schemas';
+import { page22Schema, page22UiSchema } from './schemas/page22Schemas';
 import { page2Schema, page2UiSchema } from './schemas/page2Schemas';
 import { page3Schema, page3UiSchema } from './schemas/page3Schemas';
 import { page4Schema, page4UiSchema } from './schemas/page4Schemas';
@@ -144,4 +147,22 @@ export const Page19 = Template.bind({});
 Page19.args = {
   schema: page19Schema,
   uiSchema: page19UiSchema,
+};
+
+export const Page20 = Template.bind({});
+Page20.args = {
+  schema: page20Schema,
+  uiSchema: page20UiSchema,
+};
+
+export const Page21 = Template.bind({});
+Page21.args = {
+  schema: page21Schema,
+  uiSchema: page21UiSchema,
+};
+
+export const Page22 = Template.bind({});
+Page22.args = {
+  schema: page22Schema,
+  uiSchema: page22UiSchema,
 };

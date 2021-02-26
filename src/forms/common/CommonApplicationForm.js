@@ -1,7 +1,9 @@
 // @flow
 import { useEffect } from 'react';
 
+import styled from 'styled-components';
 import { Form, Paged } from 'lattice-fabricate';
+import { Button } from 'lattice-ui-kit';
 import { ReduxUtils } from 'lattice-utils';
 
 import { schemas, uiSchemas } from './schemas';
@@ -13,6 +15,13 @@ import { ACCESS, REQUEST_STATE } from '../../core/redux/constants';
 import { goToRoot } from '../../core/router/actions';
 
 const { isPending, isSuccess } = ReduxUtils;
+
+const ActionRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px 30px 30px;
+`;
 
 const CommonApplicationForm = () => {
   const dispatch = useDispatch();
@@ -56,13 +65,30 @@ const CommonApplicationForm = () => {
             : validateAndSubmit;
 
           return (
-            <Form
-                ref={formRef}
-                isSubmitting={pending}
-                formData={pagedData}
-                onSubmit={handleSubmit}
-                schema={schemas[page]}
-                uiSchema={uiSchemas[page]} />
+            <>
+              <Form
+                  ref={formRef}
+                  hideSubmit
+                  isSubmitting={pending}
+                  formData={pagedData}
+                  onSubmit={onNext}
+                  schema={schemas[page]}
+                  uiSchema={uiSchemas[page]} />
+              <ActionRow>
+                <Button
+                    disabled={!(page > 0)}
+                    onClick={onBack}>
+                  Back
+                </Button>
+                <span>{`${page + 1} of ${totalPages}`}</span>
+                <Button
+                    isLoading={pending}
+                    mode="primary"
+                    onClick={handleNext}>
+                  { isLastPage ? 'Complete Survey' : 'Next' }
+                </Button>
+              </ActionRow>
+            </>
           );
         }} />
   );
