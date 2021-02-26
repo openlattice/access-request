@@ -1,28 +1,34 @@
-/* eslint-disable no-underscore-dangle, import/extensions */
+/* eslint-disable import/extensions, import/no-extraneous-dependencies */
 
 const path = require('path');
-const Webpack = require('webpack');
+const webpack = require('webpack');
 const externals = require('webpack-node-externals');
+const TerserPlugin = require('terser-webpack-plugin');
 
-const APP_CONFIG = require('../app/app.config.js');
-const APP_PATHS = require('../app/paths.config.js');
 const PACKAGE = require('../../package.json');
-const {
-  AUTH0_CLIENT_ID_DEV,
-  AUTH0_CLIENT_ID_PROD,
-  AUTH0_DOMAIN,
-} = require('../auth/auth0.config.js');
+const { AUTH0_CLIENT_ID_DEV, AUTH0_CLIENT_ID_PROD, AUTH0_DOMAIN } = require('../auth/auth0.config.js');
 
-module.exports = (env) => {
+const BANNER = `
+${PACKAGE.name} - v${PACKAGE.version}
+${PACKAGE.description}
+${PACKAGE.homepage}
+
+Copyright (c) 2017-${(new Date()).getFullYear()}, OpenLattice, Inc. All rights reserved.
+`;
+
+module.exports = (env = {}) => {
 
   //
   // constants
   //
 
   const BABEL_CONFIG = path.resolve(__dirname, '../babel/babel.config.js');
-  const BASE_PATH = `/${env.basePath || 'app'}/`;
   const ENV_DEV = 'development';
   const ENV_PROD = 'production';
+
+  const ROOT = path.resolve(__dirname, '../..');
+  const NODE = path.resolve(ROOT, 'node_modules');
+  const SOURCE = path.resolve(ROOT, 'src');
 
   //
   // loaders
@@ -31,9 +37,7 @@ module.exports = (env) => {
   const BABEL_LOADER = {
     test: /\.js$/,
     exclude: /node_modules/,
-    include: [
-      APP_PATHS.ABS.SOURCE,
-    ],
+    include: [SOURCE],
     use: {
       loader: 'babel-loader',
       options: {
@@ -46,15 +50,14 @@ module.exports = (env) => {
   // plugins
   //
 
-  const BANNER_PLUGIN = new Webpack.BannerPlugin({
-    banner: APP_CONFIG.BANNER,
+  const BANNER_PLUGIN = new webpack.BannerPlugin({
+    banner: BANNER,
     entryOnly: true,
   });
 
-  const DEFINE_PLUGIN = new Webpack.DefinePlugin({
+  const DEFINE_PLUGIN = new webpack.DefinePlugin({
     __AUTH0_CLIENT_ID__: JSON.stringify(env.production ? AUTH0_CLIENT_ID_PROD : AUTH0_CLIENT_ID_DEV),
     __AUTH0_DOMAIN__: JSON.stringify(AUTH0_DOMAIN),
-    __BASE_PATH__: JSON.stringify(BASE_PATH),
     __ENV_DEV__: JSON.stringify(!!env.development),
     __ENV_PROD__: JSON.stringify(!!env.production),
     __PACKAGE__: JSON.stringify(PACKAGE.name),
@@ -68,7 +71,7 @@ module.exports = (env) => {
   return {
     bail: true,
     entry: [
-      APP_PATHS.ABS.APP,
+      path.resolve(ROOT, 'src/index.js'),
     ],
     externals: [
       // https://github.com/liady/webpack-node-externals
@@ -78,25 +81,18 @@ module.exports = (env) => {
     module: {
       rules: [
         BABEL_LOADER,
-        {
-          generator: {
-            filename: (
-              env.production
-                ? `${APP_PATHS.REL.STATIC_ASSETS}/[name].[contenthash].[ext]`
-                : `${APP_PATHS.REL.STATIC_ASSETS}/[name].[ext]`
-            )
-          },
-          test: /\.(gif|ico|jpg|jpeg|png|svg|webp)(\?.*)?$/,
-          type: 'asset/resource',
-        },
       ],
     },
     optimization: {
       minimize: !!env.production,
+      minimizer: [new TerserPlugin()],
     },
     output: {
-      path: APP_PATHS.ABS.BUILD,
-      publicPath: BASE_PATH,
+      filename: 'index.js',
+      library: 'openlatticeAccessRequest',
+      libraryTarget: 'umd',
+      path: path.resolve(ROOT, 'build'),
+      publicPath: '/',
     },
     performance: {
       hints: false, // disable performance hints for now
@@ -106,11 +102,12 @@ module.exports = (env) => {
       BANNER_PLUGIN,
     ],
     resolve: {
-      extensions: ['.js', '.css'],
+      extensions: ['.js'],
       modules: [
-        APP_PATHS.ABS.SOURCE,
-        APP_PATHS.ABS.NODE,
-      ],
+        SOURCE,
+        NODE,
+      ]
     },
+    target: 'web',
   };
 };

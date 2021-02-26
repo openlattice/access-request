@@ -2,7 +2,7 @@
   "name": "@openlattice/access-request",
   "version": "0.0.0",
   "homepage": "https://github.com/openlattice/access-request",
-  "description": "a bootstrapped project to serve as a starting point for a new ReactJS app",
+  "description": "OpenLattice module for access request workflows",
   "author": {
     "name": "OpenLattice, Inc.",
     "email": "support@openlattice.com",
@@ -130,16 +130,15 @@
     "styled-components": "~5.2.0"
   },
   "scripts": {
-    "app": "webpack-dev-server --config config/webpack/webpack.config.app.js --env development",
-    "build:dev": "webpack --config config/webpack/webpack.config.app.js --env development",
-    "build:prod": "webpack --config config/webpack/webpack.config.app.js --env production",
-    "build:storybook": "build-storybook",
+    "build:dev": "webpack --config config/webpack/webpack.config.js --env development",
+    "build:prod": "webpack --config config/webpack/webpack.config.js --env production",
+    "build:storybook": "build-storybook -c config/storybook",
     "clean": "rimraf build/*",
     "flow": "flow",
     "lint": "npm-run-all lint:css lint:js",
     "lint:css": "stylelint './src/**/*.js'",
     "lint:js": "eslint --config .eslintrc src",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -c config/storybook -p 6006",
     "test": "jest --config config/jest/jest.config.js --coverage=false",
     "test:travis": "jest --maxWorkers=4 --config config/jest/jest.config.js",
     "test:watch": "jest --config config/jest/jest.config.js --watch --coverage=false"
