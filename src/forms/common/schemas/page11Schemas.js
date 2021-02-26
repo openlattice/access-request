@@ -43,7 +43,7 @@ export const page11Schema = {
                   'Any other characteristic that could uniquely identify the individual',
                 ],
               },
-              minItems: 1,
+              // minItems: 1,
               uniqueItems: true,
             },
             explainObtainingConsent: {

@@ -15,7 +15,7 @@ export const page2Schema = {
           'Privately Funded'
         ]
       },
-      minItems: 1,
+      // minItems: 1,
       uniqueItems: true,
     },
     fundingDescription: {

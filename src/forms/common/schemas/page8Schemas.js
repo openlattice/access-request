@@ -38,7 +38,7 @@ export const page8Schema = {
                   'Economically or Educationally Disadvantaged Persons',
                 ],
               },
-              minItems: 1,
+              // minItems: 1,
               uniqueItems: true,
             },
             descriptionOfProceduresObtainingInformedConsent: {

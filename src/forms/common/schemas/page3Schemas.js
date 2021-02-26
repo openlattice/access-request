@@ -15,7 +15,7 @@ export const page3Schema = {
           'Generalizable knowledge (publication in scientific journals, scientific presentations, etc.)'
         ]
       },
-      minItems: 1,
+      // minItems: 1,
       uniqueItems: true,
     },
   }

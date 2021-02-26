@@ -19,7 +19,7 @@ export const page4Schema = {
           'Research Institution',
         ],
       },
-      minItems: 1,
+      // minItems: 1,
       uniqueItems: true,
     },
     responsibleOfficial: {
