@@ -72,15 +72,10 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<void> {
 
     const now = DateTime.local().toISO();
     const entityData = [{
-      // type
       [typePTID]: [type || 'Common Application'],
-      // // formdata
       [formDataPTID]: [JSON.stringify(formData)],
-      // // schema
       [rjsfJsonSchemaPTID]: [JSON.stringify(schema)],
-      // // uischema
       [rjsfUiSchemaPTID]: [JSON.stringify(uiSchema)],
-      // // request date time
       [requestDatetimePTID]: [now]
     }];
 
