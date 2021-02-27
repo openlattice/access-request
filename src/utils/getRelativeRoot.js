@@ -10,6 +10,4 @@ const getRelativeRoot = (root :string, match :Match) => {
   return root;
 };
 
-export {
-  getRelativeRoot
-};
+export default getRelativeRoot;

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 import AccessRequestList from './AccessRequestList';
 
+import getRelativeRoot from '../../../utils/getRelativeRoot';
 import { useSelector } from '../../../core/redux';
-import { getRelativeRoot } from '../../../utils/RouteUtils';
 
 const HeaderRow = styled.div`
   display: flex;

@@ -1,15 +1,16 @@
 // @flow
 import { useEffect } from 'react';
 
+// $FlowFixMe
 import { List } from 'lattice-ui-kit';
 import { DataUtils } from 'lattice-utils';
 
 import AccessRequestListItem from './AccessRequestListItem';
 import { getAllAccessRequests } from './actions';
 
+import getRelativeRoot from '../../../utils/getRelativeRoot';
 import { useDispatch, useSelector } from '../../../core/redux';
 import { selectAccessHits } from '../../../core/redux/selectors';
-import { getRelativeRoot } from '../../../utils/RouteUtils';
 
 const { getEntityKeyId } = DataUtils;
 

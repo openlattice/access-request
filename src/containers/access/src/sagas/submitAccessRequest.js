@@ -15,9 +15,9 @@ import { DateTime } from 'luxon';
 import type { Saga } from '@redux-saga/core';
 import type { SequenceAction } from 'redux-reqseq';
 
+import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
 import { selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
-import { getESIDFromConfig } from '../../../../utils/AppUtils';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
 import { APP_PATHS } from '../../../app';
 import {
