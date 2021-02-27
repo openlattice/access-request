@@ -2,11 +2,16 @@
 import { Map } from 'immutable';
 import { Constants } from 'lattice';
 import {
+  // $FlowFixMe
   Avatar,
+  // $FlowFixMe
   ListItem,
+  // $FlowFixMe
   ListItemAvatar,
+  // $FlowFixMe
   ListItemText,
 } from 'lattice-ui-kit';
+import { DataUtils } from 'lattice-utils';
 import { DateTime } from 'luxon';
 import { Link } from 'react-router-dom';
 
@@ -14,10 +19,10 @@ import { selectAccessRequest } from './actions';
 
 import { PropertyTypes } from '../../../core/edm/constants';
 import { useDispatch } from '../../../core/redux';
-import { getPropertyValue } from '../../../utils/EntityUtils';
 
 const { OPENLATTICE_LAST_WRITE_FQN } = Constants;
 const { REQUEST_DATE_TIME, TYPE } = PropertyTypes;
+const { getPropertyValue } = DataUtils;
 
 type Props = {
   data :Map;
@@ -26,9 +31,9 @@ type Props = {
 
 const AccessRequestListItem = ({ data, to } :Props) => {
   const dispatch = useDispatch();
-  const type = getPropertyValue(data, TYPE) || '';
-  const requestDateTime = getPropertyValue(data, REQUEST_DATE_TIME);
-  const lastWrite = getPropertyValue(data, OPENLATTICE_LAST_WRITE_FQN);
+  const type = getPropertyValue(data, [TYPE, 0]);
+  const requestDateTime = getPropertyValue(data, [REQUEST_DATE_TIME, 0]);
+  const lastWrite = getPropertyValue(data, [OPENLATTICE_LAST_WRITE_FQN, 0]);
   const requestDT = DateTime.fromISO(requestDateTime);
   const updateDT = DateTime.fromISO(lastWrite);
 
