@@ -43,7 +43,7 @@ const AccessRequestSwitch = ({
 
   const initializeState = useSelector((state) => state.getIn([APP, INITIALIZE_APPLICATION, REQUEST_STATE]));
   if (isPending(initializeState) || isStandby(initializeState)) {
-    return <CenterWrapper><Spinner size="3x" /></CenterWrapper>;
+    return <CenterWrapper><Spinner size="2x" /></CenterWrapper>;
   }
 
   return (
