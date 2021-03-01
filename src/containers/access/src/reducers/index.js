@@ -3,6 +3,7 @@
  */
 
 import { List, Map, fromJS } from 'immutable';
+import { ReduxConstants } from 'lattice-utils';
 
 import getAllAccessRequestsReducer from './getAllAccessRequestsReducer';
 import getFormsReducer from './getFormsReducer';
@@ -25,13 +26,15 @@ import {
   updateAccessRequest,
 } from '../actions';
 
+const { HITS } = ReduxConstants;
+
 const INITIAL_STATE :Map = fromJS({
   [GET_ALL_ACCESS_REQUESTS]: RS_INITIAL_STATE,
   [GET_FORMS]: RS_INITIAL_STATE,
   [SUBMIT_ACCESS_REQUEST]: RS_INITIAL_STATE,
   [UPDATE_ACCESS_REQUEST]: RS_INITIAL_STATE,
   accessRequest: Map(),
-  hits: List([]),
+  [HITS]: List([]),
 });
 
 export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object) {

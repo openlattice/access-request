@@ -14,25 +14,16 @@ import {
 
 const { REQUEST_STATE } = ReduxConstants;
 
-export default function reducer(state :Map<*, *>, action :Object) {
+export default function updateAccessRequestReducer(state :Map<*, *>, action :SequenceAction) {
 
-  switch (action.type) {
-
-    case updateAccessRequest.case(action.type): {
-      const seqAction :SequenceAction = action;
-      return updateAccessRequest.reducer(state, seqAction, {
-        REQUEST: () => {
-          const { path, formData } = action.value;
-          return state
-            .setIn(path, formData)
-            .setIn([UPDATE_ACCESS_REQUEST, REQUEST_STATE], RequestStates.PENDING);
-        },
-        SUCCESS: () => state.setIn([UPDATE_ACCESS_REQUEST, REQUEST_STATE], RequestStates.SUCCESS),
-        FAILURE: () => state.setIn([UPDATE_ACCESS_REQUEST, REQUEST_STATE], RequestStates.FAILURE),
-      });
-    }
-
-    default:
-      return state;
-  }
+  return updateAccessRequest.reducer(state, action, {
+    REQUEST: () => {
+      const { path, formData } = action.value;
+      return state
+        .setIn(path, formData)
+        .setIn([UPDATE_ACCESS_REQUEST, REQUEST_STATE], RequestStates.PENDING);
+    },
+    SUCCESS: () => state.setIn([UPDATE_ACCESS_REQUEST, REQUEST_STATE], RequestStates.SUCCESS),
+    FAILURE: () => state.setIn([UPDATE_ACCESS_REQUEST, REQUEST_STATE], RequestStates.FAILURE),
+  });
 }

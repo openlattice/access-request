@@ -13,6 +13,7 @@ import {
 } from 'lattice-sagas';
 import { Logger } from 'lattice-utils';
 import type { Saga } from '@redux-saga/core';
+import type { WorkerResponse } from 'lattice-sagas';
 import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
@@ -34,8 +35,8 @@ const { FORM_DATA } = PropertyTypes;
 
 const LOG = new Logger('updateAccessRequest');
 
-function* updateAccessRequestWorker(action :SequenceAction) :Saga<void> {
-  const response :Object = {};
+function* updateAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse> {
+  let response;
   try {
     const { value } = action;
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
@@ -69,12 +70,13 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<void> {
     );
 
     if (updateAccessResponse.error) throw updateAccessResponse.error;
+    response = { data: updateAccessResponse.data };
 
     yield put(updateAccessRequest.success(action.id));
 
   }
   catch (error) {
-    response.error = error;
+    response = { error };
     LOG.error(action.type, error);
     yield put(updateAccessRequest.failure(action.id, error));
   }
@@ -84,7 +86,7 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<void> {
   return response;
 }
 
-function* updateAccessRequestWatcher() :Generator<any, any, any> {
+function* updateAccessRequestWatcher() :Saga<void> {
   yield takeEvery(UPDATE_ACCESS_REQUEST, updateAccessRequestWorker);
 }
 

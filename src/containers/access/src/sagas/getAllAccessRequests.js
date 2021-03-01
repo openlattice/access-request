@@ -13,6 +13,7 @@ import {
 } from 'lattice-sagas';
 import { Logger } from 'lattice-utils';
 import type { Saga } from '@redux-saga/core';
+import type { WorkerResponse } from 'lattice-sagas';
 import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
@@ -33,8 +34,9 @@ const { REQUEST_DATE_TIME } = PropertyTypes;
 
 const LOG = new Logger('getAllAccessRequestsSagas');
 
-function* getAllAccessRequestsWorker(action :SequenceAction) :Saga<void> {
-  const response :Object = {};
+function* getAllAccessRequestsWorker(action :SequenceAction) :Saga<WorkerResponse> {
+  let response;
+
   try {
     const { value } = action;
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
@@ -68,6 +70,7 @@ function* getAllAccessRequestsWorker(action :SequenceAction) :Saga<void> {
     );
 
     if (accessResponse.error) throw accessResponse.error;
+    response = { data: accessResponse.data };
 
     yield put(getAllAccessRequests.success(action.id, {
       hits: fromJS(accessResponse.data.hits)
@@ -75,7 +78,7 @@ function* getAllAccessRequestsWorker(action :SequenceAction) :Saga<void> {
 
   }
   catch (error) {
-    response.error = error;
+    response = { error };
     LOG.error(action.type, error);
     yield put(getAllAccessRequests.failure(action.id, error));
   }
@@ -85,7 +88,7 @@ function* getAllAccessRequestsWorker(action :SequenceAction) :Saga<void> {
   return response;
 }
 
-function* getAllAccessRequestsWatcher() :Generator<any, any, any> {
+function* getAllAccessRequestsWatcher() :Saga<void> {
   yield takeEvery(GET_ALL_ACCESS_REQUESTS, getAllAccessRequestsWorker);
 }
 
