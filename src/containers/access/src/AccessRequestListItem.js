@@ -41,7 +41,7 @@ const AccessRequestListItem = ({ data, to } :Props) => {
   let secondaryText = `Created: ${formattedDT}`;
 
   const diff = updateDT.diff(requestDT, 'seconds');
-  const { seconds } = diff.toObject();
+  const { seconds } = diff;
   if (seconds > 1) {
     const relativeUpdateTime = updateDT.toRelative({ style: 'short' });
     secondaryText = secondaryText.concat(` · Updated: ${relativeUpdateTime}`);
