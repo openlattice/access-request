@@ -1,4 +1,6 @@
 // @flow
+import { forwardRef } from 'react';
+import type { ElementRef } from 'react';
 
 import { Map } from 'immutable';
 import { Form } from 'lattice-fabricate';
@@ -25,7 +27,17 @@ type Props = {
   isSubmitting :boolean;
 };
 
-const AccessRequestEditor = ({ accessId, data, isSubmitting } :Props) => {
+type AccessRequestEditorProps = {
+  ...Props,
+  fRef :ElementRef<typeof Form>;
+}
+
+const AccessRequestEditor = ({
+  accessId,
+  data,
+  isSubmitting,
+  fRef,
+} :AccessRequestEditorProps) => {
   const dispatch = useDispatch();
   const formDataStr = getPropertyValue(data, [FORM_DATA, 0]);
   const schemaStr = getPropertyValue(data, [RJSF_JSON_SCHEMA, 0]);
@@ -54,6 +66,7 @@ const AccessRequestEditor = ({ accessId, data, isSubmitting } :Props) => {
 
     return (
       <Form
+          ref={fRef}
           formData={formData}
           isSubmitting={isSubmitting}
           onSubmit={handleSubmit}
@@ -67,4 +80,7 @@ const AccessRequestEditor = ({ accessId, data, isSubmitting } :Props) => {
 
 };
 
-export default AccessRequestEditor;
+/* eslint-disable react/jsx-props-no-spreading */
+export default forwardRef<Props, typeof Form>((props, ref) => (
+  <AccessRequestEditor {...props} fRef={ref} />
+));
