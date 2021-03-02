@@ -94,10 +94,15 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse
 
     if (submitAccessResponse.error) throw submitAccessResponse.error;
     const localEntity = Map({
+      // $FlowFixMe invalid-computed-prop
       [TYPE]: [type || 'Common Application'],
+      // $FlowFixMe invalid-computed-prop
       [FORM_DATA]: [formDataStr],
+      // $FlowFixMe invalid-computed-prop
       [RJSF_JSON_SCHEMA]: [schemaStr],
+      // $FlowFixMe invalid-computed-prop
       [RJSF_UI_SCHEMA]: [uiSchemaStr],
+      // $FlowFixMe invalid-computed-prop
       [REQUEST_DATE_TIME]: [now],
       [OPENLATTICE_ID_FQN]: submitAccessResponse.data
     });
