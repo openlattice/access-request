@@ -101,8 +101,8 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse
       [REQUEST_DATE_TIME]: [now],
       [OPENLATTICE_ID_FQN]: submitAccessResponse.data
     });
+
     response = { data: localEntity };
-    debugger;
 
     yield put(submitAccessRequest.success(action.id, response.data));
 
