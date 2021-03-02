@@ -29,6 +29,7 @@ const CommonApplicationForm = () => {
 
   const success = isSuccess(requestState);
   const pending = isPending(requestState);
+
   useEffect(() => {
     if (success) {
       dispatch(goToRoot());
@@ -38,12 +39,6 @@ const CommonApplicationForm = () => {
       dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
     };
   }, [dispatch, success]);
-
-  const handleSubmit = (payload) => {
-    dispatch(submitAccessRequest(payload));
-  };
-
-  console.log(schemas[0]);
 
   return (
     <Paged
@@ -59,6 +54,16 @@ const CommonApplicationForm = () => {
 
           const totalPages = schemas.length;
           const isLastPage = page === totalPages - 1;
+
+          const handleSubmit = () => {
+            const payload = {
+              formData: pagedData,
+              schema: schemas,
+              uiSchema: uiSchemas,
+              type: 'Common Application'
+            };
+            dispatch(submitAccessRequest(payload));
+          };
 
           const handleNext = isLastPage
             ? handleSubmit

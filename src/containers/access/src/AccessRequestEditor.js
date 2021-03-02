@@ -7,6 +7,7 @@ import type { UUID } from 'lattice';
 
 import { updateAccessRequest } from './actions';
 
+import generateReviewSchema from '../../../utils/generateReviewSchema';
 import { PropertyTypes } from '../../../core/edm/constants';
 import { useDispatch } from '../../../core/redux';
 
@@ -34,8 +35,14 @@ const AccessRequestEditor = ({ accessId, data, isSubmitting } :Props) => {
   // https://reactjs.org/docs/error-boundaries.html
   try {
     const formData = JSON.parse(formDataStr);
-    const schema = JSON.parse(schemaStr);
-    const uiSchema = JSON.parse(uiSchemaStr);
+    let schema = JSON.parse(schemaStr);
+    let uiSchema = JSON.parse(uiSchemaStr);
+
+    if (Array.isArray(schema) && Array.isArray(uiSchema)) {
+      const reviewSchemas = generateReviewSchema(schema, uiSchema);
+      schema = reviewSchemas.schema;
+      uiSchema = reviewSchemas.uiSchema;
+    }
 
     const handleSubmit = (payload) => {
       const { formData: editedFormData } = payload;
