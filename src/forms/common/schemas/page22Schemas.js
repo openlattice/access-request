@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 export const page22Schema = {
   type: 'object',
-  title: 'Data Security Letter',
+  title: 'Common Application',
   properties: {
     dataSecurityLetter: {
       type: 'object',
