@@ -1,7 +1,10 @@
 // @flow
 import { useRef } from 'react';
 
-import { Button } from 'lattice-ui-kit';
+import styled from 'styled-components';
+import { faPrint } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconButton } from 'lattice-ui-kit';
 import { DataUtils, ReduxUtils } from 'lattice-utils';
 import { useReactToPrint } from 'react-to-print';
 
@@ -14,6 +17,14 @@ import { selectAccessRequestData } from '../../../core/redux/selectors';
 
 const { getEntityKeyId } = DataUtils;
 const { isPending } = ReduxUtils;
+
+const Row = styled.div`
+  display: flex;
+`;
+
+const PrintButton = styled(IconButton)`
+  margin-left: auto;
+`;
 
 const EditAccessRequestContainer = () => {
   const data = useSelector(selectAccessRequestData());
@@ -28,7 +39,11 @@ const EditAccessRequestContainer = () => {
 
   return (
     <>
-      <Button onClick={handlePrint}>Print</Button>
+      <Row>
+        <PrintButton onClick={handlePrint}>
+          <FontAwesomeIcon icon={faPrint} fixedWidth />
+        </PrintButton>
+      </Row>
       <AccessRequestEditor
           accessId={accessId}
           data={data}
