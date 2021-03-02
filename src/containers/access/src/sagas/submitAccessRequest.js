@@ -13,11 +13,12 @@ import {
 import { Logger } from 'lattice-utils';
 import { DateTime } from 'luxon';
 import type { Saga } from '@redux-saga/core';
+import type { WorkerResponse } from 'lattice-sagas';
 import type { SequenceAction } from 'redux-reqseq';
 
+import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
 import { selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
-import { getESIDFromConfig } from '../../../../utils/AppUtils';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
 import { APP_PATHS } from '../../../app';
 import {
@@ -39,8 +40,8 @@ const {
 
 const LOG = new Logger('submitAccessRequestSagas');
 
-function* submitAccessRequestWorker(action :SequenceAction) :Saga<void> {
-  const response :Object = {};
+function* submitAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse> {
+  let response;
   try {
     const { value } = action;
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
@@ -72,15 +73,10 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<void> {
 
     const now = DateTime.local().toISO();
     const entityData = [{
-      // type
       [typePTID]: [type || 'Common Application'],
-      // // formdata
       [formDataPTID]: [JSON.stringify(formData)],
-      // // schema
       [rjsfJsonSchemaPTID]: [JSON.stringify(schema)],
-      // // uischema
       [rjsfUiSchemaPTID]: [JSON.stringify(uiSchema)],
-      // // request date time
       [requestDatetimePTID]: [now]
     }];
 
@@ -90,12 +86,13 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<void> {
     );
 
     if (submitAccessResponse.error) throw submitAccessResponse.error;
+    response = { data: submitAccessResponse.data };
 
     yield put(submitAccessRequest.success(action.id));
 
   }
   catch (error) {
-    response.error = error;
+    response = { error };
     LOG.error(action.type, error);
     yield put(submitAccessRequest.failure(action.id, error));
   }
@@ -105,7 +102,7 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<void> {
   return response;
 }
 
-function* submitAccessRequestWatcher() :Generator<any, any, any> {
+function* submitAccessRequestWatcher() :Saga<void> {
   yield takeEvery(SUBMIT_ACCESS_REQUEST, submitAccessRequestWorker);
 }
 

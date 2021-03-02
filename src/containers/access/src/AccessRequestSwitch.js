@@ -2,9 +2,8 @@
 import React, { useEffect } from 'react';
 
 import { Spinner } from 'lattice-ui-kit';
-import { ValidationUtils } from 'lattice-utils';
+import { ReduxUtils, ValidationUtils } from 'lattice-utils';
 import { Route, Switch } from 'react-router-dom';
-import { RequestStates } from 'redux-reqseq';
 import type { UUID } from 'lattice';
 import type { Match } from 'react-router';
 
@@ -14,7 +13,10 @@ import NewRequestContainer from './NewRequestContainer';
 import { CenterWrapper } from './styled';
 
 import { useDispatch, useSelector } from '../../../core/redux';
+import { APP, REQUEST_STATE } from '../../../core/redux/constants';
 import { INITIALIZE_APPLICATION, initializeApplication } from '../../app/actions';
+
+const { isPending, isStandby } = ReduxUtils;
 
 const { isValidUUID } = ValidationUtils;
 
@@ -39,9 +41,9 @@ const AccessRequestSwitch = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, organizationId, root]);
 
-  const initializeState = useSelector((state) => state.getIn(['app', INITIALIZE_APPLICATION, 'requestState']));
-  if (initializeState === RequestStates.PENDING || initializeState === RequestStates.STANDBY) {
-    return <CenterWrapper><Spinner size="3x" /></CenterWrapper>;
+  const initializeState = useSelector((state) => state.getIn([APP, INITIALIZE_APPLICATION, REQUEST_STATE]));
+  if (isPending(initializeState) || isStandby(initializeState)) {
+    return <CenterWrapper><Spinner size="2x" /></CenterWrapper>;
   }
 
   return (

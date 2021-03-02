@@ -3,6 +3,7 @@
  */
 
 import { newRequestSequence } from 'redux-reqseq';
+import type { Map } from 'immutable';
 import type { RequestSequence } from 'redux-reqseq';
 
 const GET_FORMS :'GET_FORMS' = 'GET_FORMS';
@@ -15,7 +16,7 @@ const SUBMIT_ACCESS_REQUEST :'SUBMIT_ACCESS_REQUEST' = 'SUBMIT_ACCESS_REQUEST';
 const submitAccessRequest :RequestSequence = newRequestSequence(SUBMIT_ACCESS_REQUEST);
 
 const SELECT_ACCESS_REQUEST :'SELECT_ACCESS_REQUEST' = 'SELECT_ACCESS_REQUEST';
-const selectAccessRequest = (value) => ({
+const selectAccessRequest = (value :Map) => ({
   type: SELECT_ACCESS_REQUEST,
   value
 });

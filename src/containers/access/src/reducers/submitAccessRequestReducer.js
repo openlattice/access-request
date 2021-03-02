@@ -14,22 +14,14 @@ import {
 
 const { REQUEST_STATE } = ReduxConstants;
 
-export default function reducer(state :Map<*, *>, action :Object) {
+export default function submitAccessRequestReducer(state :Map<*, *>, action :SequenceAction) {
 
-  switch (action.type) {
+  return submitAccessRequest.reducer(state, action, {
+    REQUEST: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.PENDING),
+    SUCCESS: () => state
+      .merge(action.value)
+      .setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.SUCCESS),
+    FAILURE: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.FAILURE),
+  });
 
-    case submitAccessRequest.case(action.type): {
-      const seqAction :SequenceAction = action;
-      return submitAccessRequest.reducer(state, seqAction, {
-        REQUEST: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.PENDING),
-        SUCCESS: () => state
-          .merge(action.value)
-          .setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.SUCCESS),
-        FAILURE: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.FAILURE),
-      });
-    }
-
-    default:
-      return state;
-  }
 }

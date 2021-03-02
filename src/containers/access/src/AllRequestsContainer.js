@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 
 import AccessRequestList from './AccessRequestList';
 
+import getRelativeRoot from '../../../utils/getRelativeRoot';
 import { useSelector } from '../../../core/redux';
-import { getRelativeRoot } from '../../../utils/RouteUtils';
+import { APP_PATHS } from '../../app';
 
 const HeaderRow = styled.div`
   display: flex;
@@ -15,8 +16,8 @@ const HeaderRow = styled.div`
 `;
 
 const AllRequestsContainer = () => {
-  const root = useSelector((store) => store.getIn(['app', 'root']));
-  const match = useSelector((store) => store.getIn(['app', 'match']));
+  const root = useSelector((store) => store.getIn(APP_PATHS.ROOT));
+  const match = useSelector((store) => store.getIn(APP_PATHS.MATCH));
   const relRoot = getRelativeRoot(root, match);
 
   return (

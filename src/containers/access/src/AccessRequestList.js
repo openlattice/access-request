@@ -1,23 +1,25 @@
 // @flow
 import { useEffect } from 'react';
 
+// $FlowFixMe
 import { List } from 'lattice-ui-kit';
 import { DataUtils } from 'lattice-utils';
 
 import AccessRequestListItem from './AccessRequestListItem';
 import { getAllAccessRequests } from './actions';
 
+import getRelativeRoot from '../../../utils/getRelativeRoot';
 import { useDispatch, useSelector } from '../../../core/redux';
 import { selectAccessHits } from '../../../core/redux/selectors';
-import { getRelativeRoot } from '../../../utils/RouteUtils';
+import { APP_PATHS } from '../../app';
 
 const { getEntityKeyId } = DataUtils;
 
 const AccessRequestList = () => {
   const dispatch = useDispatch();
   const hits = useSelector(selectAccessHits());
-  const root = useSelector((store) => store.getIn(['app', 'root']));
-  const match = useSelector((store) => store.getIn(['app', 'match']));
+  const root = useSelector((store) => store.getIn(APP_PATHS.ROOT));
+  const match = useSelector((store) => store.getIn(APP_PATHS.MATCH));
   const relRoot = getRelativeRoot(root, match);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const AccessRequestList = () => {
     <List>
       {
         hits.map((accessRequest) => {
-          const id = getEntityKeyId(accessRequest);
+          const id = getEntityKeyId(accessRequest) || '';
           return (
             <AccessRequestListItem
                 data={accessRequest}

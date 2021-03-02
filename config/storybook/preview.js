@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 import { addDecorator } from '@storybook/react';
 import {
   LatticeLuxonUtils,
@@ -7,7 +9,7 @@ import {
   lightTheme
 } from 'lattice-ui-kit';
 
-addDecorator(storyFn => (
+addDecorator((storyFn) => (
   <ThemeProvider theme={lightTheme}>
     <MuiPickersUtilsProvider utils={LatticeLuxonUtils}>
       <StylesProvider injectFirst>{storyFn()}</StylesProvider>
@@ -15,7 +17,6 @@ addDecorator(storyFn => (
   </ThemeProvider>
 ));
 
-
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-}
+  actions: { argTypesRegex: '^on[A-Z].*' },
+};

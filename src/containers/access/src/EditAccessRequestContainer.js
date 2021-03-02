@@ -16,7 +16,7 @@ const EditAccessRequestContainer = () => {
   const data = useSelector(selectAccessRequestData());
   const requestState = useSelector((s) => s.getIn([ACCESS, UPDATE_ACCESS_REQUEST, REQUEST_STATE]));
 
-  const accessId = getEntityKeyId(data);
+  const accessId = getEntityKeyId(data) || '';
   const isSubmitting = isPending(requestState);
 
   return (
