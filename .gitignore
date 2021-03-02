@@ -1,4 +1,5 @@
 coverage/
+*.LICENSE.txt
 
 # npm
 npm-debug.log
