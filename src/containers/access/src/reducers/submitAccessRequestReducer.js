@@ -19,7 +19,7 @@ export default function submitAccessRequestReducer(state :Map<*, *>, action :Seq
   return submitAccessRequest.reducer(state, action, {
     REQUEST: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.PENDING),
     SUCCESS: () => state
-      .merge(action.value)
+      .set('accessRequest', action.value)
       .setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.SUCCESS),
     FAILURE: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.FAILURE),
   });

@@ -28,12 +28,14 @@ import {
 
 const { HITS } = ReduxConstants;
 
+export const ACCESS_REQUEST = 'accessRequest';
+
 const INITIAL_STATE :Map = fromJS({
   [GET_ALL_ACCESS_REQUESTS]: RS_INITIAL_STATE,
   [GET_FORMS]: RS_INITIAL_STATE,
   [SUBMIT_ACCESS_REQUEST]: RS_INITIAL_STATE,
   [UPDATE_ACCESS_REQUEST]: RS_INITIAL_STATE,
-  accessRequest: Map(),
+  [ACCESS_REQUEST]: Map(),
   [HITS]: List([]),
 });
 
@@ -46,11 +48,11 @@ export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object
     }
 
     case SELECT_ACCESS_REQUEST: {
-      return state.set('accessRequest', action.value);
+      return state.set(ACCESS_REQUEST, action.value);
     }
 
     case CLEAR_ACCESS_REQUEST: {
-      return state.set('accessRequest', INITIAL_STATE.get('accessRequest'));
+      return state.set(ACCESS_REQUEST, INITIAL_STATE.get(ACCESS_REQUEST));
     }
 
     case getForms.case(action.type): {

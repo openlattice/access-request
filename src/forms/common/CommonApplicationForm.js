@@ -4,17 +4,25 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { Form, Paged } from 'lattice-fabricate';
 import { Button } from 'lattice-ui-kit';
-import { ReduxUtils } from 'lattice-utils';
+import { DataUtils, ReduxUtils, ValidationUtils } from 'lattice-utils';
 
 import { schemas, uiSchemas } from './schemas';
 
-import { SUBMIT_ACCESS_REQUEST, submitAccessRequest } from '../../containers/access/src/actions';
+import {
+  SUBMIT_ACCESS_REQUEST,
+  clearAccessRequest,
+  submitAccessRequest,
+  updateAccessRequest
+} from '../../containers/access/src/actions';
 import { useDispatch, useSelector } from '../../core/redux';
 import { resetRequestState } from '../../core/redux/actions';
 import { ACCESS, REQUEST_STATE } from '../../core/redux/constants';
+import { selectAccessRequestData } from '../../core/redux/selectors';
 import { goToRoot } from '../../core/router/actions';
 
-const { isPending, isSuccess } = ReduxUtils;
+const { isPending } = ReduxUtils;
+const { getEntityKeyId } = DataUtils;
+const { isValidUUID } = ValidationUtils;
 
 const ActionRow = styled.div`
   display: flex;
@@ -25,23 +33,39 @@ const ActionRow = styled.div`
 
 const CommonApplicationForm = () => {
   const dispatch = useDispatch();
+  const accessRequest = useSelector(selectAccessRequestData());
   const requestState = useSelector((s) => s.getIn([ACCESS, SUBMIT_ACCESS_REQUEST, REQUEST_STATE]));
 
-  const success = isSuccess(requestState);
   const pending = isPending(requestState);
 
-  useEffect(() => {
-    if (success) {
-      dispatch(goToRoot());
-    }
+  const accessId = getEntityKeyId(accessRequest) || '';
 
-    return () => {
-      dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
-    };
-  }, [dispatch, success]);
+  useEffect(() => () => {
+    dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
+    dispatch(clearAccessRequest());
+  }, [dispatch]);
+
+  const onPageChange = (pageNumber, formData) => {
+    if (isValidUUID(accessId)) {
+      dispatch(updateAccessRequest({
+        formData,
+        entityKeyId: accessId
+      }));
+    }
+    else {
+      const payload = {
+        formData,
+        schema: schemas,
+        uiSchema: uiSchemas,
+        type: 'Common Application',
+      };
+      dispatch(submitAccessRequest(payload));
+    }
+  };
 
   return (
     <Paged
+        onPageChange={onPageChange}
         render={(props) => {
           const {
             formRef,
@@ -56,13 +80,7 @@ const CommonApplicationForm = () => {
           const isLastPage = page === totalPages - 1;
 
           const handleSubmit = () => {
-            const payload = {
-              formData: pagedData,
-              schema: schemas,
-              uiSchema: uiSchemas,
-              type: 'Common Application'
-            };
-            dispatch(submitAccessRequest(payload));
+            dispatch(goToRoot());
           };
 
           const handleNext = isLastPage

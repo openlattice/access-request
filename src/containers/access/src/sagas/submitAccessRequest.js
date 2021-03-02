@@ -6,6 +6,8 @@ import {
   select,
   takeEvery,
 } from '@redux-saga/core/effects';
+import { Map } from 'immutable';
+import { Constants } from 'lattice';
 import {
   DataApiActions,
   DataApiSagas,
@@ -26,6 +28,7 @@ import {
   submitAccessRequest,
 } from '../actions';
 
+const { OPENLATTICE_ID_FQN } = Constants;
 const { createOrMergeEntityData } = DataApiActions;
 const { createOrMergeEntityDataWorker } = DataApiSagas;
 
@@ -71,12 +74,16 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse
     const rjsfUiSchemaPTID = propertyTypesByFQN.get(RJSF_UI_SCHEMA);
     const typePTID = propertyTypesByFQN.get(TYPE);
 
+    const formDataStr = JSON.stringify(formData);
+    const schemaStr = JSON.stringify(schema);
+    const uiSchemaStr = JSON.stringify(uiSchema);
+
     const now = DateTime.local().toISO();
     const entityData = [{
       [typePTID]: [type || 'Common Application'],
-      [formDataPTID]: [JSON.stringify(formData)],
-      [rjsfJsonSchemaPTID]: [JSON.stringify(schema)],
-      [rjsfUiSchemaPTID]: [JSON.stringify(uiSchema)],
+      [formDataPTID]: [formDataStr],
+      [rjsfJsonSchemaPTID]: [schemaStr],
+      [rjsfUiSchemaPTID]: [uiSchemaStr],
       [requestDatetimePTID]: [now]
     }];
 
@@ -86,9 +93,18 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse
     );
 
     if (submitAccessResponse.error) throw submitAccessResponse.error;
-    response = { data: submitAccessResponse.data };
+    const localEntity = Map({
+      [TYPE]: [type || 'Common Application'],
+      [FORM_DATA]: [formDataStr],
+      [RJSF_JSON_SCHEMA]: [schemaStr],
+      [RJSF_UI_SCHEMA]: [uiSchemaStr],
+      [REQUEST_DATE_TIME]: [now],
+      [OPENLATTICE_ID_FQN]: submitAccessResponse.data
+    });
+    response = { data: localEntity };
+    debugger;
 
-    yield put(submitAccessRequest.success(action.id));
+    yield put(submitAccessRequest.success(action.id, response.data));
 
   }
   catch (error) {
