@@ -5,12 +5,12 @@ export const page3Schema = {
   properties: {
     projectUtilization: {
       type: 'object',
-      title: 'How will the project be utilized?',
+      title: 'Project Utilization',
       properties: {
         projectUtilizationType: {
           type: 'array',
-          title: 'Check all that apply',
-          description: 'Note: If you believe the project should be considered "not research" then you must submit the Determination Request Form from the Committee for the Protection of Human Subjects website rather than this form.',
+          title: 'How will the project be utilized?',
+          description: 'Check all that apply.\nNote: If you believe the project should be considered "not research" then you must submit the Determination Request Form from the Committee for the Protection of Human Subjects website rather than this form.',
           items: {
             type: 'string',
             enum: [

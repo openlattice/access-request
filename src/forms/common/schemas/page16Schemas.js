@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 export const page16Schema = {
   type: 'object',
-  title: 'Data Storage Location',
+  title: 'Common Application',
   properties: {
     dataStorageLocation: {
       type: 'object',
@@ -19,8 +19,8 @@ export const page16Schema = {
           type: 'string',
           title: 'Secondary Address, if any',
         },
-      },
-    },
+      }
+    }
   },
 };
 

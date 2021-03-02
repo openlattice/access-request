@@ -5,11 +5,12 @@ export const page2Schema = {
   properties: {
     funding: {
       type: 'object',
-      title: 'Indicate the type of funding for this research',
+      title: 'Funding',
       properties: {
         typeOfFunding: {
           type: 'array',
-          title: 'Check all that apply',
+          title: 'Indicate the type of funding for this research',
+          description: 'Check all that apply',
           items: {
             type: 'string',
             enum: [
@@ -34,7 +35,7 @@ export const page2Schema = {
 export const page2UiSchema = {
   classNames: 'column-span-12',
   funding: {
-    classNames: 'column-span-12',
+    classNames: 'column-span-12 grid-container',
     typeOfFunding: {
       classNames: 'column-span-12',
       'ui:widget': 'checkboxes',
