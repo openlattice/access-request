@@ -1,45 +1,119 @@
 // @flow
 import { useEffect } from 'react';
 
-import { Form } from 'lattice-fabricate';
-import { ReduxUtils } from 'lattice-utils';
+import styled from 'styled-components';
+import { Form, Paged } from 'lattice-fabricate';
+import { Button } from 'lattice-ui-kit';
+import { DataUtils, ReduxUtils, ValidationUtils } from 'lattice-utils';
 
-import { schema, uiSchema } from './schemas';
+import { schemas, uiSchemas } from './schemas';
 
-import { SUBMIT_ACCESS_REQUEST, submitAccessRequest } from '../../containers/access/src/actions';
+import {
+  SUBMIT_ACCESS_REQUEST,
+  clearAccessRequest,
+  submitAccessRequest,
+  updateAccessRequest
+} from '../../containers/access/src/actions';
 import { useDispatch, useSelector } from '../../core/redux';
 import { resetRequestState } from '../../core/redux/actions';
 import { ACCESS, REQUEST_STATE } from '../../core/redux/constants';
+import { selectAccessRequestData } from '../../core/redux/selectors';
 import { goToRoot } from '../../core/router/actions';
 
-const { isPending, isSuccess } = ReduxUtils;
+const { isPending } = ReduxUtils;
+const { getEntityKeyId } = DataUtils;
+const { isValidUUID } = ValidationUtils;
+
+const ActionRow = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 30px 30px;
+`;
 
 const CommonApplicationForm = () => {
   const dispatch = useDispatch();
+  const accessRequest = useSelector(selectAccessRequestData());
   const requestState = useSelector((s) => s.getIn([ACCESS, SUBMIT_ACCESS_REQUEST, REQUEST_STATE]));
 
-  const success = isSuccess(requestState);
   const pending = isPending(requestState);
-  useEffect(() => {
-    if (success) {
-      dispatch(goToRoot());
+
+  const accessId = getEntityKeyId(accessRequest) || '';
+
+  useEffect(() => () => {
+    dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
+    dispatch(clearAccessRequest());
+  }, [dispatch]);
+
+  const onPageChange = (pageNumber, formData) => {
+    if (isValidUUID(accessId)) {
+      dispatch(updateAccessRequest({
+        formData,
+        entityKeyId: accessId
+      }));
     }
-
-    return () => {
-      dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
-    };
-  }, [dispatch, success]);
-
-  const handleSubmit = (payload) => {
-    dispatch(submitAccessRequest(payload));
+    else {
+      const payload = {
+        formData,
+        schema: schemas,
+        uiSchema: uiSchemas,
+        type: 'Common Application',
+      };
+      dispatch(submitAccessRequest(payload));
+    }
   };
 
   return (
-    <Form
-        isSubmitting={pending}
-        onSubmit={handleSubmit}
-        schema={schema}
-        uiSchema={uiSchema} />
+    <Paged
+        onPageChange={onPageChange}
+        render={(props) => {
+          const {
+            formRef,
+            onBack,
+            onNext,
+            page,
+            pagedData,
+            validateAndSubmit,
+          } = props;
+
+          const totalPages = schemas.length;
+          const isLastPage = page === totalPages - 1;
+
+          const handleSubmit = () => {
+            dispatch(goToRoot());
+          };
+
+          const handleNext = isLastPage
+            ? handleSubmit
+            : validateAndSubmit;
+
+          return (
+            <>
+              <Form
+                  formData={pagedData}
+                  hideSubmit
+                  isSubmitting={pending}
+                  onSubmit={onNext}
+                  ref={formRef}
+                  schema={schemas[page]}
+                  uiSchema={uiSchemas[page]} />
+              <ActionRow>
+                <Button
+                    disabled={!(page > 0)}
+                    onClick={onBack}>
+                  Back
+                </Button>
+                <span>{`${page + 1} of ${totalPages}`}</span>
+                <Button
+                    isLoading={pending}
+                    mode="primary"
+                    onClick={handleNext}>
+                  { isLastPage ? 'Complete Survey' : 'Next' }
+                </Button>
+              </ActionRow>
+            </>
+          );
+        }} />
   );
 };
 
