@@ -3,10 +3,11 @@
  */
 
 import * as AppSagas from './sagas';
+import { APP_PATHS } from './reducers';
 
-export { default as AppContainer } from './AppContainer';
 export { default as AppReducer } from './reducers';
 
 export {
   AppSagas,
+  APP_PATHS,
 };

@@ -13,7 +13,18 @@ import { INITIALIZE_APPLICATION, initializeApplication } from '../actions';
 
 const INITIAL_STATE :Map = fromJS({
   [INITIALIZE_APPLICATION]: RS_INITIAL_STATE,
+  appConfig: {},
+  root: '/',
+  match: {},
 });
+
+const APP_PATHS = {
+  APP_CONFIG: ['app', 'appConfig', 'config'],
+  ROOT: ['app', 'root'],
+  MATCH: ['app', 'match'],
+};
+
+export { APP_PATHS };
 
 export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object) {
 
