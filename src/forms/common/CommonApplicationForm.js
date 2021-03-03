@@ -25,9 +25,9 @@ const { getEntityKeyId } = DataUtils;
 const { isValidUUID } = ValidationUtils;
 
 const ActionRow = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 0 30px 30px 30px;
 `;
 
@@ -69,10 +69,10 @@ const CommonApplicationForm = () => {
         render={(props) => {
           const {
             formRef,
-            pagedData,
-            page,
             onBack,
             onNext,
+            page,
+            pagedData,
             validateAndSubmit,
           } = props;
 
@@ -90,11 +90,11 @@ const CommonApplicationForm = () => {
           return (
             <>
               <Form
-                  ref={formRef}
+                  formData={pagedData}
                   hideSubmit
                   isSubmitting={pending}
-                  formData={pagedData}
                   onSubmit={onNext}
+                  ref={formRef}
                   schema={schemas[page]}
                   uiSchema={uiSchemas[page]} />
               <ActionRow>

@@ -9,6 +9,7 @@ import getAllAccessRequestsReducer from './getAllAccessRequestsReducer';
 import getFormsReducer from './getFormsReducer';
 import submitAccessRequestReducer from './submitAccessRequestReducer';
 import updateAccessRequestReducer from './updateAccessRequestReducer';
+import { ACCESS_REQUEST } from './constants';
 
 import { RESET_REQUEST_STATE } from '../../../../core/redux/actions';
 import { RS_INITIAL_STATE } from '../../../../core/redux/constants';
@@ -27,8 +28,6 @@ import {
 } from '../actions';
 
 const { HITS } = ReduxConstants;
-
-export const ACCESS_REQUEST = 'accessRequest';
 
 const INITIAL_STATE :Map = fromJS({
   [GET_ALL_ACCESS_REQUESTS]: RS_INITIAL_STATE,

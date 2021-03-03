@@ -7,6 +7,8 @@ import { ReduxConstants } from 'lattice-utils';
 import { RequestStates } from 'redux-reqseq';
 import type { SequenceAction } from 'redux-reqseq';
 
+import { ACCESS_REQUEST } from './constants';
+
 import {
   SUBMIT_ACCESS_REQUEST,
   submitAccessRequest,
@@ -19,7 +21,7 @@ export default function submitAccessRequestReducer(state :Map<*, *>, action :Seq
   return submitAccessRequest.reducer(state, action, {
     REQUEST: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.PENDING),
     SUCCESS: () => state
-      .set('accessRequest', action.value)
+      .set(ACCESS_REQUEST, action.value)
       .setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.SUCCESS),
     FAILURE: () => state.setIn([SUBMIT_ACCESS_REQUEST, REQUEST_STATE], RequestStates.FAILURE),
   });
