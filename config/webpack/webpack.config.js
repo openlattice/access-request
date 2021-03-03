@@ -70,6 +70,7 @@ module.exports = (env = {}) => {
 
   return {
     bail: true,
+    devtool: false,
     entry: [
       path.resolve(ROOT, 'src/index.js'),
     ],
