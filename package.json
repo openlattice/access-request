@@ -21,6 +21,9 @@
   "bugs": {
     "url": "https://github.com/openlattice/access-request/issues"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "license": "Apache-2.0",
   "main": "build/index.js",
   "devDependencies": {
