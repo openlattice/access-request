@@ -23,7 +23,7 @@ const {
 } = PropertyTypes;
 
 type Props = {
-  accessId :UUID;
+  accessRequestId :UUID;
   data :Map;
   isSubmitting :boolean;
 };
@@ -34,7 +34,7 @@ type AccessRequestEditorProps = {
 }
 
 const AccessRequestEditor = ({
-  accessId,
+  accessRequestId,
   data,
   isSubmitting,
   fRef,
@@ -61,7 +61,7 @@ const AccessRequestEditor = ({
       const { formData: editedFormData } = payload;
       dispatch(updateAccessRequest({
         formData: editedFormData,
-        entityKeyId: accessId
+        entityKeyId: accessRequestId
       }));
     };
 

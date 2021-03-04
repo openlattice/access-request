@@ -39,7 +39,7 @@ const CommonApplicationForm = () => {
 
   const pending = isPending(requestState);
 
-  const accessId = getEntityKeyId(accessRequest) || '';
+  const accessRequestId = getEntityKeyId(accessRequest) || '';
 
   useEffect(() => () => {
     dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
@@ -47,10 +47,10 @@ const CommonApplicationForm = () => {
   }, [dispatch]);
 
   const onPageChange = (pageNumber, formData) => {
-    if (isValidUUID(accessId)) {
+    if (isValidUUID(accessRequestId)) {
       dispatch(updateAccessRequest({
         formData,
-        entityKeyId: accessId
+        entityKeyId: accessRequestId
       }));
     }
     else {

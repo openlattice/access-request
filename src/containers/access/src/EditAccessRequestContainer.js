@@ -46,16 +46,16 @@ const EditAccessRequestContainer = () => {
   const fetchState = useSelector((s) => s.getIn([ACCESS, GET_ACCESS_REQUEST, REQUEST_STATE]));
 
   const match :Match = useRouteMatch();
-  const accessId = match?.params?.accessId || '';
+  const accessRequestId = match?.params?.accessRequestId || '';
 
   useEffect(() => {
-    dispatch(getAccessRequest(accessId));
+    dispatch(getAccessRequest(accessRequestId));
     return () => {
       dispatch(resetRequestState([UPDATE_ACCESS_REQUEST]));
       dispatch(resetRequestState([GET_ACCESS_REQUEST]));
       dispatch(clearAccessRequest());
     };
-  }, [accessId, dispatch]);
+  }, [accessRequestId, dispatch]);
 
   const isSubmitting = isPending(updateState);
 
@@ -75,7 +75,7 @@ const EditAccessRequestContainer = () => {
           )
           : (
             <AccessRequestEditor
-                accessId={accessId}
+                accessRequestId={accessRequestId}
                 data={data}
                 isSubmitting={isSubmitting}
                 ref={componentRef} />
