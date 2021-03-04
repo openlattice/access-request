@@ -46,7 +46,7 @@ const EditAccessRequestContainer = () => {
   const fetchState = useSelector((s) => s.getIn([ACCESS, GET_ACCESS_REQUEST, REQUEST_STATE]));
 
   const match :Match = useRouteMatch();
-  const accessRequestId = match?.params?.accessRequestId || '';
+  const accessRequestId = match.params.accessRequestId || '';
 
   useEffect(() => {
     dispatch(getAccessRequest(accessRequestId));
