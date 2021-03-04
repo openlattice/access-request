@@ -1,6 +1,6 @@
 {
   "name": "@openlattice/access-request",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "https://github.com/openlattice/access-request",
   "description": "OpenLattice module for access request workflows",
   "author": {
@@ -20,6 +20,9 @@
   },
   "bugs": {
     "url": "https://github.com/openlattice/access-request/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "license": "Apache-2.0",
   "main": "build/index.js",
