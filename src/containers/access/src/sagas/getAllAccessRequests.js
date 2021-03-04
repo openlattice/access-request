@@ -38,8 +38,6 @@ function* getAllAccessRequestsWorker(action :SequenceAction) :Saga<WorkerRespons
   let response;
 
   try {
-    const { value } = action;
-    if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
     yield put(getAllAccessRequests.request(action.id));
 
     const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));

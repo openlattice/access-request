@@ -14,6 +14,7 @@ import { CenterWrapper } from './styled';
 
 import { useDispatch, useSelector } from '../../../core/redux';
 import { APP, REQUEST_STATE } from '../../../core/redux/constants';
+import { ACCESS_REQUEST_PATH } from '../../../core/router/Routes';
 import { INITIALIZE_APPLICATION, initializeApplication } from '../../app/actions';
 
 const { isPending, isStandby } = ReduxUtils;
@@ -49,7 +50,7 @@ const AccessRequestSwitch = ({
   return (
     <Switch>
       <Route path={`${root}/new`} render={() => <NewRequestContainer />} />
-      <Route path={`${root}/request/:accessId`} render={() => <EditAccessRequestContainer />} />
+      <Route path={`${root}${ACCESS_REQUEST_PATH}`} render={() => <EditAccessRequestContainer />} />
       <Route render={() => <AllRequestsContainer />} />
     </Switch>
   );

@@ -12,6 +12,9 @@ const getForms :RequestSequence = newRequestSequence(GET_FORMS);
 const GET_ALL_ACCESS_REQUESTS :'GET_ALL_ACCESS_REQUESTS' = 'GET_ALL_ACCESS_REQUESTS';
 const getAllAccessRequests :RequestSequence = newRequestSequence(GET_ALL_ACCESS_REQUESTS);
 
+const GET_ACCESS_REQUEST :'GET_ACCESS_REQUEST' = 'GET_ACCESS_REQUEST';
+const getAccessRequest :RequestSequence = newRequestSequence(GET_ACCESS_REQUEST);
+
 const SUBMIT_ACCESS_REQUEST :'SUBMIT_ACCESS_REQUEST' = 'SUBMIT_ACCESS_REQUEST';
 const submitAccessRequest :RequestSequence = newRequestSequence(SUBMIT_ACCESS_REQUEST);
 
@@ -31,12 +34,14 @@ const updateAccessRequest :RequestSequence = newRequestSequence(UPDATE_ACCESS_RE
 
 export {
   CLEAR_ACCESS_REQUEST,
+  GET_ACCESS_REQUEST,
   GET_ALL_ACCESS_REQUESTS,
   GET_FORMS,
   SELECT_ACCESS_REQUEST,
   SUBMIT_ACCESS_REQUEST,
   UPDATE_ACCESS_REQUEST,
   clearAccessRequest,
+  getAccessRequest,
   getAllAccessRequests,
   getForms,
   selectAccessRequest,
