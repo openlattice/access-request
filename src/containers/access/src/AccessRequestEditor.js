@@ -10,6 +10,7 @@ import type { UUID } from 'lattice';
 import { updateAccessRequest } from './actions';
 
 import generateReviewSchema from '../../../utils/generateReviewSchema';
+import { EdgelessForm } from '../../../components/styled';
 import { PropertyTypes } from '../../../core/edm/constants';
 import { useDispatch } from '../../../core/redux';
 
@@ -65,7 +66,7 @@ const AccessRequestEditor = ({
     };
 
     return (
-      <Form
+      <EdgelessForm
           ref={fRef}
           formData={formData}
           isSubmitting={isSubmitting}

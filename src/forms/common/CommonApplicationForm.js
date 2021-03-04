@@ -2,12 +2,13 @@
 import { useEffect } from 'react';
 
 import styled from 'styled-components';
-import { Form, Paged } from 'lattice-fabricate';
+import { Paged } from 'lattice-fabricate';
 import { Button } from 'lattice-ui-kit';
 import { DataUtils, ReduxUtils, ValidationUtils } from 'lattice-utils';
 
 import { schemas, uiSchemas } from './schemas';
 
+import { EdgelessForm } from '../../components/styled';
 import {
   SUBMIT_ACCESS_REQUEST,
   clearAccessRequest,
@@ -89,7 +90,7 @@ const CommonApplicationForm = () => {
 
           return (
             <>
-              <Form
+              <EdgelessForm
                   formData={pagedData}
                   hideSubmit
                   isSubmitting={pending}
