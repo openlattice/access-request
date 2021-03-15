@@ -32,19 +32,34 @@ const clearAccessRequest = () => ({
 const UPDATE_ACCESS_REQUEST :'UPDATE_ACCESS_REQUEST' = 'UPDATE_ACCESS_REQUEST';
 const updateAccessRequest :RequestSequence = newRequestSequence(UPDATE_ACCESS_REQUEST);
 
+const GET_ATTACHMENTS :'GET_ATTACHMENTS' = 'GET_ATTACHMENTS';
+const getAttachments :RequestSequence = newRequestSequence(GET_ATTACHMENTS);
+
+const UPLOAD_ATTACHMENTS :'UPLOAD_ATTACHMENTS' = 'UPLOAD_ATTACHMENTS';
+const uploadAttachments :RequestSequence = newRequestSequence(UPLOAD_ATTACHMENTS);
+
+const DELETE_ATTACHMENTS :'DELETE_ATTACHMENTS' = 'DELETE_ATTACHMENTS';
+const deleteAttachments :RequestSequence = newRequestSequence(DELETE_ATTACHMENTS);
+
 export {
   CLEAR_ACCESS_REQUEST,
+  DELETE_ATTACHMENTS,
   GET_ACCESS_REQUEST,
   GET_ALL_ACCESS_REQUESTS,
+  GET_ATTACHMENTS,
   GET_FORMS,
   SELECT_ACCESS_REQUEST,
   SUBMIT_ACCESS_REQUEST,
   UPDATE_ACCESS_REQUEST,
+  UPLOAD_ATTACHMENTS,
   clearAccessRequest,
+  deleteAttachments,
   getAccessRequest,
   getAllAccessRequests,
+  getAttachments,
   getForms,
   selectAccessRequest,
   submitAccessRequest,
   updateAccessRequest,
+  uploadAttachments,
 };
