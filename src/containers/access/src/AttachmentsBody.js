@@ -3,9 +3,10 @@ import { useState } from 'react';
 
 import { Tab, Tabs } from 'lattice-ui-kit';
 
-import Dropzone from '../../../components/Dropzone';
-import ModalBody from '../../../components/styled';
+import UploadAttachmentsContainer from './UploadAttachmentsContainer';
+
 import TabPanel from '../../../components/TabPanel';
+import { ModalBody } from '../../../components/styled';
 
 const AttachmentsBody = () => {
   const [value, setValue] = useState(0);
@@ -17,22 +18,22 @@ const AttachmentsBody = () => {
   return (
     <ModalBody>
       <Tabs
-          onChange={handleChange}
-          value={value}
           indicatorColor="primary"
-          textColor="primary">
+          onChange={handleChange}
+          textColor="primary"
+          value={value}>
         <Tab label="Manage" />
         <Tab label="Upload" />
       </Tabs>
       <TabPanel
-          value={value}
-          index={0}>
+          index={0}
+          value={value}>
         manage
       </TabPanel>
       <TabPanel
-          value={value}
-          index={1}>
-        <Dropzone onDrop={() => {}} />
+          index={1}
+          value={value}>
+        <UploadAttachmentsContainer />
       </TabPanel>
     </ModalBody>
   );
