@@ -11,11 +11,14 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   IconButton,
+  // $FlowFixMe
   ListItem,
+  // $FlowFixMe
   ListItemAvatar,
+  // $FlowFixMe
   ListItemSecondaryAction,
+  // $FlowFixMe
   ListItemText,
-  Select,
 } from 'lattice-ui-kit';
 
 import {
@@ -29,6 +32,7 @@ const MIME_TYPES_TO_ICONS = {
 };
 
 type Props = {
+  divider :boolean;
   file :{
     name :string;
     type :string;
@@ -43,7 +47,12 @@ const ImagePreview = styled.img`
   max-width: 40px;
 `;
 
-const DocumentItem = ({ file, index, onDelete } :Props) => {
+const DocumentItem = ({
+  divider,
+  file,
+  index,
+  onDelete
+} :Props) => {
 
   const handleDelete = () => {
     onDelete(index);
@@ -60,7 +69,7 @@ const DocumentItem = ({ file, index, onDelete } :Props) => {
   const imagePreview = icon ? <FontAwesomeIcon fixedWidth icon={icon} size="2x" /> : <ImagePreview src={base64} />;
 
   return (
-    <ListItem divider>
+    <ListItem divider={divider}>
       <ListItemAvatar>
         {imagePreview}
       </ListItemAvatar>

@@ -1,6 +1,7 @@
 // @flow
 import type { Node } from 'react';
 
+// $FlowFixMe
 import { Box } from 'lattice-ui-kit';
 
 type Props = {|

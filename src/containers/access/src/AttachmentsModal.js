@@ -1,14 +1,17 @@
 // @flow
 import { Modal } from 'lattice-ui-kit';
+import type { UUID } from 'lattice';
 
 import AttachmentsBody from './AttachmentsBody';
 
 type Props = {
+  accessRequestId :UUID;
   isVisible :boolean;
   onClose :() => void;
 };
 
 const AttachmentsModal = ({
+  accessRequestId,
   isVisible,
   onClose
 } :Props) => {
@@ -18,7 +21,7 @@ const AttachmentsModal = ({
         isVisible={isVisible}
         onClose={onClose}
         withFooter={false}>
-      <AttachmentsBody />
+      <AttachmentsBody accessRequestId={accessRequestId} />
     </Modal>
   );
 };

@@ -2,13 +2,18 @@
 import { useState } from 'react';
 
 import { Tab, Tabs } from 'lattice-ui-kit';
+import type { UUID } from 'lattice';
 
 import UploadAttachmentsContainer from './UploadAttachmentsContainer';
 
 import TabPanel from '../../../components/TabPanel';
 import { ModalBody } from '../../../components/styled';
 
-const AttachmentsBody = () => {
+type Props = {
+  accessRequestId :UUID;
+};
+
+const AttachmentsBody = ({ accessRequestId } :Props) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -33,7 +38,7 @@ const AttachmentsBody = () => {
       <TabPanel
           index={1}
           value={value}>
-        <UploadAttachmentsContainer />
+        <UploadAttachmentsContainer accessRequestId={accessRequestId} />
       </TabPanel>
     </ModalBody>
   );

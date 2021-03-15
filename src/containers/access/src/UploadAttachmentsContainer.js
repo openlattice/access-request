@@ -2,20 +2,37 @@
 import { Component } from 'react';
 
 import { Map } from 'immutable';
-import { List } from 'lattice-ui-kit';
+// $FlowFixMe
+import { Button, List } from 'lattice-ui-kit';
+import { ReduxUtils } from 'lattice-utils';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import type { UUID } from 'lattice';
+import type { Dispatch } from 'redux';
+import type { RequestSequence } from 'redux-reqseq';
 
 import FileUpload from './FileUpload';
+import {
+  UPLOAD_ATTACHMENTS,
+  uploadAttachments
+} from './actions';
 
 import DocumentItem from '../DocumentItem';
+import { moduleContext } from '../../../core/redux';
+import { ACCESS, REQUEST_STATE } from '../../../core/redux/constants';
+
+const { isPending } = ReduxUtils;
 
 type Props = {
-
+  accessRequestId :UUID;
+  actions :{
+    uploadAttachments :RequestSequence
+  }
 };
 
 type State = {
   files :Object[];
-  tags :Map<UUID, string[]>;
+  tags :string[];
 };
 
 class UploadAttachmentsContainer extends Component<Props, State> {
@@ -27,7 +44,7 @@ class UploadAttachmentsContainer extends Component<Props, State> {
 
   getInitialState = () => ({
     files: [],
-    tags: Map(),
+    tags: [],
   })
 
   onDrop = ({ file } :{ file :any }) => {
@@ -41,6 +58,16 @@ class UploadAttachmentsContainer extends Component<Props, State> {
     this.setState({ files });
   };
 
+  onUpload = () => {
+    const { accessRequestId, actions } = this.props;
+    const { files, tags } = this.state;
+    actions.uploadAttachments({
+      files,
+      tags,
+      accessRequestId,
+    });
+  }
+
   render() {
     const { files } = this.state;
     return (
@@ -48,18 +75,44 @@ class UploadAttachmentsContainer extends Component<Props, State> {
         <FileUpload onChange={this.onDrop} />
         <List>
           {
-            files.map((file, index) => (
-              <DocumentItem
-                  file={file}
-                  index={index}
-                  onDelete={this.onDelete}
-                  onSelectTag={() => {}} />
-            ))
+            files.map((file, index) => {
+              const hasDivider = index !== files.length - 1;
+              return (
+                <DocumentItem
+                    divider={hasDivider}
+                    file={file}
+                    index={index}
+                    onDelete={this.onDelete}
+                    onSelectTag={() => {}} />
+              );
+            })
           }
         </List>
+        <Button
+            color="primary"
+            disabled={!files.length}
+            fullWidth>
+          Upload
+        </Button>
       </div>
     );
   }
 }
 
-export default UploadAttachmentsContainer;
+const mapStateToProps = (state :Map) => ({
+  loading: isPending(state.getIn([ACCESS, UPLOAD_ATTACHMENTS, REQUEST_STATE]))
+});
+
+const mapDispatchToProps = (dispatch :Dispatch<any>) => ({
+  actions: bindActionCreators({
+    uploadAttachments
+  }, dispatch)
+});
+
+// $FlowFixMe
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+  null,
+  { context: moduleContext }
+)(UploadAttachmentsContainer);

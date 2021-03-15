@@ -5,9 +5,12 @@ import { faEllipsisV } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   IconButton,
+  // $FlowFixMe
   Menu,
+  // $FlowFixMe
   MenuItem
 } from 'lattice-ui-kit';
+import type { UUID } from 'lattice';
 
 import AttachmentsModal from './AttachmentsModal';
 
@@ -53,10 +56,12 @@ const reducer = (state, action) => {
 };
 
 type Props = {
+  accessRequestId :UUID;
   onPrint :Function;
 };
 
 const AccessRequestActionButton = ({
+  accessRequestId,
   onPrint
 } :Props) => {
   const [state, stateDispatch] = useReducer(reducer, INITIAL_STATE);
@@ -109,6 +114,7 @@ const AccessRequestActionButton = ({
         <MenuItem onClick={handleOpenAttachments}>Manage Attachments</MenuItem>
       </Menu>
       <AttachmentsModal
+          accessRequestId={accessRequestId}
           isVisible={state.attachmentsOpen}
           onClose={handleCloseAttachments} />
     </>
