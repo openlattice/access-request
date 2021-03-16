@@ -11,9 +11,13 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   IconButton,
+  // $FlowFixMe
   ListItem,
+  // $FlowFixMe
   ListItemAvatar,
+  // $FlowFixMe
   ListItemSecondaryAction,
+  // $FlowFixMe
   ListItemText,
 } from 'lattice-ui-kit';
 

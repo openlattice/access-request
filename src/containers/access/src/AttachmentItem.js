@@ -12,9 +12,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Map } from 'immutable';
 import {
   IconButton,
+  // $FlowFixMe
   ListItem,
+  // $FlowFixMe
   ListItemAvatar,
+  // $FlowFixMe
   ListItemSecondaryAction,
+  // $FlowFixMe
   ListItemText,
 } from 'lattice-ui-kit';
 import { DataUtils } from 'lattice-utils';
