@@ -2,9 +2,7 @@
 import { useEffect, useRef } from 'react';
 
 import styled from 'styled-components';
-import { faPrint } from '@fortawesome/pro-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconButton, Spinner } from 'lattice-ui-kit';
+import { Spinner } from 'lattice-ui-kit';
 import { ReduxUtils } from 'lattice-utils';
 import { useRouteMatch } from 'react-router';
 import { useReactToPrint } from 'react-to-print';

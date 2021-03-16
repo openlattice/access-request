@@ -7,7 +7,6 @@ import {
 } from '@redux-saga/core/effects';
 import {
   List,
-  Map,
   fromJS,
 } from 'immutable';
 import {
@@ -15,11 +14,10 @@ import {
   SearchApiSagas,
 } from 'lattice-sagas';
 import { Logger, ValidationUtils } from 'lattice-utils';
-import type { UUID } from 'lattice';
 import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
-import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
+import { AppTypes } from '../../../../core/edm/constants';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
 import { APP_PATHS } from '../../../app';
 import {
