@@ -41,17 +41,17 @@ const getColor = (props) => {
 };
 
 const DropzoneWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
-  padding: 32px;
-  border-width: 2px;
-  border-radius: 3px;
-  border-color: ${(props) => getColor(props)};
-  border-style: dashed;
   background-color: ${NEUTRAL.N50};
+  border-color: ${(props) => getColor(props)};
+  border-radius: 3px;
+  border-style: dashed;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   outline: none;
+  padding: 32px;
   transition: border 250ms ease-in-out;
 `;
 
