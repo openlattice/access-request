@@ -1,9 +1,7 @@
+// @flow
 import { useCallback } from 'react';
 
 import Dropzone from '../../../components/Dropzone';
-
-// @flow
-
 
 type Props = {
   onChange :Function
