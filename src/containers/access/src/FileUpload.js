@@ -18,17 +18,15 @@ const FileUpload = ({
       const { name, type } = file;
       const reader = new FileReader();
 
-      reader.onload = (event) => {
-        if (event.target instanceof FileReader) {
-          const base64 = event.target.result;
-          handleChange({
-            file: {
-              base64,
-              name,
-              type
-            }
-          });
-        }
+      reader.onload = () => {
+        const base64 = reader.result;
+        handleChange({
+          file: {
+            base64,
+            name,
+            type
+          }
+        });
       };
       reader.readAsDataURL(file);
     });
