@@ -12,13 +12,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Map } from 'immutable';
 import {
   IconButton,
-  // $FlowFixMe
   ListItem,
-  // $FlowFixMe
   ListItemAvatar,
-  // $FlowFixMe
   ListItemSecondaryAction,
-  // $FlowFixMe
   ListItemText,
 } from 'lattice-ui-kit';
 import { DataUtils } from 'lattice-utils';
@@ -87,12 +83,18 @@ const AttachmentItem = ({
       <ListItemText primary={name} secondary={dateStr} />
 
       <ListItemSecondaryAction>
-        <a href={fileData} download rel="noreferrer" target="_blank">
+        <a
+            aria-label="Download"
+            download
+            href={fileData}
+            rel="noreferrer"
+            target="_blank"
+            title="Download">
           <IconButton>
             <FontAwesomeIcon icon={faDownload} fixedWidth />
           </IconButton>
         </a>
-        <IconButton onClick={handleDelete}>
+        <IconButton aria-label="Delete" onClick={handleDelete} title="Delete">
           <FontAwesomeIcon fixedWidth icon={faTrashAlt} />
         </IconButton>
       </ListItemSecondaryAction>
