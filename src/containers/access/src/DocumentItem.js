@@ -24,7 +24,7 @@ import {
 import {
   DOCX_MIME_TYPE,
   PDF_MIME_TYPE,
-} from '../../constants/FileTypeConstants';
+} from '../../../constants/FileTypeConstants';
 
 const MIME_TYPES_TO_ICONS = {
   [PDF_MIME_TYPE]: faFilePdf,

@@ -10,6 +10,7 @@ import { useRouteMatch } from 'react-router';
 import { useReactToPrint } from 'react-to-print';
 import type { Match } from 'react-router';
 
+import AccessRequestActionButton from './AccessRequestActionButton';
 import AccessRequestEditor from './AccessRequestEditor';
 import {
   GET_ACCESS_REQUEST,
@@ -28,10 +29,10 @@ const { isPending, isStandby } = ReduxUtils;
 
 const Row = styled.div`
   display: flex;
-`;
 
-const PrintButton = styled(IconButton)`
-  margin-left: auto;
+  button {
+    margin-left: auto;
+  }
 `;
 
 const EditAccessRequestContainer = () => {
@@ -62,9 +63,7 @@ const EditAccessRequestContainer = () => {
   return (
     <div>
       <Row>
-        <PrintButton onClick={handlePrint}>
-          <FontAwesomeIcon icon={faPrint} fixedWidth />
-        </PrintButton>
+        <AccessRequestActionButton accessRequestId={accessRequestId} onPrint={handlePrint} />
       </Row>
       {
         isPending(fetchState) || isStandby(fetchState)

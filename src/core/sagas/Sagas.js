@@ -6,7 +6,7 @@ import { all, fork } from '@redux-saga/core/effects';
 import { AuthSagas } from 'lattice-auth';
 import type { Saga } from '@redux-saga/core';
 
-import * as AcccessSagas from '../../containers/access/src/sagas';
+import * as AccessSagas from '../../containers/access/src/sagas';
 import { AppSagas } from '../../containers/app/sagas';
 import { EDMSagas } from '../edm';
 import { RoutingSagas } from '../router';
@@ -31,9 +31,11 @@ export default function* sagas() :Saga<*> {
     fork(RoutingSagas.goToRootWatcher),
     fork(RoutingSagas.goToRouteWatcher),
 
-    fork(AcccessSagas.getAllAccessRequestsWatcher),
-    fork(AcccessSagas.getAccessRequestWatcher),
-    fork(AcccessSagas.submitAccessRequestWatcher),
-    fork(AcccessSagas.updateAccessRequestWatcher),
+    fork(AccessSagas.getAccessRequestWatcher),
+    fork(AccessSagas.getAttachmentsWatcher),
+    fork(AccessSagas.getAllAccessRequestsWatcher),
+    fork(AccessSagas.submitAccessRequestWatcher),
+    fork(AccessSagas.updateAccessRequestWatcher),
+    fork(AccessSagas.uploadAttachmentsWatcher),
   ]);
 }

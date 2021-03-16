@@ -11,13 +11,13 @@ import type { UUID } from 'lattice';
 import type { Dispatch } from 'redux';
 import type { RequestSequence } from 'redux-reqseq';
 
+import DocumentItem from './DocumentItem';
 import FileUpload from './FileUpload';
 import {
   UPLOAD_ATTACHMENTS,
   uploadAttachments
 } from './actions';
 
-import DocumentItem from '../DocumentItem';
 import { moduleContext } from '../../../core/redux';
 import { ACCESS, REQUEST_STATE } from '../../../core/redux/constants';
 
@@ -27,7 +27,8 @@ type Props = {
   accessRequestId :UUID;
   actions :{
     uploadAttachments :RequestSequence
-  }
+  },
+  loading :boolean;
 };
 
 type State = {
@@ -70,6 +71,7 @@ class UploadAttachmentsContainer extends Component<Props, State> {
 
   render() {
     const { files } = this.state;
+    const { loading } = this.props;
     return (
       <div>
         <FileUpload onChange={this.onDrop} />
@@ -91,7 +93,9 @@ class UploadAttachmentsContainer extends Component<Props, State> {
         <Button
             color="primary"
             disabled={!files.length}
-            fullWidth>
+            fullWidth
+            isLoading={loading}
+            onClick={this.onUpload}>
           Upload
         </Button>
       </div>
