@@ -1,30 +1,29 @@
 // @flow
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
+// $FlowFixMe
 import { Tab, Tabs } from 'lattice-ui-kit';
 import type { UUID } from 'lattice';
 
+import ManageAttachmentsContainer from './ManageAttachmentsContainer';
 import UploadAttachmentsContainer from './UploadAttachmentsContainer';
-import { getAttachments } from './actions';
 
 import TabPanel from '../../../components/TabPanel';
 import { ModalBody } from '../../../components/styled';
-import { useDispatch } from '../../../core/redux';
 
 type Props = {
   accessRequestId :UUID;
 };
 
 const AttachmentsBody = ({ accessRequestId } :Props) => {
-  const dispatch = useDispatch();
   const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    dispatch(getAttachments(accessRequestId));
-  }, [accessRequestId, dispatch]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleSuccess = () => {
+    setValue(0);
   };
 
   return (
@@ -40,12 +39,12 @@ const AttachmentsBody = ({ accessRequestId } :Props) => {
       <TabPanel
           index={0}
           value={value}>
-        manage
+        <ManageAttachmentsContainer accessRequestId={accessRequestId} />
       </TabPanel>
       <TabPanel
           index={1}
           value={value}>
-        <UploadAttachmentsContainer accessRequestId={accessRequestId} />
+        <UploadAttachmentsContainer accessRequestId={accessRequestId} onSuccess={handleSuccess} />
       </TabPanel>
     </ModalBody>
   );

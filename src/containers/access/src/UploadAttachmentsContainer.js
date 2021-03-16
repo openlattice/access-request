@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { UUID } from 'lattice';
 import type { Dispatch } from 'redux';
-import type { RequestSequence } from 'redux-reqseq';
+import type { RequestSequence, RequestState } from 'redux-reqseq';
 
 import DocumentItem from './DocumentItem';
 import FileUpload from './FileUpload';
@@ -19,16 +19,19 @@ import {
 } from './actions';
 
 import { moduleContext } from '../../../core/redux';
+import { resetRequestState } from '../../../core/redux/actions';
 import { ACCESS, REQUEST_STATE } from '../../../core/redux/constants';
 
-const { isPending } = ReduxUtils;
+const { isSuccess, isPending } = ReduxUtils;
 
 type Props = {
   accessRequestId :UUID;
   actions :{
-    uploadAttachments :RequestSequence
+    uploadAttachments :RequestSequence;
+    resetRequestState :RequestSequence;
   },
-  loading :boolean;
+  requestState :RequestState;
+  onSuccess :() => void;
 };
 
 type State = {
@@ -41,6 +44,18 @@ class UploadAttachmentsContainer extends Component<Props, State> {
   constructor(props :Props) {
     super(props);
     this.state = this.getInitialState();
+  }
+
+  componentDidUpdate() {
+    const { requestState, onSuccess } = this.props;
+    if (isSuccess(requestState)) {
+      onSuccess();
+    }
+  }
+
+  componentWillUnmount() {
+    const { actions } = this.props;
+    actions.resetRequestState([UPLOAD_ATTACHMENTS]);
   }
 
   getInitialState = () => ({
@@ -71,7 +86,7 @@ class UploadAttachmentsContainer extends Component<Props, State> {
 
   render() {
     const { files } = this.state;
-    const { loading } = this.props;
+    const { requestState } = this.props;
     return (
       <div>
         <FileUpload onChange={this.onDrop} />
@@ -84,8 +99,7 @@ class UploadAttachmentsContainer extends Component<Props, State> {
                     divider={hasDivider}
                     file={file}
                     index={index}
-                    onDelete={this.onDelete}
-                    onSelectTag={() => {}} />
+                    onDelete={this.onDelete} />
               );
             })
           }
@@ -94,7 +108,7 @@ class UploadAttachmentsContainer extends Component<Props, State> {
             color="primary"
             disabled={!files.length}
             fullWidth
-            isLoading={loading}
+            isLoading={isPending(requestState)}
             onClick={this.onUpload}>
           Upload
         </Button>
@@ -104,11 +118,12 @@ class UploadAttachmentsContainer extends Component<Props, State> {
 }
 
 const mapStateToProps = (state :Map) => ({
-  loading: isPending(state.getIn([ACCESS, UPLOAD_ATTACHMENTS, REQUEST_STATE]))
+  requestState: state.getIn([ACCESS, UPLOAD_ATTACHMENTS, REQUEST_STATE])
 });
 
 const mapDispatchToProps = (dispatch :Dispatch<any>) => ({
   actions: bindActionCreators({
+    resetRequestState,
     uploadAttachments
   }, dispatch)
 });

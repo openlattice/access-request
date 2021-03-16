@@ -5,12 +5,14 @@
 import { List, Map, fromJS } from 'immutable';
 import { ReduxConstants } from 'lattice-utils';
 
+import deleteAttachmentsReducer from './deleteAttachmentsReducer';
 import getAccessRequestReducer from './getAccessRequestReducer';
 import getAllAccessRequestsReducer from './getAllAccessRequestsReducer';
 import getAttachmentsReducer from './getAttachmentsReducer';
 import getFormsReducer from './getFormsReducer';
 import submitAccessRequestReducer from './submitAccessRequestReducer';
 import updateAccessRequestReducer from './updateAccessRequestReducer';
+import uploadAttachmentsReducer from './uploadAttachmentsReducer';
 import { ACCESS_REQUEST, ATTACHMENTS } from './constants';
 
 import { RESET_REQUEST_STATE } from '../../../../core/redux/actions';
@@ -25,12 +27,14 @@ import {
   SUBMIT_ACCESS_REQUEST,
   UPDATE_ACCESS_REQUEST,
   UPLOAD_ATTACHMENTS,
+  deleteAttachments,
   getAccessRequest,
   getAllAccessRequests,
   getAttachments,
   getForms,
   submitAccessRequest,
   updateAccessRequest,
+  uploadAttachments,
 } from '../actions';
 
 const { HITS } = ReduxConstants;
@@ -85,6 +89,14 @@ export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object
 
     case getAttachments.case(action.type): {
       return getAttachmentsReducer(state, action);
+    }
+
+    case uploadAttachments.case(action.type): {
+      return uploadAttachmentsReducer(state, action);
+    }
+
+    case deleteAttachments.case(action.type): {
+      return deleteAttachmentsReducer(state, action);
     }
 
     default:

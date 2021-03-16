@@ -37,5 +37,6 @@ export default function* sagas() :Saga<*> {
     fork(AccessSagas.submitAccessRequestWatcher),
     fork(AccessSagas.updateAccessRequestWatcher),
     fork(AccessSagas.uploadAttachmentsWatcher),
+    fork(AccessSagas.deleteAttachmentsWatcher),
   ]);
 }

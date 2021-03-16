@@ -48,7 +48,6 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
 
     const {
       files,
-      tags,
       accessRequestId,
     } = action.value;
 
@@ -67,8 +66,7 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
 
     const dateTimePTID = propertyTypesByFQN.get(DATE_TIME);
     const fileDataPTID = propertyTypesByFQN.get(FILE_DATA);
-    const namePTID = propertyTypesByFQN.get(LABEL);
-    const tagPTID = propertyTypesByFQN.get(NAME);
+    const namePTID = propertyTypesByFQN.get(NAME);
     const typePTID = propertyTypesByFQN.get(TYPE);
 
     const now = DateTime.local().toISO();
