@@ -10,6 +10,7 @@ import type { UUID } from 'lattice';
 import { updateAccessRequest } from './actions';
 
 import generateReviewSchema from '../../../utils/generateReviewSchema';
+import { EdgelessForm } from '../../../components/styled';
 import { PropertyTypes } from '../../../core/edm/constants';
 import { useDispatch } from '../../../core/redux';
 
@@ -22,7 +23,7 @@ const {
 } = PropertyTypes;
 
 type Props = {
-  accessId :UUID;
+  accessRequestId :UUID;
   data :Map;
   isSubmitting :boolean;
 };
@@ -33,7 +34,7 @@ type AccessRequestEditorProps = {
 }
 
 const AccessRequestEditor = ({
-  accessId,
+  accessRequestId,
   data,
   isSubmitting,
   fRef,
@@ -60,12 +61,12 @@ const AccessRequestEditor = ({
       const { formData: editedFormData } = payload;
       dispatch(updateAccessRequest({
         formData: editedFormData,
-        entityKeyId: accessId
+        entityKeyId: accessRequestId
       }));
     };
 
     return (
-      <Form
+      <EdgelessForm
           ref={fRef}
           formData={formData}
           isSubmitting={isSubmitting}

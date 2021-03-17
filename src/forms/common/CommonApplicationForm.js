@@ -2,12 +2,13 @@
 import { useEffect } from 'react';
 
 import styled from 'styled-components';
-import { Form, Paged } from 'lattice-fabricate';
+import { Paged } from 'lattice-fabricate';
 import { Button } from 'lattice-ui-kit';
 import { DataUtils, ReduxUtils, ValidationUtils } from 'lattice-utils';
 
 import { schemas, uiSchemas } from './schemas';
 
+import { EdgelessForm } from '../../components/styled';
 import {
   SUBMIT_ACCESS_REQUEST,
   clearAccessRequest,
@@ -38,7 +39,7 @@ const CommonApplicationForm = () => {
 
   const pending = isPending(requestState);
 
-  const accessId = getEntityKeyId(accessRequest) || '';
+  const accessRequestId = getEntityKeyId(accessRequest) || '';
 
   useEffect(() => () => {
     dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
@@ -46,10 +47,10 @@ const CommonApplicationForm = () => {
   }, [dispatch]);
 
   const onPageChange = (pageNumber, formData) => {
-    if (isValidUUID(accessId)) {
+    if (isValidUUID(accessRequestId)) {
       dispatch(updateAccessRequest({
         formData,
-        entityKeyId: accessId
+        entityKeyId: accessRequestId
       }));
     }
     else {
@@ -89,7 +90,7 @@ const CommonApplicationForm = () => {
 
           return (
             <>
-              <Form
+              <EdgelessForm
                   formData={pagedData}
                   hideSubmit
                   isSubmitting={pending}
