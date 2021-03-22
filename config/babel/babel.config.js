@@ -35,9 +35,7 @@ module.exports = {
   ],
   presets: [
     ['@babel/preset-env', {
-      corejs: '3.9',
-      targets: ['defaults', 'not ie > 0'],
-      useBuiltIns: 'usage',
+      useBuiltIns: false,
     }],
     ['@babel/preset-react', {
       runtime: 'automatic'
