@@ -16,17 +16,3 @@
 declare module 'react-to-print' {
   declare module.exports: any;
 }
-
-/**
- * We include stubs for each file inside this npm package in case you need to
- * require those files directly. Feel free to delete any files that aren't
- * needed.
- */
-declare module 'react-to-print/lib/index' {
-  declare module.exports: any;
-}
-
-// Filename aliases
-declare module 'react-to-print/lib/index.js' {
-  declare module.exports: $Exports<'react-to-print/lib/index'>;
-}

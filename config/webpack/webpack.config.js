@@ -76,7 +76,13 @@ module.exports = (env = {}) => {
     ],
     externals: [
       // https://github.com/liady/webpack-node-externals
-      externals(),
+      externals({
+        allowlist: [
+          'react-dropzone',
+          'react-to-print',
+          /babel/,
+        ],
+      }),
     ],
     mode: env.production ? ENV_PROD : ENV_DEV,
     module: {
