@@ -2,13 +2,15 @@
 import { useEffect, useRef } from 'react';
 
 import styled from 'styled-components';
-import { Spinner } from 'lattice-ui-kit';
+import { faPrint } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconButton, Spinner } from 'lattice-ui-kit';
 import { ReduxUtils } from 'lattice-utils';
 import { useRouteMatch } from 'react-router';
 import { useReactToPrint } from 'react-to-print';
 import type { Match } from 'react-router';
 
-import AccessRequestActionButton from './AccessRequestActionButton';
+import AccessRequestAttachmentButton from './AccessRequestAttachmentButton';
 import AccessRequestEditor from './AccessRequestEditor';
 import {
   GET_ACCESS_REQUEST,
@@ -31,6 +33,10 @@ const Row = styled.div`
   button {
     margin-left: auto;
   }
+`;
+
+const PrintButton = styled(IconButton)`
+  margin-left: auto;
 `;
 
 const EditAccessRequestContainer = () => {
@@ -61,7 +67,10 @@ const EditAccessRequestContainer = () => {
   return (
     <div>
       <Row>
-        <AccessRequestActionButton accessRequestId={accessRequestId} onPrint={handlePrint} />
+        <PrintButton onClick={handlePrint}>
+          <FontAwesomeIcon icon={faPrint} fixedWidth />
+        </PrintButton>
+        <AccessRequestAttachmentButton accessRequestId={accessRequestId} />
       </Row>
       {
         isPending(fetchState) || isStandby(fetchState)
