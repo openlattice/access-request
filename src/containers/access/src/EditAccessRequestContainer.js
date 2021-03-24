@@ -29,10 +29,6 @@ const { isPending, isStandby } = ReduxUtils;
 
 const Row = styled.div`
   display: flex;
-
-  button {
-    margin-left: auto;
-  }
 `;
 
 const PrintButton = styled(IconButton)`
