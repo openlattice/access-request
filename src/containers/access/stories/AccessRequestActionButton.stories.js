@@ -1,15 +1,15 @@
-import AccessRequestActionButton from '../src/AccessRequestActionButton';
+import AccessRequestAttachmentButton from '../src/AccessRequestAttachmentButton';
 import ModuleProvider from '../../../core/provider/ModuleProvider';
 
 export default {
-  title: 'Access Request Action Button',
-  component: AccessRequestActionButton,
+  title: 'Access Request Attachment Button',
+  component: AccessRequestAttachmentButton,
 };
 
 /* eslint-disable react/jsx-props-no-spreading */
 const Template = (args) => (
   <ModuleProvider>
-    <AccessRequestActionButton {...args} />
+    <AccessRequestAttachmentButton {...args} />
   </ModuleProvider>
 );
 
