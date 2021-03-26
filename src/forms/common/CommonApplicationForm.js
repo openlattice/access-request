@@ -29,7 +29,7 @@ const ActionRow = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px 30px 30px;
+  padding: 32px 0;
 `;
 
 const CommonApplicationForm = () => {
