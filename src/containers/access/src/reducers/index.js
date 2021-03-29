@@ -13,7 +13,7 @@ import getFormsReducer from './getFormsReducer';
 import submitAccessRequestReducer from './submitAccessRequestReducer';
 import updateAccessRequestReducer from './updateAccessRequestReducer';
 import uploadAttachmentsReducer from './uploadAttachmentsReducer';
-import { ACCESS_REQUEST, ATTACHMENTS } from './constants';
+import { ACCESS_REQUEST, ATTACHMENTS, FORMS } from './constants';
 
 import { RESET_REQUEST_STATE } from '../../../../core/redux/actions';
 import { RS_INITIAL_STATE } from '../../../../core/redux/constants';
@@ -42,6 +42,7 @@ const { HITS } = ReduxConstants;
 const INITIAL_STATE :Map = fromJS({
   [ACCESS_REQUEST]: Map(),
   [ATTACHMENTS]: List(),
+  [FORMS]: List(),
   [GET_ALL_ACCESS_REQUESTS]: RS_INITIAL_STATE,
   [GET_ATTACHMENTS]: RS_INITIAL_STATE,
   [GET_FORMS]: RS_INITIAL_STATE,
