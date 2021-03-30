@@ -20,9 +20,8 @@ import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
-import { selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
+import { selectAppConfig, selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
-import { APP_PATHS } from '../../../app';
 import {
   SUBMIT_ACCESS_REQUEST,
   submitAccessRequest,
@@ -50,7 +49,7 @@ function* submitAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
     yield put(submitAccessRequest.request(action.id));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const entitySetId = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
 
     const {

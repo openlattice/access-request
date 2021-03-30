@@ -17,7 +17,7 @@ import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes } from '../../../../core/edm/constants';
-import { APP_PATHS } from '../../../app';
+import { selectAppConfig } from '../../../../core/redux/selectors';
 import {
   GET_FORMS,
   getForms,
@@ -27,7 +27,6 @@ const { searchEntitySetData } = SearchApiActions;
 const { searchEntitySetDataWorker } = SearchApiSagas;
 
 const { FORM } = AppTypes;
-// const { REQUEST_DATE_TIME } = PropertyTypes;
 
 const LOG = new Logger('getFormsSagas');
 
@@ -37,7 +36,7 @@ function* getFormsWorker(action :SequenceAction) :Saga<WorkerResponse> {
   try {
     yield put(getForms.request(action.id));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const formESID = getESIDFromConfig(config, FORM);
 
     const formsResponse :WorkerResponse = yield call(

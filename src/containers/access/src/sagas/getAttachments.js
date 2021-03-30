@@ -18,8 +18,8 @@ import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes } from '../../../../core/edm/constants';
+import { selectAppConfig } from '../../../../core/redux/selectors';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
-import { APP_PATHS } from '../../../app';
 import {
   GET_ATTACHMENTS,
   getAttachments,
@@ -41,7 +41,7 @@ function* getAttachmentsWorker(action :SequenceAction) :Generator<any, any, any>
 
     yield put(getAttachments.request(action.id));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const accessRequestESID = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
     const fileESID = getESIDFromConfig(config, FILE);
     const attachedToESID = getESIDFromConfig(config, ATTACHED_TO);

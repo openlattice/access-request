@@ -17,9 +17,8 @@ import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
-import { selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
+import { selectAppConfig, selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
-import { APP_PATHS } from '../../../app';
 import {
   SAVE_NEW_FORM_TEMPLATE,
   saveNewFormTemplate,
@@ -44,7 +43,7 @@ function* saveNewFormTemplateWorker(action :SequenceAction) :Saga<WorkerResponse
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
     yield put(saveNewFormTemplate.request(action.id));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const entitySetId = getESIDFromConfig(config, FORM);
 
     const {

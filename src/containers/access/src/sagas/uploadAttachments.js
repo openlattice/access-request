@@ -16,8 +16,7 @@ import type { SequenceAction } from 'redux-reqseq';
 import cleanBase64ForUpload from '../../../../utils/cleanBase64ForUpload';
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
-import { selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
-import { APP_PATHS } from '../../../app';
+import { selectAppConfig, selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
 import {
   UPLOAD_ATTACHMENTS,
   uploadAttachments
@@ -51,7 +50,7 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
       accessRequestId,
     } = action.value;
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const accessRequestESID = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
     const fileESID = getESIDFromConfig(config, FILE);
     const attachedToESID = getESIDFromConfig(config, ATTACHED_TO);
