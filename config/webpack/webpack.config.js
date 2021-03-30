@@ -27,6 +27,7 @@ module.exports = (env = {}) => {
   const ENV_PROD = 'production';
 
   const ROOT = path.resolve(__dirname, '../..');
+  const BUILD = path.resolve(ROOT, 'build');
   const NODE = path.resolve(ROOT, 'node_modules');
   const SOURCE = path.resolve(ROOT, 'src');
 
@@ -92,13 +93,19 @@ module.exports = (env = {}) => {
     },
     optimization: {
       minimize: !!env.production,
-      minimizer: [new TerserPlugin()],
+      minimizer: [
+        new TerserPlugin({
+          extractComments: false,
+        }),
+      ],
     },
     output: {
       filename: 'index.js',
-      library: 'openlatticeAccessRequest',
-      libraryTarget: 'umd',
-      path: path.resolve(ROOT, 'build'),
+      library: {
+        name: 'openlatticeAccessRequest',
+        type: 'umd',
+      },
+      path: BUILD,
       publicPath: '/',
     },
     performance: {
