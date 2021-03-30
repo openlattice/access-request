@@ -6,14 +6,11 @@ import {
   select,
   takeEvery,
 } from '@redux-saga/core/effects';
-import { Map } from 'immutable';
-import { Constants } from 'lattice';
 import {
   DataApiActions,
   DataApiSagas,
 } from 'lattice-sagas';
 import { Logger } from 'lattice-utils';
-import { DateTime } from 'luxon';
 import type { Saga } from '@redux-saga/core';
 import type { WorkerResponse } from 'lattice-sagas';
 import type { SequenceAction } from 'redux-reqseq';
@@ -23,110 +20,85 @@ import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
 import { selectAppConfig, selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
 import {
-  SUBMIT_ACCESS_REQUEST,
-  submitAccessRequest,
+  SAVE_NEW_FORM_TEMPLATE,
+  saveNewFormTemplate,
 } from '../actions';
 
-const { OPENLATTICE_ID_FQN } = Constants;
 const { createOrMergeEntityData } = DataApiActions;
 const { createOrMergeEntityDataWorker } = DataApiSagas;
 
-const { ACCESS_REQUEST_SUBMISSION } = AppTypes;
+const { FORM } = AppTypes;
 const {
-  FORM_DATA,
-  REQUEST_DATE_TIME,
   RJSF_JSON_SCHEMA,
   RJSF_UI_SCHEMA,
   TYPE,
 } = PropertyTypes;
 
-const LOG = new Logger('submitAccessRequestSagas');
+const LOG = new Logger('saveNewFormTemplateSagas');
 
-function* submitAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse> {
+function* saveNewFormTemplateWorker(action :SequenceAction) :Saga<WorkerResponse> {
   let response;
   try {
     const { value } = action;
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
-    yield put(submitAccessRequest.request(action.id));
+    yield put(saveNewFormTemplate.request(action.id));
 
     const config = yield select(selectAppConfig());
-    const entitySetId = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
+    const entitySetId = getESIDFromConfig(config, FORM);
 
     const {
-      formData,
       schema,
       uiSchema,
       type
     } = value;
 
     const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([
-      FORM_DATA,
-      REQUEST_DATE_TIME,
       RJSF_JSON_SCHEMA,
       RJSF_UI_SCHEMA,
       TYPE,
     ]));
 
-    const formDataPTID = propertyTypesByFQN.get(FORM_DATA);
-    const requestDatetimePTID = propertyTypesByFQN.get(REQUEST_DATE_TIME);
     const rjsfJsonSchemaPTID = propertyTypesByFQN.get(RJSF_JSON_SCHEMA);
     const rjsfUiSchemaPTID = propertyTypesByFQN.get(RJSF_UI_SCHEMA);
     const typePTID = propertyTypesByFQN.get(TYPE);
 
-    const formDataStr = JSON.stringify(formData);
     const schemaStr = JSON.stringify(schema);
     const uiSchemaStr = JSON.stringify(uiSchema);
 
-    const now = DateTime.local().toISO();
     const entityData = [{
       [typePTID]: [type || 'Common Application'],
-      [formDataPTID]: [formDataStr],
       [rjsfJsonSchemaPTID]: [schemaStr],
       [rjsfUiSchemaPTID]: [uiSchemaStr],
-      [requestDatetimePTID]: [now]
     }];
 
-    const submitAccessResponse = yield call(
+    const saveNewTemplateResponse = yield call(
       createOrMergeEntityDataWorker,
       createOrMergeEntityData({ entitySetId, entityData })
     );
 
-    if (submitAccessResponse.error) throw submitAccessResponse.error;
-    const localEntity = Map({
-      // $FlowFixMe invalid-computed-prop
-      [TYPE]: [type || 'Common Application'],
-      // $FlowFixMe invalid-computed-prop
-      [FORM_DATA]: [formDataStr],
-      // $FlowFixMe invalid-computed-prop
-      [RJSF_JSON_SCHEMA]: [schemaStr],
-      // $FlowFixMe invalid-computed-prop
-      [RJSF_UI_SCHEMA]: [uiSchemaStr],
-      // $FlowFixMe invalid-computed-prop
-      [REQUEST_DATE_TIME]: [now],
-      [OPENLATTICE_ID_FQN]: submitAccessResponse.data
-    });
+    if (saveNewTemplateResponse.error) throw saveNewTemplateResponse.error;
 
-    response = { data: localEntity };
+    response = saveNewTemplateResponse;
 
-    yield put(submitAccessRequest.success(action.id, response.data));
+    yield put(saveNewFormTemplate.success(action.id));
 
   }
   catch (error) {
     response = { error };
     LOG.error(action.type, error);
-    yield put(submitAccessRequest.failure(action.id, error));
+    yield put(saveNewFormTemplate.failure(action.id, error));
   }
   finally {
-    yield put(submitAccessRequest.finally(action.id));
+    yield put(saveNewFormTemplate.finally(action.id));
   }
   return response;
 }
 
-function* submitAccessRequestWatcher() :Saga<void> {
-  yield takeEvery(SUBMIT_ACCESS_REQUEST, submitAccessRequestWorker);
+function* saveNewFormTemplateWatcher() :Saga<void> {
+  yield takeEvery(SAVE_NEW_FORM_TEMPLATE, saveNewFormTemplateWorker);
 }
 
 export {
-  submitAccessRequestWatcher,
-  submitAccessRequestWorker,
+  saveNewFormTemplateWatcher,
+  saveNewFormTemplateWorker,
 };

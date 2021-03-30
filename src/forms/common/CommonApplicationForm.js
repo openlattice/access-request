@@ -6,8 +6,6 @@ import { Paged } from 'lattice-fabricate';
 import { Button } from 'lattice-ui-kit';
 import { DataUtils, ReduxUtils, ValidationUtils } from 'lattice-utils';
 
-import { schemas, uiSchemas } from './schemas';
-
 import { EdgelessForm } from '../../components/styled';
 import {
   SUBMIT_ACCESS_REQUEST,
@@ -29,10 +27,15 @@ const ActionRow = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px 30px 30px;
+  padding: 32px 0;
 `;
 
-const CommonApplicationForm = () => {
+type Props = {
+  schemas :Object[];
+  uiSchemas :Object[];
+}
+
+const CommonApplicationForm = ({ schemas, uiSchemas } :Props) => {
   const dispatch = useDispatch();
   const accessRequest = useSelector(selectAccessRequestData());
   const requestState = useSelector((s) => s.getIn([ACCESS, SUBMIT_ACCESS_REQUEST, REQUEST_STATE]));
