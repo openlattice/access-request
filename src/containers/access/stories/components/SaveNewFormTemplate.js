@@ -10,10 +10,10 @@ import { useDispatch } from '../../../../core/redux';
 import { saveNewFormTemplate } from '../../src/actions';
 
 type Props = {
-  schema :Object;
-  uiSchema :Object;
-  type :string;
   isSubmitting :boolean;
+  schema :Object;
+  type :string;
+  uiSchema :Object;
 };
 
 type SaveNewFormTemplateProps = {
@@ -22,11 +22,11 @@ type SaveNewFormTemplateProps = {
 }
 
 const SaveNewFormTemplate = ({
-  schema,
-  uiSchema,
-  type,
-  isSubmitting,
   fRef,
+  isSubmitting,
+  schema,
+  type,
+  uiSchema,
 } :SaveNewFormTemplateProps) => {
   const dispatch = useDispatch();
 
@@ -37,16 +37,16 @@ const SaveNewFormTemplate = ({
     const handleSubmit = () => {
       dispatch(saveNewFormTemplate({
         schema,
-        uiSchema,
         type,
+        uiSchema,
       }));
     };
 
     return (
       <EdgelessForm
-          ref={fRef}
           isSubmitting={isSubmitting}
           onSubmit={handleSubmit}
+          ref={fRef}
           schema={reviewSchemas.schema}
           uiSchema={reviewSchemas.uiSchema} />
     );
@@ -61,3 +61,4 @@ const SaveNewFormTemplate = ({
 export default forwardRef<Props, typeof Form>((props, ref) => (
   <SaveNewFormTemplate {...props} fRef={ref} />
 ));
+/* eslint-enable */

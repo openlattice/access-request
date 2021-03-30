@@ -14,11 +14,11 @@ const Template = (args) => (
     <SaveNewFormTemplate {...args} />
   </ModuleProvider>
 );
+/* eslint-enable */
 
-/* eslint-disable max-len */
 export const SaveNewTemplate = Template.bind({});
 SaveNewTemplate.args = {
   schema: schemas,
-  uiSchema: uiSchemas,
   type: 'Common Application',
+  uiSchema: uiSchemas,
 };
