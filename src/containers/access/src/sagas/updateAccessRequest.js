@@ -18,9 +18,8 @@ import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
-import { selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
+import { selectAppConfig, selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
-import { APP_PATHS } from '../../../app';
 import {
   UPDATE_ACCESS_REQUEST,
   updateAccessRequest,
@@ -47,7 +46,7 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse
       formData: formDataStr
     }));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const entitySetId = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
 
     const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([FORM_DATA]));

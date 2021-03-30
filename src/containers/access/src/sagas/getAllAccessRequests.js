@@ -17,8 +17,7 @@ import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
-import { selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
-import { APP_PATHS } from '../../../app';
+import { selectAppConfig, selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
 import {
   GET_ALL_ACCESS_REQUESTS,
   getAllAccessRequests,
@@ -38,7 +37,7 @@ function* getAllAccessRequestsWorker(action :SequenceAction) :Saga<WorkerRespons
   try {
     yield put(getAllAccessRequests.request(action.id));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const accessESID = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
 
     const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([REQUEST_DATE_TIME]));
