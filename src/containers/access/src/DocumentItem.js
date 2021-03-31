@@ -21,6 +21,9 @@ import {
   ListItemText,
 } from 'lattice-ui-kit';
 
+import SelectTags from './SelectTags';
+import { ItemTextWrapper } from './styled';
+
 import {
   DOCX_MIME_TYPE,
   PDF_MIME_TYPE,
@@ -39,7 +42,9 @@ type Props = {
     base64 :string;
   };
   index :number;
-  onDelete :Function
+  onDelete :Function;
+  onTagChange :Function;
+  tag :string;
 }
 
 const ImagePreview = styled.img`
@@ -51,7 +56,9 @@ const DocumentItem = ({
   divider,
   file,
   index,
-  onDelete
+  onDelete,
+  onTagChange,
+  tag,
 } :Props) => {
 
   const handleDelete = () => {
@@ -73,7 +80,10 @@ const DocumentItem = ({
       <ListItemAvatar>
         {imagePreview}
       </ListItemAvatar>
-      <ListItemText primary={name} />
+      <ItemTextWrapper>
+        <ListItemText primary={name} />
+        <SelectTags index={index} onTagChange={onTagChange} value={tag} />
+      </ItemTextWrapper>
 
       <ListItemSecondaryAction>
         <IconButton aria-label="Remove" onClick={handleDelete} title="Remove">

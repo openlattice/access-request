@@ -20,9 +20,12 @@ import {
   ListItemSecondaryAction,
   // $FlowFixMe
   ListItemText,
+  Tag,
 } from 'lattice-ui-kit';
 import { DataUtils } from 'lattice-utils';
 import { DateTime } from 'luxon';
+
+import { ItemTextWrapper } from './styled';
 
 import {
   DOCX_MIME_TYPE,
@@ -39,6 +42,7 @@ const { getEntityKeyId, getPropertyValue } = DataUtils;
 const {
   DATE_TIME,
   FILE_DATA,
+  LABEL,
   NAME,
   TYPE,
 } = PropertyTypes;
@@ -54,18 +58,33 @@ const ImagePreview = styled.img`
   max-width: 40px;
 `;
 
+type SecondaryTextProps = {
+  date :string;
+  tag :string;
+};
+
+const SecondaryText = ({ date, tag } :SecondaryTextProps) => (
+  <div>
+    {date}
+    { tag && (
+      <Tag mode="secondary">{tag}</Tag>
+    )}
+  </div>
+);
+
 const AttachmentItem = ({
   divider,
   file,
   onDelete
 } :Props) => {
 
-  const fileId = getEntityKeyId(file);
-  const name = getPropertyValue(file, [NAME, 0]);
-  const type = getPropertyValue(file, [TYPE, 0]);
-  const fileData = getPropertyValue(file, [FILE_DATA, 0]);
   const dateTime = getPropertyValue(file, [DATE_TIME, 0]);
   const dateStr = DateTime.fromISO(dateTime).toLocaleString(DateTime.DATE_SHORT);
+  const fileData = getPropertyValue(file, [FILE_DATA, 0]);
+  const fileId = getEntityKeyId(file);
+  const name = getPropertyValue(file, [NAME, 0]);
+  const tag = getPropertyValue(file, [LABEL, 0]);
+  const type = getPropertyValue(file, [TYPE, 0]);
 
   let icon;
   Object.entries(MIME_TYPES_TO_ICONS).forEach(([prefix, fileTypeIcon]) => {
@@ -84,8 +103,11 @@ const AttachmentItem = ({
       <ListItemAvatar>
         {imagePreview}
       </ListItemAvatar>
-      <ListItemText primary={name} secondary={dateStr} />
-
+      <ItemTextWrapper>
+        <ListItemText
+            primary={name}
+            secondary={<SecondaryText date={dateStr} tag={tag} />} />
+      </ItemTextWrapper>
       <ListItemSecondaryAction>
         <a
             aria-label="Download"

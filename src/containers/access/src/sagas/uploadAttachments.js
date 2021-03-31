@@ -46,8 +46,9 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
     yield put(uploadAttachments.request(action.id));
 
     const {
-      files,
       accessRequestId,
+      files,
+      tags,
     } = action.value;
 
     const config = yield select(selectAppConfig());
@@ -67,6 +68,7 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
     const fileDataPTID = propertyTypesByFQN.get(FILE_DATA);
     const namePTID = propertyTypesByFQN.get(NAME);
     const typePTID = propertyTypesByFQN.get(TYPE);
+    const tagPTID = propertyTypesByFQN.get(LABEL);
 
     const now = DateTime.local().toISO();
 
@@ -74,8 +76,8 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
       base64,
       name,
       type,
-    }) => ({
-      // [tagPTID]: tags.toJS(),
+    }, index) => ({
+      [tagPTID]: [tags[index]],
       [dateTimePTID]: [now],
       [typePTID]: [type],
       [namePTID]: [name],
