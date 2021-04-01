@@ -4,7 +4,7 @@ import { Creatable } from 'lattice-ui-kit';
 import { TAG_OPTIONS } from './constants';
 
 type Props = {
-  index :number;
+  index :?number | string;
   onTagChange :Function;
   value :string;
 };
