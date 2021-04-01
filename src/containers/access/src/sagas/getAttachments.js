@@ -7,13 +7,14 @@ import {
 } from '@redux-saga/core/effects';
 import {
   List,
+  Map,
   fromJS,
 } from 'immutable';
 import {
   SearchApiActions,
   SearchApiSagas,
 } from 'lattice-sagas';
-import { Logger, ValidationUtils } from 'lattice-utils';
+import { DataUtils, Logger, ValidationUtils } from 'lattice-utils';
 import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
@@ -27,6 +28,7 @@ import {
 
 const LOG = new Logger('DocumentsSagas');
 
+const { getEntityKeyId } = DataUtils;
 const { isValidUUID } = ValidationUtils;
 const { searchEntityNeighborsWithFilter } = SearchApiActions;
 const { searchEntityNeighborsWithFilterWorker } = SearchApiSagas;
@@ -65,10 +67,12 @@ function* getAttachmentsWorker(action :SequenceAction) :Generator<any, any, any>
       .get(accessRequestId, List())
       .map((file) => file.get('neighborDetails'));
 
-    response.data = fileData;
+    const filesById = Map(fileData.map((v) => [getEntityKeyId(v), v]));
+
+    response.data = filesById;
 
     yield put(getAttachments.success(action.id, {
-      data: fileData
+      data: filesById
     }));
   }
   catch (error) {

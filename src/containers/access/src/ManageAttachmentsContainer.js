@@ -33,7 +33,7 @@ const ManageAttachmentsContainer = ({ accessRequestId } :Props) => {
   return (
     <List>
       {
-        attachments.map((file, index) => {
+        attachments.valueSeq().map((file, index) => {
           const fileId = getEntityKeyId(file);
           const divider = index !== attachments.size - 1;
 

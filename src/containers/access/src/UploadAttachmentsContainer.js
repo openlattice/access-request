@@ -106,6 +106,8 @@ class UploadAttachmentsContainer extends Component<Props, State> {
               const hasDivider = index !== files.length - 1;
               return (
                 <DocumentItem
+                    /* eslint-disable-next-line react/no-array-index-key */
+                    key={`document-${index}`}
                     divider={hasDivider}
                     file={file}
                     index={index}

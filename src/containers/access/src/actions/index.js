@@ -44,6 +44,9 @@ const deleteAttachments :RequestSequence = newRequestSequence(DELETE_ATTACHMENTS
 const SAVE_NEW_FORM_TEMPLATE :'SAVE_NEW_FORM_TEMPLATE' = 'SAVE_NEW_FORM_TEMPLATE';
 const saveNewFormTemplate :RequestSequence = newRequestSequence(SAVE_NEW_FORM_TEMPLATE);
 
+const UPDATE_ATTACHMENT_TAG :'UPDATE_ATTACHMENT_TAG' = 'UPDATE_ATTACHMENT_TAG';
+const updateAttachmentTag :RequestSequence = newRequestSequence(UPDATE_ATTACHMENT_TAG);
+
 export {
   CLEAR_ACCESS_REQUEST,
   DELETE_ATTACHMENTS,
@@ -55,6 +58,7 @@ export {
   SELECT_ACCESS_REQUEST,
   SUBMIT_ACCESS_REQUEST,
   UPDATE_ACCESS_REQUEST,
+  UPDATE_ATTACHMENT_TAG,
   UPLOAD_ATTACHMENTS,
   clearAccessRequest,
   deleteAttachments,
@@ -66,5 +70,6 @@ export {
   selectAccessRequest,
   submitAccessRequest,
   updateAccessRequest,
+  updateAttachmentTag,
   uploadAttachments,
 };

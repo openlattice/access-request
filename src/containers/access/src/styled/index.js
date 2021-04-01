@@ -8,7 +8,7 @@ const CenterWrapper = styled.div`
 `;
 
 const ItemTextWrapper = styled.div`
-  padding-right: 16px;
+  padding-right: ${(props) => (props.paddingRight ? props.paddingRight : '16px')};
   width: 100%;
 `;
 

@@ -1,4 +1,6 @@
 // @flow
+import { useState } from 'react';
+
 import styled from 'styled-components';
 import {
   faFilePdf,
@@ -6,6 +8,8 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import {
   faDownload,
+  faPen,
+  faTimes,
   faTrashAlt,
 } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,6 +29,8 @@ import {
 import { DataUtils } from 'lattice-utils';
 import { DateTime } from 'luxon';
 
+import SelectTags from './SelectTags';
+import { updateAttachmentTag } from './actions';
 import { ItemTextWrapper } from './styled';
 
 import {
@@ -32,6 +38,7 @@ import {
   PDF_MIME_TYPE,
 } from '../../../constants/FileTypeConstants';
 import { PropertyTypes } from '../../../core/edm/constants';
+import { useDispatch } from '../../../core/redux';
 
 const MIME_TYPES_TO_ICONS = {
   [PDF_MIME_TYPE]: faFilePdf,
@@ -64,12 +71,12 @@ type SecondaryTextProps = {
 };
 
 const SecondaryText = ({ date, tag } :SecondaryTextProps) => (
-  <div>
+  <>
     {date}
     { tag && (
       <Tag mode="secondary">{tag}</Tag>
     )}
-  </div>
+  </>
 );
 
 const AttachmentItem = ({
@@ -77,7 +84,8 @@ const AttachmentItem = ({
   file,
   onDelete
 } :Props) => {
-
+  const dispatch = useDispatch();
+  const [editing, setEditing] = useState(false);
   const dateTime = getPropertyValue(file, [DATE_TIME, 0]);
   const dateStr = DateTime.fromISO(dateTime).toLocaleString(DateTime.DATE_SHORT);
   const fileData = getPropertyValue(file, [FILE_DATA, 0]);
@@ -98,17 +106,32 @@ const AttachmentItem = ({
     onDelete(fileId);
   };
 
+  const handleEditTag = () => {
+    setEditing(!editing);
+  };
+
+  const onTagChange = (entityKeyId, value = '') => {
+    dispatch(updateAttachmentTag({ entityKeyId, tag: value }));
+    setEditing(false);
+  };
+
   return (
     <ListItem divider={divider}>
       <ListItemAvatar>
         {imagePreview}
       </ListItemAvatar>
-      <ItemTextWrapper>
+      <ItemTextWrapper paddingRight="96px">
         <ListItemText
             primary={name}
-            secondary={<SecondaryText date={dateStr} tag={tag} />} />
+            secondary={!editing ? <SecondaryText date={dateStr} tag={tag} /> : null} />
+        { editing && (
+          <SelectTags index={fileId} onTagChange={onTagChange} value={tag} />
+        )}
       </ItemTextWrapper>
       <ListItemSecondaryAction>
+        <IconButton aria-label="Edit Tag" onClick={handleEditTag} title="Edit Tag">
+          <FontAwesomeIcon fixedWidth icon={editing ? faTimes : faPen} />
+        </IconButton>
         <a
             aria-label="Download"
             download
