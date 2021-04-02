@@ -123,7 +123,7 @@ const AttachmentItem = ({
       <ItemTextWrapper paddingRight="96px">
         <ListItemText
             primary={name}
-            secondary={!editing ? <SecondaryText date={dateStr} tag={tag} /> : null} />
+            secondary={editing ? null : <SecondaryText date={dateStr} tag={tag} />} />
         { editing && (
           <SelectTags index={fileId} onTagChange={onTagChange} value={tag} />
         )}

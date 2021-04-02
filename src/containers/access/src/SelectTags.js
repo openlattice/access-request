@@ -5,7 +5,7 @@ import { TAG_OPTIONS } from './constants';
 
 type Props = {
   index :?number | string;
-  onTagChange :Function;
+  onTagChange :(index :?number | string, value :string) => void;
   value :string;
 };
 

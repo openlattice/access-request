@@ -71,9 +71,7 @@ function* getAttachmentsWorker(action :SequenceAction) :Generator<any, any, any>
 
     response.data = filesById;
 
-    yield put(getAttachments.success(action.id, {
-      data: filesById
-    }));
+    yield put(getAttachments.success(action.id, filesById));
   }
   catch (error) {
     LOG.error(action.type, error);
