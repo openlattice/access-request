@@ -6,4 +6,5 @@ export * from './getForms';
 export * from './saveNewFormTemplate';
 export * from './submitAccessRequest';
 export * from './updateAccessRequest';
+export * from './updateAttachmentTag';
 export * from './uploadAttachments';

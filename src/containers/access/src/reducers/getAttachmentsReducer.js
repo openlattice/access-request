@@ -20,12 +20,9 @@ export default function getAttachmentsReducer(state :Map<*, *>, action :Sequence
 
   return getAttachments.reducer(state, action, {
     REQUEST: () => state.setIn([GET_ATTACHMENTS, REQUEST_STATE], RequestStates.PENDING),
-    SUCCESS: () => {
-      const { data } = action.value;
-      return state
-        .set(ATTACHMENTS, data)
-        .setIn([GET_ATTACHMENTS, REQUEST_STATE], RequestStates.SUCCESS);
-    },
+    SUCCESS: () => state
+      .set(ATTACHMENTS, action.value)
+      .setIn([GET_ATTACHMENTS, REQUEST_STATE], RequestStates.SUCCESS),
     FAILURE: () => state.setIn([GET_ATTACHMENTS, REQUEST_STATE], RequestStates.FAILURE),
   });
 
