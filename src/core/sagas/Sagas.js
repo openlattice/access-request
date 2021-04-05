@@ -38,5 +38,8 @@ export default function* sagas() :Saga<*> {
     fork(AccessSagas.updateAccessRequestWatcher),
     fork(AccessSagas.uploadAttachmentsWatcher),
     fork(AccessSagas.deleteAttachmentsWatcher),
+    fork(AccessSagas.saveNewFormTemplateWatcher),
+    fork(AccessSagas.getFormsWatcher),
+    fork(AccessSagas.updateAttachmentTagWatcher),
   ]);
 }

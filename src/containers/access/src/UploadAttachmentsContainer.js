@@ -69,23 +69,33 @@ class UploadAttachmentsContainer extends Component<Props, State> {
   }
 
   onDelete = (index :number) => {
-    const { files } = this.state;
-    files.splice(index, 1);
-    this.setState({ files });
+    const { files, tags } = this.state;
+    const newFiles = Array.from(files);
+    const newTags = Array.from(tags);
+    newFiles.splice(index, 1);
+    newTags.splice(index, 1);
+    this.setState({ files: newFiles, tags: newTags });
+  };
+
+  onTagChange = (index :number, value :string) => {
+    const { tags } = this.state;
+    const newTags = Array.from(tags);
+    newTags[index] = value;
+    this.setState({ tags: newTags });
   };
 
   onUpload = () => {
     const { accessRequestId, actions } = this.props;
     const { files, tags } = this.state;
     actions.uploadAttachments({
+      accessRequestId,
       files,
       tags,
-      accessRequestId,
     });
   }
 
   render() {
-    const { files } = this.state;
+    const { files, tags } = this.state;
     const { requestState } = this.props;
     return (
       <div>
@@ -96,10 +106,14 @@ class UploadAttachmentsContainer extends Component<Props, State> {
               const hasDivider = index !== files.length - 1;
               return (
                 <DocumentItem
+                    /* eslint-disable-next-line react/no-array-index-key */
+                    key={`document-${index}`}
                     divider={hasDivider}
                     file={file}
                     index={index}
-                    onDelete={this.onDelete} />
+                    onDelete={this.onDelete}
+                    onTagChange={this.onTagChange}
+                    tag={tags[index]} />
               );
             })
           }

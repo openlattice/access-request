@@ -12,8 +12,9 @@ import getAttachmentsReducer from './getAttachmentsReducer';
 import getFormsReducer from './getFormsReducer';
 import submitAccessRequestReducer from './submitAccessRequestReducer';
 import updateAccessRequestReducer from './updateAccessRequestReducer';
+import updateAttachmentTagReducer from './updateAttachmentTagReducer';
 import uploadAttachmentsReducer from './uploadAttachmentsReducer';
-import { ACCESS_REQUEST, ATTACHMENTS } from './constants';
+import { ACCESS_REQUEST, ATTACHMENTS, FORMS } from './constants';
 
 import { RESET_REQUEST_STATE } from '../../../../core/redux/actions';
 import { RS_INITIAL_STATE } from '../../../../core/redux/constants';
@@ -34,6 +35,7 @@ import {
   getForms,
   submitAccessRequest,
   updateAccessRequest,
+  updateAttachmentTag,
   uploadAttachments,
 } from '../actions';
 
@@ -41,7 +43,8 @@ const { HITS } = ReduxConstants;
 
 const INITIAL_STATE :Map = fromJS({
   [ACCESS_REQUEST]: Map(),
-  [ATTACHMENTS]: List(),
+  [ATTACHMENTS]: Map(),
+  [FORMS]: List(),
   [GET_ALL_ACCESS_REQUESTS]: RS_INITIAL_STATE,
   [GET_ATTACHMENTS]: RS_INITIAL_STATE,
   [GET_FORMS]: RS_INITIAL_STATE,
@@ -97,6 +100,10 @@ export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object
 
     case deleteAttachments.case(action.type): {
       return deleteAttachmentsReducer(state, action);
+    }
+
+    case updateAttachmentTag.case(action.type): {
+      return updateAttachmentTagReducer(state, action);
     }
 
     default:

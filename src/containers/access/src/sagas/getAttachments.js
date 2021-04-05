@@ -7,19 +7,20 @@ import {
 } from '@redux-saga/core/effects';
 import {
   List,
+  Map,
   fromJS,
 } from 'immutable';
 import {
   SearchApiActions,
   SearchApiSagas,
 } from 'lattice-sagas';
-import { Logger, ValidationUtils } from 'lattice-utils';
+import { DataUtils, Logger, ValidationUtils } from 'lattice-utils';
 import type { SequenceAction } from 'redux-reqseq';
 
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { AppTypes } from '../../../../core/edm/constants';
+import { selectAppConfig } from '../../../../core/redux/selectors';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
-import { APP_PATHS } from '../../../app';
 import {
   GET_ATTACHMENTS,
   getAttachments,
@@ -27,6 +28,7 @@ import {
 
 const LOG = new Logger('DocumentsSagas');
 
+const { getEntityKeyId } = DataUtils;
 const { isValidUUID } = ValidationUtils;
 const { searchEntityNeighborsWithFilter } = SearchApiActions;
 const { searchEntityNeighborsWithFilterWorker } = SearchApiSagas;
@@ -41,7 +43,7 @@ function* getAttachmentsWorker(action :SequenceAction) :Generator<any, any, any>
 
     yield put(getAttachments.request(action.id));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const accessRequestESID = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
     const fileESID = getESIDFromConfig(config, FILE);
     const attachedToESID = getESIDFromConfig(config, ATTACHED_TO);
@@ -65,11 +67,11 @@ function* getAttachmentsWorker(action :SequenceAction) :Generator<any, any, any>
       .get(accessRequestId, List())
       .map((file) => file.get('neighborDetails'));
 
-    response.data = fileData;
+    const filesById = Map(fileData.map((v) => [getEntityKeyId(v), v]));
 
-    yield put(getAttachments.success(action.id, {
-      data: fileData
-    }));
+    response.data = filesById;
+
+    yield put(getAttachments.success(action.id, filesById));
   }
   catch (error) {
     LOG.error(action.type, error);

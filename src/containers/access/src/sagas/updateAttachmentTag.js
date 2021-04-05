@@ -21,41 +21,41 @@ import { AppTypes, PropertyTypes } from '../../../../core/edm/constants';
 import { selectAppConfig, selectPropertyTypeIDsByFQN } from '../../../../core/redux/selectors';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
 import {
-  UPDATE_ACCESS_REQUEST,
-  updateAccessRequest,
+  UPDATE_ATTACHMENT_TAG,
+  updateAttachmentTag,
 } from '../actions';
+import { ATTACHMENTS } from '../reducers/constants';
 
 const { updateEntityData } = DataApiActions;
 const { updateEntityDataWorker } = DataApiSagas;
 const { UpdateTypes } = Types;
 
-const { ACCESS_REQUEST_SUBMISSION } = AppTypes;
-const { FORM_DATA } = PropertyTypes;
+const { FILE } = AppTypes;
+const { LABEL } = PropertyTypes;
 
-const LOG = new Logger('updateAccessRequest');
+const LOG = new Logger('updateAttachmentTag');
 
-function* updateAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse> {
+function* updateAttachmentTagWorker(action :SequenceAction) :Saga<WorkerResponse> {
   let response;
   try {
     const { value } = action;
     if (!isPlainObject(value)) throw ERR_ACTION_VALUE_TYPE;
-    const { formData, entityKeyId } = value;
-    const formDataStr = JSON.stringify(formData);
-    yield put(updateAccessRequest.request(action.id, {
-      path: ['accessRequest', FORM_DATA.toString(), 0],
-      formData: formDataStr
+    const { tag, entityKeyId } = value;
+    yield put(updateAttachmentTag.request(action.id, {
+      path: [ATTACHMENTS, entityKeyId, LABEL.toString(), 0],
+      tag,
     }));
 
     const config = yield select(selectAppConfig());
-    const entitySetId = getESIDFromConfig(config, ACCESS_REQUEST_SUBMISSION);
+    const entitySetId = getESIDFromConfig(config, FILE);
 
-    const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([FORM_DATA]));
+    const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([LABEL]));
 
-    const formDataPTID = propertyTypesByFQN.get(FORM_DATA);
+    const tagPTID = propertyTypesByFQN.get(LABEL);
 
     const entities = {
       [entityKeyId]: {
-        [formDataPTID]: [formDataStr],
+        [tagPTID]: [tag],
       },
     };
 
@@ -71,25 +71,25 @@ function* updateAccessRequestWorker(action :SequenceAction) :Saga<WorkerResponse
     if (updateAccessResponse.error) throw updateAccessResponse.error;
     response = { data: updateAccessResponse.data };
 
-    yield put(updateAccessRequest.success(action.id));
+    yield put(updateAttachmentTag.success(action.id));
 
   }
   catch (error) {
     response = { error };
     LOG.error(action.type, error);
-    yield put(updateAccessRequest.failure(action.id, error));
+    yield put(updateAttachmentTag.failure(action.id, error));
   }
   finally {
-    yield put(updateAccessRequest.finally(action.id));
+    yield put(updateAttachmentTag.finally(action.id));
   }
   return response;
 }
 
-function* updateAccessRequestWatcher() :Saga<void> {
-  yield takeEvery(UPDATE_ACCESS_REQUEST, updateAccessRequestWorker);
+function* updateAttachmentTagWatcher() :Saga<void> {
+  yield takeEvery(UPDATE_ATTACHMENT_TAG, updateAttachmentTagWorker);
 }
 
 export {
-  updateAccessRequestWatcher,
-  updateAccessRequestWorker,
+  updateAttachmentTagWatcher,
+  updateAttachmentTagWorker,
 };

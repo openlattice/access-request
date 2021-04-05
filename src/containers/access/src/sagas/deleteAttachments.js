@@ -13,9 +13,9 @@ import type { SequenceAction } from 'redux-reqseq';
 import getESIDFromConfig from '../../../../utils/getESIDFromConfig';
 import { deleteBulkEntities } from '../../../../core/actions';
 import { AppTypes } from '../../../../core/edm/constants';
+import { selectAppConfig } from '../../../../core/redux/selectors';
 import { deleteBulkEntitiesWorker } from '../../../../core/sagas/data/deleteBulkEntities';
 import { ERR_ACTION_VALUE_TYPE } from '../../../../utils/Errors';
-import { APP_PATHS } from '../../../app';
 import { DELETE_ATTACHMENTS, deleteAttachments } from '../actions';
 
 const { isValidUUID } = ValidationUtils;
@@ -32,7 +32,7 @@ function* deleteAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
 
     yield put(deleteAttachments.request(action.id));
 
-    const config = yield select((store) => store.getIn(APP_PATHS.APP_CONFIG));
+    const config = yield select(selectAppConfig());
     const fileESID = getESIDFromConfig(config, FILE);
 
     const entityData = {
