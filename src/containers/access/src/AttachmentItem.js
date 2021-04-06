@@ -1,4 +1,6 @@
 // @flow
+import { useState } from 'react';
+
 import styled from 'styled-components';
 import {
   faFilePdf,
@@ -6,6 +8,8 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import {
   faDownload,
+  faPen,
+  faTimes,
   faTrashAlt,
 } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,15 +24,21 @@ import {
   ListItemSecondaryAction,
   // $FlowFixMe
   ListItemText,
+  Tag,
 } from 'lattice-ui-kit';
 import { DataUtils } from 'lattice-utils';
 import { DateTime } from 'luxon';
+
+import SelectTags from './SelectTags';
+import { updateAttachmentTag } from './actions';
+import { ItemTextWrapper } from './styled';
 
 import {
   DOCX_MIME_TYPE,
   PDF_MIME_TYPE,
 } from '../../../constants/FileTypeConstants';
 import { PropertyTypes } from '../../../core/edm/constants';
+import { useDispatch } from '../../../core/redux';
 
 const MIME_TYPES_TO_ICONS = {
   [PDF_MIME_TYPE]: faFilePdf,
@@ -39,6 +49,7 @@ const { getEntityKeyId, getPropertyValue } = DataUtils;
 const {
   DATE_TIME,
   FILE_DATA,
+  LABEL,
   NAME,
   TYPE,
 } = PropertyTypes;
@@ -54,18 +65,34 @@ const ImagePreview = styled.img`
   max-width: 40px;
 `;
 
+type SecondaryTextProps = {
+  date :string;
+  tag :string;
+};
+
+const SecondaryText = ({ date, tag } :SecondaryTextProps) => (
+  <>
+    {date}
+    { tag && (
+      <Tag mode="secondary">{tag}</Tag>
+    )}
+  </>
+);
+
 const AttachmentItem = ({
   divider,
   file,
   onDelete
 } :Props) => {
-
-  const fileId = getEntityKeyId(file);
-  const name = getPropertyValue(file, [NAME, 0]);
-  const type = getPropertyValue(file, [TYPE, 0]);
-  const fileData = getPropertyValue(file, [FILE_DATA, 0]);
+  const dispatch = useDispatch();
+  const [editing, setEditing] = useState(false);
   const dateTime = getPropertyValue(file, [DATE_TIME, 0]);
   const dateStr = DateTime.fromISO(dateTime).toLocaleString(DateTime.DATE_SHORT);
+  const fileData = getPropertyValue(file, [FILE_DATA, 0]);
+  const fileId = getEntityKeyId(file);
+  const name = getPropertyValue(file, [NAME, 0]);
+  const tag = getPropertyValue(file, [LABEL, 0]);
+  const type = getPropertyValue(file, [TYPE, 0]);
 
   let icon;
   Object.entries(MIME_TYPES_TO_ICONS).forEach(([prefix, fileTypeIcon]) => {
@@ -79,14 +106,32 @@ const AttachmentItem = ({
     onDelete(fileId);
   };
 
+  const handleEditTag = () => {
+    setEditing(!editing);
+  };
+
+  const onTagChange = (entityKeyId, value = '') => {
+    dispatch(updateAttachmentTag({ entityKeyId, tag: value }));
+    setEditing(false);
+  };
+
   return (
     <ListItem divider={divider}>
       <ListItemAvatar>
         {imagePreview}
       </ListItemAvatar>
-      <ListItemText primary={name} secondary={dateStr} />
-
+      <ItemTextWrapper paddingRight="96px">
+        <ListItemText
+            primary={name}
+            secondary={editing ? null : <SecondaryText date={dateStr} tag={tag} />} />
+        { editing && (
+          <SelectTags index={fileId} onTagChange={onTagChange} value={tag} />
+        )}
+      </ItemTextWrapper>
       <ListItemSecondaryAction>
+        <IconButton aria-label="Edit Tag" onClick={handleEditTag} title="Edit Tag">
+          <FontAwesomeIcon fixedWidth icon={editing ? faTimes : faPen} />
+        </IconButton>
         <a
             aria-label="Download"
             download

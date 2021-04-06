@@ -17,6 +17,7 @@ const AttachmentsModal = ({
 } :Props) => {
   return (
     <Modal
+        viewportScrolling
         textTitle="Attachments"
         isVisible={isVisible}
         onClose={onClose}

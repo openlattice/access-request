@@ -7,6 +7,12 @@ const CenterWrapper = styled.div`
   justify-content: center;
 `;
 
+const ItemTextWrapper = styled.div`
+  padding-right: ${(props) => (props.paddingRight ? props.paddingRight : '16px')};
+  width: 100%;
+`;
+
 export {
-  CenterWrapper
+  CenterWrapper,
+  ItemTextWrapper,
 };
