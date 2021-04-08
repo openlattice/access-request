@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AccessRequestAttachmentButton mount IconButton with faPaperclip 1`] = `
+exports[`AccessRequestAttachmentButton match snapshot when closed 1`] = `
 <Fragment>
   <ForwardRef
     aria-haspopup="menu"
