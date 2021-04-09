@@ -8,10 +8,9 @@ import type { UUID } from 'lattice';
 
 import AttachmentItem from './AttachmentItem';
 import { deleteAttachments, getAttachments } from './actions';
-import { ATTACHMENTS } from './reducers/constants';
 
 import { useDispatch, useSelector } from '../../../core/redux';
-import { ACCESS } from '../../../core/redux/constants';
+import { selectAttachments } from '../../../core/redux/selectors';
 
 const { getEntityKeyId } = DataUtils;
 type Props = {
@@ -19,7 +18,7 @@ type Props = {
 };
 
 const ManageAttachmentsContainer = ({ accessRequestId } :Props) => {
-  const attachments = useSelector((state) => state.getIn([ACCESS, ATTACHMENTS]));
+  const attachments = useSelector(selectAttachments());
   const dispatch = useDispatch();
 
   useEffect(() => {
