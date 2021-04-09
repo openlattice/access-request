@@ -1,12 +1,33 @@
 import toJson from 'enzyme-to-json';
 import { faPaperclip } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { IconButton } from 'lattice-ui-kit';
 import { NIL } from 'uuid';
 
 import AccessRequestAttachmentButton from '../AccessRequestAttachmentButton';
 import AttachmentsModal from '../AttachmentsModal';
+import ModuleProvider from '../../../../core/provider/ModuleProvider';
+
+const mockDispatch = jest.fn();
+const mockUseDispatch = jest.fn();
+mockUseDispatch.mockReturnValue(mockDispatch);
+
+jest.mock('../../../../core/redux', () => {
+  const {
+    useSelector,
+    useStore,
+    moduleStore,
+    moduleContext,
+  } = jest.requireActual('../../../../core/redux');
+  return {
+    moduleContext,
+    moduleStore,
+    useDispatch: () => mockUseDispatch(),
+    useSelector,
+    useStore,
+  };
+});
 
 describe('AccessRequestAttachmentButton', () => {
   test('match snapshot when closed', () => {
@@ -32,6 +53,20 @@ describe('AccessRequestAttachmentButton', () => {
     const attachmentsModal = wrapper.find(AttachmentsModal);
 
     expect(attachmentsModal).toHaveLength(1);
+  });
+
+  test('click sets AttachmentsModal isVisible to true', () => {
+    const wrapper = mount(
+      <ModuleProvider>
+        <AccessRequestAttachmentButton accessRequestId={NIL} />
+      </ModuleProvider>
+    );
+
+    expect(wrapper.find(AttachmentsModal).prop('isVisible')).toEqual(false);
+    const button = wrapper.find('button');
+    button.simulate('click');
+    wrapper.update();
+    expect(wrapper.find(AttachmentsModal).prop('isVisible')).toEqual(true);
   });
 
 });

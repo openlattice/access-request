@@ -5,6 +5,7 @@ exports[`AccessRequestAttachmentButton match snapshot when closed 1`] = `
   <ForwardRef
     aria-haspopup="menu"
     aria-label="access request attachment button"
+    onClick={[Function]}
   >
     <FontAwesomeIcon
       border={false}
@@ -27,7 +28,6 @@ exports[`AccessRequestAttachmentButton match snapshot when closed 1`] = `
       inverse={false}
       listItem={false}
       mask={null}
-      onClick={[Function]}
       pull={null}
       pulse={false}
       rotation={null}
