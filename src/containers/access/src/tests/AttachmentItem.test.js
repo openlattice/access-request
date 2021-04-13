@@ -8,7 +8,12 @@ import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import { NIL } from 'uuid';
 
-import { MOCK_DOCX_FILE, MOCK_FILE, MOCK_FILE_ID, MOCK_PDF_FILE } from './constants';
+import {
+  MOCK_DOCX_FILE,
+  MOCK_FILE,
+  MOCK_FILE_ID,
+  MOCK_PDF_FILE
+} from './constants';
 
 import AttachmentItem from '../AttachmentItem';
 import ModuleProvider from '../../../../core/provider/ModuleProvider';
