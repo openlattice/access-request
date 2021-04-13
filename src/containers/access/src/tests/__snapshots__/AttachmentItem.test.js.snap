@@ -1,0 +1,995 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttachmentItem match snapshot 1`] = `
+<ModuleProvider>
+  <Provider
+    context={
+      Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": Object {
+          "$$typeof": Symbol(react.context),
+          "_calculateChangedBits": null,
+          "_context": [Circular],
+        },
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": Object {},
+        "_currentRenderer2": null,
+        "_currentValue": null,
+        "_currentValue2": null,
+        "_threadCount": 0,
+      }
+    }
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <Connect(ConnectedRouterWithContext)
+      context={
+        Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": Object {
+            "$$typeof": Symbol(react.context),
+            "_calculateChangedBits": null,
+            "_context": [Circular],
+          },
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": Object {},
+          "_currentRenderer2": null,
+          "_currentValue": null,
+          "_currentValue2": null,
+          "_threadCount": 0,
+        }
+      }
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <ConnectedRouterWithContext
+        context={
+          Object {
+            "$$typeof": Symbol(react.context),
+            "Consumer": Object {
+              "$$typeof": Symbol(react.context),
+              "_calculateChangedBits": null,
+              "_context": [Circular],
+            },
+            "Provider": Object {
+              "$$typeof": Symbol(react.provider),
+              "_context": [Circular],
+            },
+            "_calculateChangedBits": null,
+            "_currentRenderer": Object {},
+            "_currentRenderer2": null,
+            "_currentValue": null,
+            "_currentValue2": null,
+            "_threadCount": 0,
+          }
+        }
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        onLocationChanged={[Function]}
+      >
+        <ConnectedRouter
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": null,
+              "_currentValue2": null,
+              "_threadCount": 0,
+            }
+          }
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          onLocationChanged={[Function]}
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
+        >
+          <Router
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+          >
+            <AttachmentItem
+              divider={true}
+              file={
+                Object {
+                  "ol.datetime": Array [
+                    "2021-01-01T00:00:00.000-08:00",
+                  ],
+                  "ol.filedata": Array [
+                    "https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg",
+                  ],
+                  "ol.label": Array [
+                    "Other",
+                  ],
+                  "ol.name": Array [
+                    "openlattice-logo.svg",
+                  ],
+                  "ol.type": Array [
+                    "image/jpeg",
+                  ],
+                  "openlattice.@id": Array [
+                    "00000000-0000-0000-0000-000000000000",
+                  ],
+                }
+              }
+              onDelete={[MockFunction]}
+            >
+              <ForwardRef(WithStyles)
+                divider={true}
+              >
+                <ForwardRef(ListItem)
+                  classes={
+                    Object {
+                      "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                      "button": "MuiListItem-button",
+                      "container": "MuiListItem-container",
+                      "dense": "MuiListItem-dense",
+                      "disabled": "Mui-disabled",
+                      "divider": "MuiListItem-divider",
+                      "focusVisible": "Mui-focusVisible",
+                      "gutters": "MuiListItem-gutters",
+                      "root": "MuiListItem-root",
+                      "secondaryAction": "MuiListItem-secondaryAction",
+                      "selected": "Mui-selected",
+                    }
+                  }
+                  divider={true}
+                >
+                  <li
+                    className="MuiListItem-container"
+                  >
+                    <div
+                      className="MuiListItem-root MuiListItem-gutters MuiListItem-divider MuiListItem-secondaryAction"
+                      disabled={false}
+                    >
+                      <ForwardRef(WithStyles)
+                        key=".0"
+                      >
+                        <ForwardRef(ListItemAvatar)
+                          classes={
+                            Object {
+                              "alignItemsFlexStart": "MuiListItemAvatar-alignItemsFlexStart",
+                              "root": "MuiListItemAvatar-root",
+                            }
+                          }
+                        >
+                          <div
+                            className="MuiListItemAvatar-root"
+                          >
+                            <AttachmentItem__ImagePreview
+                              src="https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg"
+                            >
+                              <img
+                                className="AttachmentItem__ImagePreview-olj6j0-0 eIAMMu"
+                                src="https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg"
+                              />
+                            </AttachmentItem__ImagePreview>
+                          </div>
+                        </ForwardRef(ListItemAvatar)>
+                      </ForwardRef(WithStyles)>
+                      <styled__ItemTextWrapper
+                        key=".1"
+                        paddingRight="96px"
+                      >
+                        <div
+                          className="styled__ItemTextWrapper-sc-6qf0vq-1 dDKgoH"
+                        >
+                          <ForwardRef(WithStyles)
+                            primary="openlattice-logo.svg"
+                            secondary={
+                              <SecondaryText
+                                date="1/1/2021"
+                                tag="Other"
+                              />
+                            }
+                          >
+                            <ForwardRef(ListItemText)
+                              classes={
+                                Object {
+                                  "dense": "MuiListItemText-dense",
+                                  "inset": "MuiListItemText-inset",
+                                  "multiline": "MuiListItemText-multiline",
+                                  "primary": "MuiListItemText-primary",
+                                  "root": "MuiListItemText-root",
+                                  "secondary": "MuiListItemText-secondary",
+                                }
+                              }
+                              primary="openlattice-logo.svg"
+                              secondary={
+                                <SecondaryText
+                                  date="1/1/2021"
+                                  tag="Other"
+                                />
+                              }
+                            >
+                              <div
+                                className="MuiListItemText-root MuiListItemText-multiline"
+                              >
+                                <ForwardRef(WithStyles)
+                                  className="MuiListItemText-primary"
+                                  component="span"
+                                  display="block"
+                                  variant="body1"
+                                >
+                                  <ForwardRef(Typography)
+                                    className="MuiListItemText-primary"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTypography-alignCenter",
+                                        "alignJustify": "MuiTypography-alignJustify",
+                                        "alignLeft": "MuiTypography-alignLeft",
+                                        "alignRight": "MuiTypography-alignRight",
+                                        "body1": "MuiTypography-body1",
+                                        "body2": "MuiTypography-body2",
+                                        "button": "MuiTypography-button",
+                                        "caption": "MuiTypography-caption",
+                                        "colorError": "MuiTypography-colorError",
+                                        "colorInherit": "MuiTypography-colorInherit",
+                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                        "displayBlock": "MuiTypography-displayBlock",
+                                        "displayInline": "MuiTypography-displayInline",
+                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                        "h1": "MuiTypography-h1",
+                                        "h2": "MuiTypography-h2",
+                                        "h3": "MuiTypography-h3",
+                                        "h4": "MuiTypography-h4",
+                                        "h5": "MuiTypography-h5",
+                                        "h6": "MuiTypography-h6",
+                                        "noWrap": "MuiTypography-noWrap",
+                                        "overline": "MuiTypography-overline",
+                                        "paragraph": "MuiTypography-paragraph",
+                                        "root": "MuiTypography-root",
+                                        "srOnly": "MuiTypography-srOnly",
+                                        "subtitle1": "MuiTypography-subtitle1",
+                                        "subtitle2": "MuiTypography-subtitle2",
+                                      }
+                                    }
+                                    component="span"
+                                    display="block"
+                                    variant="body1"
+                                  >
+                                    <span
+                                      className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                                    >
+                                      openlattice-logo.svg
+                                    </span>
+                                  </ForwardRef(Typography)>
+                                </ForwardRef(WithStyles)>
+                                <ForwardRef(WithStyles)
+                                  className="MuiListItemText-secondary"
+                                  color="textSecondary"
+                                  display="block"
+                                  variant="body2"
+                                >
+                                  <ForwardRef(Typography)
+                                    className="MuiListItemText-secondary"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTypography-alignCenter",
+                                        "alignJustify": "MuiTypography-alignJustify",
+                                        "alignLeft": "MuiTypography-alignLeft",
+                                        "alignRight": "MuiTypography-alignRight",
+                                        "body1": "MuiTypography-body1",
+                                        "body2": "MuiTypography-body2",
+                                        "button": "MuiTypography-button",
+                                        "caption": "MuiTypography-caption",
+                                        "colorError": "MuiTypography-colorError",
+                                        "colorInherit": "MuiTypography-colorInherit",
+                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                        "displayBlock": "MuiTypography-displayBlock",
+                                        "displayInline": "MuiTypography-displayInline",
+                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                        "h1": "MuiTypography-h1",
+                                        "h2": "MuiTypography-h2",
+                                        "h3": "MuiTypography-h3",
+                                        "h4": "MuiTypography-h4",
+                                        "h5": "MuiTypography-h5",
+                                        "h6": "MuiTypography-h6",
+                                        "noWrap": "MuiTypography-noWrap",
+                                        "overline": "MuiTypography-overline",
+                                        "paragraph": "MuiTypography-paragraph",
+                                        "root": "MuiTypography-root",
+                                        "srOnly": "MuiTypography-srOnly",
+                                        "subtitle1": "MuiTypography-subtitle1",
+                                        "subtitle2": "MuiTypography-subtitle2",
+                                      }
+                                    }
+                                    color="textSecondary"
+                                    display="block"
+                                    variant="body2"
+                                  >
+                                    <p
+                                      className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                                    >
+                                      <SecondaryText
+                                        date="1/1/2021"
+                                        tag="Other"
+                                      >
+                                        1/1/2021
+                                        <styled.span
+                                          mode="secondary"
+                                        >
+                                          <span
+                                            className="sc-pVTma inPcgW"
+                                            mode="secondary"
+                                          >
+                                            Other
+                                          </span>
+                                        </styled.span>
+                                      </SecondaryText>
+                                    </p>
+                                  </ForwardRef(Typography)>
+                                </ForwardRef(WithStyles)>
+                              </div>
+                            </ForwardRef(ListItemText)>
+                          </ForwardRef(WithStyles)>
+                        </div>
+                      </styled__ItemTextWrapper>
+                    </div>
+                    <ForwardRef(WithStyles)
+                      key=".2"
+                    >
+                      <ForwardRef(ListItemSecondaryAction)
+                        classes={
+                          Object {
+                            "root": "MuiListItemSecondaryAction-root",
+                          }
+                        }
+                      >
+                        <div
+                          className="MuiListItemSecondaryAction-root"
+                        >
+                          <ForwardRef
+                            aria-label="Edit Tag"
+                            onClick={[Function]}
+                            title="Edit Tag"
+                          >
+                            <IconButton
+                              aria-label="Edit Tag"
+                              forwardRef={null}
+                              onClick={[Function]}
+                              title="Edit Tag"
+                            >
+                              <ForwardRef(WithStyles)
+                                aria-label="Edit Tag"
+                                className=""
+                                color="default"
+                                disabled={false}
+                                onClick={[Function]}
+                                title="Edit Tag"
+                              >
+                                <ForwardRef(IconButton)
+                                  aria-label="Edit Tag"
+                                  className=""
+                                  classes={
+                                    Object {
+                                      "colorInherit": "MuiIconButton-colorInherit",
+                                      "colorPrimary": "MuiIconButton-colorPrimary",
+                                      "colorSecondary": "MuiIconButton-colorSecondary",
+                                      "disabled": "Mui-disabled",
+                                      "edgeEnd": "MuiIconButton-edgeEnd",
+                                      "edgeStart": "MuiIconButton-edgeStart",
+                                      "label": "MuiIconButton-label",
+                                      "root": "MuiIconButton-root",
+                                      "sizeSmall": "MuiIconButton-sizeSmall",
+                                    }
+                                  }
+                                  color="default"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  title="Edit Tag"
+                                >
+                                  <ForwardRef(WithStyles)
+                                    aria-label="Edit Tag"
+                                    centerRipple={true}
+                                    className="MuiIconButton-root"
+                                    disabled={false}
+                                    focusRipple={true}
+                                    onClick={[Function]}
+                                    title="Edit Tag"
+                                  >
+                                    <ForwardRef(ButtonBase)
+                                      aria-label="Edit Tag"
+                                      centerRipple={true}
+                                      className="MuiIconButton-root"
+                                      classes={
+                                        Object {
+                                          "disabled": "Mui-disabled",
+                                          "focusVisible": "Mui-focusVisible",
+                                          "root": "MuiButtonBase-root",
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusRipple={true}
+                                      onClick={[Function]}
+                                      title="Edit Tag"
+                                    >
+                                      <button
+                                        aria-label="Edit Tag"
+                                        className="MuiButtonBase-root MuiIconButton-root"
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onDragLeave={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseUp={[Function]}
+                                        onTouchEnd={[Function]}
+                                        onTouchMove={[Function]}
+                                        onTouchStart={[Function]}
+                                        tabIndex={0}
+                                        title="Edit Tag"
+                                        type="button"
+                                      >
+                                        <span
+                                          className="MuiIconButton-label"
+                                        >
+                                          <styled.div
+                                            isLoading={false}
+                                          >
+                                            <div
+                                              className="sc-jrQzUz kZKQay"
+                                            >
+                                              <FontAwesomeIcon
+                                                border={false}
+                                                className=""
+                                                fixedWidth={true}
+                                                flip={null}
+                                                icon={
+                                                  Object {
+                                                    "icon": Array [
+                                                      512,
+                                                      512,
+                                                      Array [],
+                                                      "f304",
+                                                      "M493.26 56.26l-37.51-37.51C443.25 6.25 426.87 0 410.49 0s-32.76 6.25-45.25 18.74l-74.49 74.49L256 127.98 12.85 371.12.15 485.34C-1.45 499.72 9.88 512 23.95 512c.89 0 1.79-.05 2.69-.15l114.14-12.61L384.02 256l34.74-34.74 74.49-74.49c25-25 25-65.52.01-90.51zM118.75 453.39l-67.58 7.46 7.53-67.69 231.24-231.24 31.02-31.02 60.14 60.14-31.02 31.02-231.33 231.33zm340.56-340.57l-44.28 44.28-60.13-60.14 44.28-44.28c4.08-4.08 8.84-4.69 11.31-4.69s7.24.61 11.31 4.69l37.51 37.51c6.24 6.25 6.24 16.4 0 22.63z",
+                                                    ],
+                                                    "iconName": "pen",
+                                                    "prefix": "far",
+                                                  }
+                                                }
+                                                inverse={false}
+                                                listItem={false}
+                                                mask={null}
+                                                pull={null}
+                                                pulse={false}
+                                                rotation={null}
+                                                size={null}
+                                                spin={false}
+                                                swapOpacity={false}
+                                                symbol={false}
+                                                title=""
+                                                transform={null}
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  className="svg-inline--fa fa-pen fa-w-16 fa-fw "
+                                                  data-icon="pen"
+                                                  data-prefix="far"
+                                                  focusable="false"
+                                                  role="img"
+                                                  style={Object {}}
+                                                  viewBox="0 0 512 512"
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    d="M493.26 56.26l-37.51-37.51C443.25 6.25 426.87 0 410.49 0s-32.76 6.25-45.25 18.74l-74.49 74.49L256 127.98 12.85 371.12.15 485.34C-1.45 499.72 9.88 512 23.95 512c.89 0 1.79-.05 2.69-.15l114.14-12.61L384.02 256l34.74-34.74 74.49-74.49c25-25 25-65.52.01-90.51zM118.75 453.39l-67.58 7.46 7.53-67.69 231.24-231.24 31.02-31.02 60.14 60.14-31.02 31.02-231.33 231.33zm340.56-340.57l-44.28 44.28-60.13-60.14 44.28-44.28c4.08-4.08 8.84-4.69 11.31-4.69s7.24.61 11.31 4.69l37.51 37.51c6.24 6.25 6.24 16.4 0 22.63z"
+                                                    fill="currentColor"
+                                                    style={Object {}}
+                                                  />
+                                                </svg>
+                                              </FontAwesomeIcon>
+                                            </div>
+                                          </styled.div>
+                                        </span>
+                                        <ForwardRef(WithStyles)
+                                          center={true}
+                                        >
+                                          <ForwardRef(TouchRipple)
+                                            center={true}
+                                            classes={
+                                              Object {
+                                                "child": "MuiTouchRipple-child",
+                                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                                "ripple": "MuiTouchRipple-ripple",
+                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                "root": "MuiTouchRipple-root",
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              className="MuiTouchRipple-root"
+                                            >
+                                              <TransitionGroup
+                                                childFactory={[Function]}
+                                                component={null}
+                                                exit={true}
+                                              />
+                                            </span>
+                                          </ForwardRef(TouchRipple)>
+                                        </ForwardRef(WithStyles)>
+                                      </button>
+                                    </ForwardRef(ButtonBase)>
+                                  </ForwardRef(WithStyles)>
+                                </ForwardRef(IconButton)>
+                              </ForwardRef(WithStyles)>
+                            </IconButton>
+                          </ForwardRef>
+                          <a
+                            aria-label="Download"
+                            download={true}
+                            href="https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg"
+                            rel="noreferrer"
+                            target="_blank"
+                            title="Download"
+                          >
+                            <ForwardRef>
+                              <IconButton
+                                forwardRef={null}
+                              >
+                                <ForwardRef(WithStyles)
+                                  className=""
+                                  color="default"
+                                  disabled={false}
+                                >
+                                  <ForwardRef(IconButton)
+                                    className=""
+                                    classes={
+                                      Object {
+                                        "colorInherit": "MuiIconButton-colorInherit",
+                                        "colorPrimary": "MuiIconButton-colorPrimary",
+                                        "colorSecondary": "MuiIconButton-colorSecondary",
+                                        "disabled": "Mui-disabled",
+                                        "edgeEnd": "MuiIconButton-edgeEnd",
+                                        "edgeStart": "MuiIconButton-edgeStart",
+                                        "label": "MuiIconButton-label",
+                                        "root": "MuiIconButton-root",
+                                        "sizeSmall": "MuiIconButton-sizeSmall",
+                                      }
+                                    }
+                                    color="default"
+                                    disabled={false}
+                                  >
+                                    <ForwardRef(WithStyles)
+                                      centerRipple={true}
+                                      className="MuiIconButton-root"
+                                      disabled={false}
+                                      focusRipple={true}
+                                    >
+                                      <ForwardRef(ButtonBase)
+                                        centerRipple={true}
+                                        className="MuiIconButton-root"
+                                        classes={
+                                          Object {
+                                            "disabled": "Mui-disabled",
+                                            "focusVisible": "Mui-focusVisible",
+                                            "root": "MuiButtonBase-root",
+                                          }
+                                        }
+                                        disabled={false}
+                                        focusRipple={true}
+                                      >
+                                        <button
+                                          className="MuiButtonBase-root MuiIconButton-root"
+                                          disabled={false}
+                                          onBlur={[Function]}
+                                          onDragLeave={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          onMouseLeave={[Function]}
+                                          onMouseUp={[Function]}
+                                          onTouchEnd={[Function]}
+                                          onTouchMove={[Function]}
+                                          onTouchStart={[Function]}
+                                          tabIndex={0}
+                                          type="button"
+                                        >
+                                          <span
+                                            className="MuiIconButton-label"
+                                          >
+                                            <styled.div
+                                              isLoading={false}
+                                            >
+                                              <div
+                                                className="sc-jrQzUz kZKQay"
+                                              >
+                                                <FontAwesomeIcon
+                                                  border={false}
+                                                  className=""
+                                                  fixedWidth={true}
+                                                  flip={null}
+                                                  icon={
+                                                    Object {
+                                                      "icon": Array [
+                                                        576,
+                                                        512,
+                                                        Array [],
+                                                        "f019",
+                                                        "M528 288h-92.1l46.1-46.1c30.1-30.1 8.8-81.9-33.9-81.9h-64V48c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v112h-64c-42.6 0-64.2 51.7-33.9 81.9l46.1 46.1H48c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V336c0-26.5-21.5-48-48-48zm-400-80h112V48h96v160h112L288 368 128 208zm400 256H48V336h140.1l65.9 65.9c18.8 18.8 49.1 18.7 67.9 0l65.9-65.9H528v128zm-88-64c0-13.3 10.7-24 24-24s24 10.7 24 24-10.7 24-24 24-24-10.7-24-24z",
+                                                      ],
+                                                      "iconName": "download",
+                                                      "prefix": "far",
+                                                    }
+                                                  }
+                                                  inverse={false}
+                                                  listItem={false}
+                                                  mask={null}
+                                                  pull={null}
+                                                  pulse={false}
+                                                  rotation={null}
+                                                  size={null}
+                                                  spin={false}
+                                                  swapOpacity={false}
+                                                  symbol={false}
+                                                  title=""
+                                                  transform={null}
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    className="svg-inline--fa fa-download fa-w-18 fa-fw "
+                                                    data-icon="download"
+                                                    data-prefix="far"
+                                                    focusable="false"
+                                                    role="img"
+                                                    style={Object {}}
+                                                    viewBox="0 0 576 512"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                  >
+                                                    <path
+                                                      d="M528 288h-92.1l46.1-46.1c30.1-30.1 8.8-81.9-33.9-81.9h-64V48c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v112h-64c-42.6 0-64.2 51.7-33.9 81.9l46.1 46.1H48c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V336c0-26.5-21.5-48-48-48zm-400-80h112V48h96v160h112L288 368 128 208zm400 256H48V336h140.1l65.9 65.9c18.8 18.8 49.1 18.7 67.9 0l65.9-65.9H528v128zm-88-64c0-13.3 10.7-24 24-24s24 10.7 24 24-10.7 24-24 24-24-10.7-24-24z"
+                                                      fill="currentColor"
+                                                      style={Object {}}
+                                                    />
+                                                  </svg>
+                                                </FontAwesomeIcon>
+                                              </div>
+                                            </styled.div>
+                                          </span>
+                                          <ForwardRef(WithStyles)
+                                            center={true}
+                                          >
+                                            <ForwardRef(TouchRipple)
+                                              center={true}
+                                              classes={
+                                                Object {
+                                                  "child": "MuiTouchRipple-child",
+                                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                                  "ripple": "MuiTouchRipple-ripple",
+                                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                  "root": "MuiTouchRipple-root",
+                                                }
+                                              }
+                                            >
+                                              <span
+                                                className="MuiTouchRipple-root"
+                                              >
+                                                <TransitionGroup
+                                                  childFactory={[Function]}
+                                                  component={null}
+                                                  exit={true}
+                                                />
+                                              </span>
+                                            </ForwardRef(TouchRipple)>
+                                          </ForwardRef(WithStyles)>
+                                        </button>
+                                      </ForwardRef(ButtonBase)>
+                                    </ForwardRef(WithStyles)>
+                                  </ForwardRef(IconButton)>
+                                </ForwardRef(WithStyles)>
+                              </IconButton>
+                            </ForwardRef>
+                          </a>
+                          <ForwardRef
+                            aria-label="Delete"
+                            onClick={[Function]}
+                            title="Delete"
+                          >
+                            <IconButton
+                              aria-label="Delete"
+                              forwardRef={null}
+                              onClick={[Function]}
+                              title="Delete"
+                            >
+                              <ForwardRef(WithStyles)
+                                aria-label="Delete"
+                                className=""
+                                color="default"
+                                disabled={false}
+                                onClick={[Function]}
+                                title="Delete"
+                              >
+                                <ForwardRef(IconButton)
+                                  aria-label="Delete"
+                                  className=""
+                                  classes={
+                                    Object {
+                                      "colorInherit": "MuiIconButton-colorInherit",
+                                      "colorPrimary": "MuiIconButton-colorPrimary",
+                                      "colorSecondary": "MuiIconButton-colorSecondary",
+                                      "disabled": "Mui-disabled",
+                                      "edgeEnd": "MuiIconButton-edgeEnd",
+                                      "edgeStart": "MuiIconButton-edgeStart",
+                                      "label": "MuiIconButton-label",
+                                      "root": "MuiIconButton-root",
+                                      "sizeSmall": "MuiIconButton-sizeSmall",
+                                    }
+                                  }
+                                  color="default"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  title="Delete"
+                                >
+                                  <ForwardRef(WithStyles)
+                                    aria-label="Delete"
+                                    centerRipple={true}
+                                    className="MuiIconButton-root"
+                                    disabled={false}
+                                    focusRipple={true}
+                                    onClick={[Function]}
+                                    title="Delete"
+                                  >
+                                    <ForwardRef(ButtonBase)
+                                      aria-label="Delete"
+                                      centerRipple={true}
+                                      className="MuiIconButton-root"
+                                      classes={
+                                        Object {
+                                          "disabled": "Mui-disabled",
+                                          "focusVisible": "Mui-focusVisible",
+                                          "root": "MuiButtonBase-root",
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusRipple={true}
+                                      onClick={[Function]}
+                                      title="Delete"
+                                    >
+                                      <button
+                                        aria-label="Delete"
+                                        className="MuiButtonBase-root MuiIconButton-root"
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onDragLeave={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseUp={[Function]}
+                                        onTouchEnd={[Function]}
+                                        onTouchMove={[Function]}
+                                        onTouchStart={[Function]}
+                                        tabIndex={0}
+                                        title="Delete"
+                                        type="button"
+                                      >
+                                        <span
+                                          className="MuiIconButton-label"
+                                        >
+                                          <styled.div
+                                            isLoading={false}
+                                          >
+                                            <div
+                                              className="sc-jrQzUz kZKQay"
+                                            >
+                                              <FontAwesomeIcon
+                                                border={false}
+                                                className=""
+                                                fixedWidth={true}
+                                                flip={null}
+                                                icon={
+                                                  Object {
+                                                    "icon": Array [
+                                                      448,
+                                                      512,
+                                                      Array [],
+                                                      "f2ed",
+                                                      "M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z",
+                                                    ],
+                                                    "iconName": "trash-alt",
+                                                    "prefix": "far",
+                                                  }
+                                                }
+                                                inverse={false}
+                                                listItem={false}
+                                                mask={null}
+                                                pull={null}
+                                                pulse={false}
+                                                rotation={null}
+                                                size={null}
+                                                spin={false}
+                                                swapOpacity={false}
+                                                symbol={false}
+                                                title=""
+                                                transform={null}
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  className="svg-inline--fa fa-trash-alt fa-w-14 fa-fw "
+                                                  data-icon="trash-alt"
+                                                  data-prefix="far"
+                                                  focusable="false"
+                                                  role="img"
+                                                  style={Object {}}
+                                                  viewBox="0 0 448 512"
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"
+                                                    fill="currentColor"
+                                                    style={Object {}}
+                                                  />
+                                                </svg>
+                                              </FontAwesomeIcon>
+                                            </div>
+                                          </styled.div>
+                                        </span>
+                                        <ForwardRef(WithStyles)
+                                          center={true}
+                                        >
+                                          <ForwardRef(TouchRipple)
+                                            center={true}
+                                            classes={
+                                              Object {
+                                                "child": "MuiTouchRipple-child",
+                                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                                "ripple": "MuiTouchRipple-ripple",
+                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                "root": "MuiTouchRipple-root",
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              className="MuiTouchRipple-root"
+                                            >
+                                              <TransitionGroup
+                                                childFactory={[Function]}
+                                                component={null}
+                                                exit={true}
+                                              />
+                                            </span>
+                                          </ForwardRef(TouchRipple)>
+                                        </ForwardRef(WithStyles)>
+                                      </button>
+                                    </ForwardRef(ButtonBase)>
+                                  </ForwardRef(WithStyles)>
+                                </ForwardRef(IconButton)>
+                              </ForwardRef(WithStyles)>
+                            </IconButton>
+                          </ForwardRef>
+                        </div>
+                      </ForwardRef(ListItemSecondaryAction)>
+                    </ForwardRef(WithStyles)>
+                  </li>
+                </ForwardRef(ListItem)>
+              </ForwardRef(WithStyles)>
+            </AttachmentItem>
+          </Router>
+        </ConnectedRouter>
+      </ConnectedRouterWithContext>
+    </Connect(ConnectedRouterWithContext)>
+  </Provider>
+</ModuleProvider>
+`;
