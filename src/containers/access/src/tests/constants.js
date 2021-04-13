@@ -1,16 +1,18 @@
 import { fromJS } from 'immutable';
-import { DateTime } from 'luxon';
 /* eslint-disable import/no-extraneous-dependencies */
 import { NIL } from 'uuid';
 
 import { DOCX_MIME_TYPE, PDF_MIME_TYPE } from '../../../../constants/FileTypeConstants';
+
+// use static date time for test snapshots
+const MOCK_UPLOAD_DATE = '2021-01-01T00:00:00.000-08:00';
 
 const MOCK_FILE = {
   'ol.filedata': [
     'https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg'
   ],
   'ol.datetime': [
-    DateTime.utc(2021).toISO()
+    MOCK_UPLOAD_DATE
   ],
   'ol.type': [
     'image/jpeg'
@@ -31,7 +33,7 @@ const MOCK_PDF_FILE = {
     'https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg'
   ],
   'ol.datetime': [
-    DateTime.utc(2021).toISO()
+    MOCK_UPLOAD_DATE
   ],
   'ol.type': [
     PDF_MIME_TYPE
@@ -52,7 +54,7 @@ const MOCK_DOCX_FILE = {
     'https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg'
   ],
   'ol.datetime': [
-    DateTime.utc(2021).toISO()
+    MOCK_UPLOAD_DATE
   ],
   'ol.type': [
     DOCX_MIME_TYPE
