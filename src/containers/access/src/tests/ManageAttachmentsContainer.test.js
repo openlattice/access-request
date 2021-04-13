@@ -1,9 +1,10 @@
 import toJson from 'enzyme-to-json';
 import { mount } from 'enzyme';
-import { Map, fromJS } from 'immutable';
+import { Map } from 'immutable';
 import { List } from 'lattice-ui-kit';
-import { DateTime } from 'luxon';
 import { NIL } from 'uuid';
+
+import { MOCK_ATTACHMENTS } from './constants';
 
 import ManageAttachmentsContainer from '../ManageAttachmentsContainer';
 import ModuleProvider from '../../../../core/provider/ModuleProvider';
@@ -13,31 +14,6 @@ import { DELETE_ATTACHMENTS, GET_ATTACHMENTS } from '../actions';
 const mockDispatch = jest.fn();
 const mockUseDispatch = jest.fn();
 mockUseDispatch.mockReturnValue(mockDispatch);
-
-const MOCK_ATTACHMENTS = fromJS(
-  {
-    [NIL]: {
-      'ol.filedata': [
-        'https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg'
-      ],
-      'ol.datetime': [
-        DateTime.local(2021).toISO()
-      ],
-      'ol.type': [
-        'image/jpeg'
-      ],
-      'ol.name': [
-        'openlattice-logo.svg'
-      ],
-      'ol.label': [
-        'Other'
-      ],
-      'openlattice.@id': [
-        NIL
-      ]
-    }
-  }
-);
 
 jest.mock('../../../../core/redux', () => {
   const redux = jest.requireActual('../../../../core/redux');
