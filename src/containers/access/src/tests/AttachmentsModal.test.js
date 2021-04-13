@@ -77,7 +77,8 @@ describe('AttachmentsModal', () => {
     );
 
     const attachmentsBodyWrapper = wrapper.find(AttachmentsBody);
-    expect(attachmentsBodyWrapper.prop('accessRequestId')).toEqual(NIL);
+    const modalWrapper = wrapper.find(AttachmentsModal);
+    expect(attachmentsBodyWrapper.prop('accessRequestId')).toEqual(modalWrapper.prop('accessRequestId'));
 
   });
 

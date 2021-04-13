@@ -89,6 +89,35 @@ describe('AttachmentsBody', () => {
     expect(uploadWrapper).toHaveLength(1);
   });
 
+  test('pass accessRequestId to ManageAttachments', () => {
+    const wrapper = mount(
+      <ModuleProvider>
+        <AttachmentsBody accessRequestId={NIL} />
+      </ModuleProvider>
+    );
+
+    const bodyWrapper = wrapper.find(AttachmentsBody);
+    const manageWrapper = wrapper.find(ManageAttachmentsContainer);
+
+    expect(bodyWrapper.prop('accessRequestId')).toEqual(manageWrapper.prop('accessRequestId'));
+  });
+
+  test('pass accessRequestId to UploadAttachments', () => {
+    const wrapper = mount(
+      <ModuleProvider>
+        <AttachmentsBody accessRequestId={NIL} />
+      </ModuleProvider>
+    );
+
+    const tabWrapper = wrapper.find(Tab);
+    tabWrapper.at(1).simulate('click');
+
+    const bodyWrapper = wrapper.find(AttachmentsBody);
+    const uploadWrapper = wrapper.find(UploadAttachmentsContainer);
+
+    expect(bodyWrapper.prop('accessRequestId')).toEqual(uploadWrapper.prop('accessRequestId'));
+  });
+
   test('show ManageAttachmentsContainer on upload success', () => {
     const wrapper = mount(
       <ModuleProvider>
