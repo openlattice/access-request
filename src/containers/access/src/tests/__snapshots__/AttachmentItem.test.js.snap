@@ -197,7 +197,7 @@ exports[`AttachmentItem match snapshot 1`] = `
               file={
                 Object {
                   "ol.datetime": Array [
-                    "2021-01-01T00:00:00.000-08:00",
+                    "2021-01-01T00:00:00.000Z",
                   ],
                   "ol.filedata": Array [
                     "https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg",
@@ -282,7 +282,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                             primary="openlattice-logo.svg"
                             secondary={
                               <SecondaryText
-                                date="1/1/2021"
+                                date="12/31/2020"
                                 tag="Other"
                               />
                             }
@@ -301,7 +301,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                               primary="openlattice-logo.svg"
                               secondary={
                                 <SecondaryText
-                                  date="1/1/2021"
+                                  date="12/31/2020"
                                   tag="Other"
                                 />
                               }
@@ -412,10 +412,10 @@ exports[`AttachmentItem match snapshot 1`] = `
                                       className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                     >
                                       <SecondaryText
-                                        date="1/1/2021"
+                                        date="12/31/2020"
                                         tag="Other"
                                       >
-                                        1/1/2021
+                                        12/31/2020
                                         <styled.span
                                           mode="secondary"
                                         >

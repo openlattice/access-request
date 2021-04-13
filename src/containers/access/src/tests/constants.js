@@ -10,7 +10,7 @@ const MOCK_FILE = {
     'https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg'
   ],
   'ol.datetime': [
-    DateTime.local(2021).toISO()
+    DateTime.utc(2021).toISO()
   ],
   'ol.type': [
     'image/jpeg'
@@ -31,7 +31,7 @@ const MOCK_PDF_FILE = {
     'https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg'
   ],
   'ol.datetime': [
-    DateTime.local(2021).toISO()
+    DateTime.utc(2021).toISO()
   ],
   'ol.type': [
     PDF_MIME_TYPE
@@ -52,7 +52,7 @@ const MOCK_DOCX_FILE = {
     'https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg'
   ],
   'ol.datetime': [
-    DateTime.local(2021).toISO()
+    DateTime.utc(2021).toISO()
   ],
   'ol.type': [
     DOCX_MIME_TYPE
