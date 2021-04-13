@@ -15,18 +15,10 @@ const mockUseDispatch = jest.fn();
 mockUseDispatch.mockReturnValue(mockDispatch);
 
 jest.mock('../../../../core/redux', () => {
-  const {
-    useSelector,
-    useStore,
-    moduleStore,
-    moduleContext,
-  } = jest.requireActual('../../../../core/redux');
+  const redux = jest.requireActual('../../../../core/redux');
   return {
-    moduleContext,
-    moduleStore,
+    ...redux,
     useDispatch: () => mockUseDispatch(),
-    useSelector,
-    useStore,
   };
 });
 
@@ -136,21 +128,6 @@ describe('AttachmentsBody', () => {
     expect(uploadWrapper).toHaveLength(1);
     const manageWrapper = wrapper.find(ManageAttachmentsContainer);
     expect(manageWrapper).toHaveLength(0);
-  });
-
-  test('dispatch GET_ATTACHMENTS with accessRequestId', () => {
-    const wrapper = mount(
-      <ModuleProvider>
-        <AttachmentsBody accessRequestId={NIL} />
-      </ModuleProvider>
-    );
-
-    const attachmentsBodyWrapper = wrapper.find(AttachmentsBody);
-    expect(attachmentsBodyWrapper.prop('accessRequestId')).toEqual(NIL);
-    expect(mockDispatch).toHaveBeenCalledTimes(1);
-    expect(mockDispatch.mock.calls[0][0]).toHaveProperty('id');
-    expect(mockDispatch.mock.calls[0][0]).toHaveProperty('type', GET_ATTACHMENTS);
-    expect(mockDispatch.mock.calls[0][0]).toHaveProperty('value', NIL);
   });
 
 });
