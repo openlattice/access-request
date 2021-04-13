@@ -8,7 +8,6 @@ import AttachmentsBody from '../AttachmentsBody';
 import ManageAttachmentsContainer from '../ManageAttachmentsContainer';
 import ModuleProvider from '../../../../core/provider/ModuleProvider';
 import UploadAttachmentsContainer from '../UploadAttachmentsContainer';
-import { GET_ATTACHMENTS } from '../actions';
 
 const mockDispatch = jest.fn();
 const mockUseDispatch = jest.fn();
