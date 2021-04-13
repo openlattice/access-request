@@ -8,7 +8,7 @@ import { NIL } from 'uuid';
 import ManageAttachmentsContainer from '../ManageAttachmentsContainer';
 import ModuleProvider from '../../../../core/provider/ModuleProvider';
 import { selectAttachments } from '../../../../core/redux/selectors';
-import { GET_ATTACHMENTS } from '../actions';
+import { DELETE_ATTACHMENTS, GET_ATTACHMENTS } from '../actions';
 
 const mockDispatch = jest.fn();
 const mockUseDispatch = jest.fn();
@@ -90,7 +90,7 @@ describe('ManageAttachmentsContainer', () => {
     expect(wrapper.find(List).children()).toHaveLength(1);
   });
 
-  test('dispatch GET_ATTACHMENTS with accessRequestId', () => {
+  test('dispatch GET_ATTACHMENTS with accessRequestId on mount', () => {
     const wrapper = mount(
       <ModuleProvider>
         <ManageAttachmentsContainer accessRequestId={NIL} />
@@ -103,6 +103,22 @@ describe('ManageAttachmentsContainer', () => {
     expect(mockDispatch.mock.calls[0][0]).toHaveProperty('id');
     expect(mockDispatch.mock.calls[0][0]).toHaveProperty('type', GET_ATTACHMENTS);
     expect(mockDispatch.mock.calls[0][0]).toHaveProperty('value', NIL);
+  });
+
+  test('dispatch DELETE_ATTACHMENTS when onDelete is called', () => {
+    selectAttachments.mockImplementation(() => () => MOCK_ATTACHMENTS);
+    const wrapper = mount(
+      <ModuleProvider>
+        <ManageAttachmentsContainer accessRequestId={NIL} />
+      </ModuleProvider>
+    );
+
+    const deleteButtonWrapper = wrapper.find('button[aria-label="Delete"]');
+    expect(deleteButtonWrapper).toHaveLength(1);
+    deleteButtonWrapper.simulate('click');
+    expect(mockDispatch.mock.calls[1][0]).toHaveProperty('id');
+    expect(mockDispatch.mock.calls[1][0]).toHaveProperty('type', DELETE_ATTACHMENTS);
+    expect(mockDispatch.mock.calls[1][0]).toHaveProperty('value', [NIL]);
   });
 
 });
