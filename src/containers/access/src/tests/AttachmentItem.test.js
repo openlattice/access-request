@@ -103,18 +103,41 @@ describe('AttachmentItem', () => {
 
     wrapper.find('button[aria-label="Edit Tag"]').simulate('click');
     const selectTagsWrapper = wrapper.find(SelectTags);
+    const tag = 'Other';
     act(() => {
-      selectTagsWrapper.prop('onTagChange')(NIL, 'Other');
+      selectTagsWrapper.prop('onTagChange')(NIL, tag);
     });
     expect(mockDispatch).toHaveBeenCalledTimes(1);
     expect(mockDispatch.mock.calls[0][0]).toHaveProperty('id');
     expect(mockDispatch.mock.calls[0][0]).toHaveProperty('type', UPDATE_ATTACHMENT_TAG);
     expect(mockDispatch.mock.calls[0][0]).toHaveProperty('value', {
       entityKeyId: NIL,
-      tag: 'Other'
+      tag
     });
     wrapper.update();
     expect(wrapper.find(SelectTags)).toHaveLength(0);
+  });
+
+  test('dispatch UPDATE_ATTACHMENT_TAG with empty string as default', () => {
+    const wrapper = mount(
+      <ModuleProvider>
+        <AttachmentItem divider file={MOCK_FILE} onDelete={mockOnDelete} />
+      </ModuleProvider>
+    );
+
+    wrapper.find('button[aria-label="Edit Tag"]').simulate('click');
+    const selectTagsWrapper = wrapper.find(SelectTags);
+    const tag = undefined;
+    act(() => {
+      selectTagsWrapper.prop('onTagChange')(NIL, tag);
+    });
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch.mock.calls[0][0]).toHaveProperty('id');
+    expect(mockDispatch.mock.calls[0][0]).toHaveProperty('type', UPDATE_ATTACHMENT_TAG);
+    expect(mockDispatch.mock.calls[0][0]).toHaveProperty('value', {
+      entityKeyId: NIL,
+      tag: ''
+    });
   });
 
 });
