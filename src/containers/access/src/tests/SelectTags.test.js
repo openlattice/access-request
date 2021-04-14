@@ -7,7 +7,7 @@ import ModuleProvider from '../../../../core/provider/ModuleProvider';
 import SelectTags from '../SelectTags';
 
 describe('SelectTags', () => {
-  const mockOnDelete = jest.fn();
+  const mockOnTagChange = jest.fn();
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -15,23 +15,23 @@ describe('SelectTags', () => {
   test('match snapshot', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <SelectTags index={NIL} onTagChange={mockOnDelete} value="Other" />
+        <SelectTags index={NIL} onTagChange={mockOnTagChange} value="Other" />
       </ModuleProvider>
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  test('invoke onDelete with fileId when clicked', () => {
+  test('invoke onTagChange for change events', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <SelectTags index={NIL} onTagChange={mockOnDelete} value="Other" />
+        <SelectTags index={NIL} onTagChange={mockOnTagChange} value="Other" />
       </ModuleProvider>
     );
     const value = 'test';
     wrapper.find(Creatable).prop('onChange')(value);
-    expect(mockOnDelete).toHaveBeenCalledTimes(1);
-    expect(mockOnDelete).toHaveBeenCalledWith(NIL, value);
+    expect(mockOnTagChange).toHaveBeenCalledTimes(1);
+    expect(mockOnTagChange).toHaveBeenCalledWith(NIL, value);
   });
 
 });

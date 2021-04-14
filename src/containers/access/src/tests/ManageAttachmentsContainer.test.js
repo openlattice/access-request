@@ -4,7 +4,7 @@ import { Map } from 'immutable';
 import { List } from 'lattice-ui-kit';
 import { NIL } from 'uuid';
 
-import { MOCK_ATTACHMENTS, MOCK_FILE_ID } from './constants';
+import { MOCK_ATTACHMENTS, MOCK_FILE_ENTITY_ENTITY_ID } from './constants';
 
 import ManageAttachmentsContainer from '../ManageAttachmentsContainer';
 import ModuleProvider from '../../../../core/provider/ModuleProvider';
@@ -94,7 +94,7 @@ describe('ManageAttachmentsContainer', () => {
     deleteButtonWrapper.simulate('click');
     expect(mockDispatch.mock.calls[1][0]).toHaveProperty('id');
     expect(mockDispatch.mock.calls[1][0]).toHaveProperty('type', DELETE_ATTACHMENTS);
-    expect(mockDispatch.mock.calls[1][0]).toHaveProperty('value', [MOCK_FILE_ID]);
+    expect(mockDispatch.mock.calls[1][0]).toHaveProperty('value', [MOCK_FILE_ENTITY_ENTITY_ID]);
   });
 
 });

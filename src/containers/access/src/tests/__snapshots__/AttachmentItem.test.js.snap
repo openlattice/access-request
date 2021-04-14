@@ -200,7 +200,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                     "2021-01-01T00:00:00.000-08:00",
                   ],
                   "ol.filedata": Array [
-                    "https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg",
+                    "test",
                   ],
                   "ol.label": Array [
                     "Other",
@@ -261,11 +261,11 @@ exports[`AttachmentItem match snapshot 1`] = `
                             className="MuiListItemAvatar-root"
                           >
                             <AttachmentItem__ImagePreview
-                              src="https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg"
+                              src="test"
                             >
                               <img
                                 className="AttachmentItem__ImagePreview-olj6j0-0 eIAMMu"
-                                src="https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg"
+                                src="test"
                               />
                             </AttachmentItem__ImagePreview>
                           </div>
@@ -633,7 +633,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                           <a
                             aria-label="Download"
                             download={true}
-                            href="https://openlattice.com/orgs/static/assets/ol-icon.2e9841c7bafdc51236eb.svg"
+                            href="test"
                             rel="noreferrer"
                             target="_blank"
                             title="Download"
