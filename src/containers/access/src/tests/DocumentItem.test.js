@@ -6,21 +6,9 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { mount } from 'enzyme';
 
-import { MOCK_DOCX_FILE, MOCK_IMAGE_FILE, MOCK_PDF_FILE } from './constants';
+import { MOCK_DOCX_PAYLOAD, MOCK_IMAGE_PAYLOAD, MOCK_PDF_PAYLOAD } from './constants';
 
 import DocumentItem from '../DocumentItem';
-
-const mockDispatch = jest.fn();
-const mockUseDispatch = jest.fn();
-mockUseDispatch.mockReturnValue(mockDispatch);
-
-jest.mock('../../../../core/redux', () => {
-  const redux = jest.requireActual('../../../../core/redux');
-  return {
-    ...redux,
-    useDispatch: () => mockUseDispatch(),
-  };
-});
 
 describe('DocumentItem', () => {
   const mockOnDelete = jest.fn();
@@ -33,7 +21,7 @@ describe('DocumentItem', () => {
     const wrapper = mount(
       <DocumentItem
           divider
-          file={MOCK_IMAGE_FILE}
+          file={MOCK_IMAGE_PAYLOAD}
           index={0}
           onDelete={mockOnDelete}
           onTagChange={mockOnTagChange}
@@ -47,7 +35,7 @@ describe('DocumentItem', () => {
     const wrapper = mount(
       <DocumentItem
           divider
-          file={MOCK_DOCX_FILE}
+          file={MOCK_DOCX_PAYLOAD}
           index={0}
           onDelete={mockOnDelete}
           onTagChange={mockOnTagChange}
@@ -63,7 +51,7 @@ describe('DocumentItem', () => {
     const wrapper = mount(
       <DocumentItem
           divider
-          file={MOCK_DOCX_FILE}
+          file={MOCK_DOCX_PAYLOAD}
           index={0}
           onDelete={mockOnDelete}
           onTagChange={mockOnTagChange}
@@ -78,7 +66,7 @@ describe('DocumentItem', () => {
     const wrapper = mount(
       <DocumentItem
           divider
-          file={MOCK_PDF_FILE}
+          file={MOCK_PDF_PAYLOAD}
           index={0}
           onDelete={mockOnDelete}
           onTagChange={mockOnTagChange}
