@@ -24,7 +24,7 @@ const Template = (args) => {
 export const Live = Template.bind({});
 Live.args = {
   jwt: '123',
-  organizationId: '00000000-0000-0000-0000-000000000000',
+  organizationId: '1d5aa1f4-4d22-46a5-97cd-dcc6820e7ff8',
   match: {},
   root: '/'
 };
