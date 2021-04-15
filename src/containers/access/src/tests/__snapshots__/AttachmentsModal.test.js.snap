@@ -1,0 +1,1169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttachmentsModal match snapshot when closed 1`] = `
+<ModuleProvider>
+  <Provider
+    context={
+      Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": Object {
+          "$$typeof": Symbol(react.context),
+          "_calculateChangedBits": null,
+          "_context": [Circular],
+        },
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": Object {},
+        "_currentRenderer2": null,
+        "_currentValue": null,
+        "_currentValue2": null,
+        "_threadCount": 0,
+      }
+    }
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <Connect(ConnectedRouterWithContext)
+      context={
+        Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": Object {
+            "$$typeof": Symbol(react.context),
+            "_calculateChangedBits": null,
+            "_context": [Circular],
+          },
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": Object {},
+          "_currentRenderer2": null,
+          "_currentValue": null,
+          "_currentValue2": null,
+          "_threadCount": 0,
+        }
+      }
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <ConnectedRouterWithContext
+        context={
+          Object {
+            "$$typeof": Symbol(react.context),
+            "Consumer": Object {
+              "$$typeof": Symbol(react.context),
+              "_calculateChangedBits": null,
+              "_context": [Circular],
+            },
+            "Provider": Object {
+              "$$typeof": Symbol(react.provider),
+              "_context": [Circular],
+            },
+            "_calculateChangedBits": null,
+            "_currentRenderer": Object {},
+            "_currentRenderer2": null,
+            "_currentValue": null,
+            "_currentValue2": null,
+            "_threadCount": 0,
+          }
+        }
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        onLocationChanged={[Function]}
+      >
+        <ConnectedRouter
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": null,
+              "_currentValue2": null,
+              "_threadCount": 0,
+            }
+          }
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          onLocationChanged={[Function]}
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
+        >
+          <Router
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+          >
+            <AttachmentsModal
+              accessRequestId="00000000-0000-0000-0000-000000000000"
+            >
+              <Modal
+                shouldBeCentered={true}
+                shouldCloseOnEscape={true}
+                shouldCloseOnOutsideClick={true}
+                shouldStretchButtons={false}
+                textTitle="Attachments"
+                viewportScrolling={true}
+                withFooter={false}
+                withHeader={true}
+              >
+                <Overlay
+                  isScrollable={true}
+                  isVisible={false}
+                  onClose={[Function]}
+                  shouldCloseOnClick={true}
+                  transparent={false}
+                >
+                  <CSSTransition
+                    classNames="luk-fade"
+                    in={false}
+                    mountOnEnter={true}
+                    timeout={200}
+                    unmountOnExit={true}
+                  >
+                    <Transition
+                      appear={false}
+                      enter={true}
+                      exit={true}
+                      in={false}
+                      mountOnEnter={true}
+                      onEnter={[Function]}
+                      onEntered={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      onExiting={[Function]}
+                      timeout={200}
+                      unmountOnExit={true}
+                    />
+                  </CSSTransition>
+                </Overlay>
+              </Modal>
+            </AttachmentsModal>
+          </Router>
+        </ConnectedRouter>
+      </ConnectedRouterWithContext>
+    </Connect(ConnectedRouterWithContext)>
+  </Provider>
+</ModuleProvider>
+`;
+
+exports[`AttachmentsModal match snapshot when open 1`] = `
+<ModuleProvider>
+  <Provider
+    context={
+      Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": Object {
+          "$$typeof": Symbol(react.context),
+          "_calculateChangedBits": null,
+          "_context": [Circular],
+        },
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": Object {},
+        "_currentRenderer2": null,
+        "_currentValue": null,
+        "_currentValue2": null,
+        "_threadCount": 0,
+      }
+    }
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <Connect(ConnectedRouterWithContext)
+      context={
+        Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": Object {
+            "$$typeof": Symbol(react.context),
+            "_calculateChangedBits": null,
+            "_context": [Circular],
+          },
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": Object {},
+          "_currentRenderer2": null,
+          "_currentValue": null,
+          "_currentValue2": null,
+          "_threadCount": 0,
+        }
+      }
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <ConnectedRouterWithContext
+        context={
+          Object {
+            "$$typeof": Symbol(react.context),
+            "Consumer": Object {
+              "$$typeof": Symbol(react.context),
+              "_calculateChangedBits": null,
+              "_context": [Circular],
+            },
+            "Provider": Object {
+              "$$typeof": Symbol(react.provider),
+              "_context": [Circular],
+            },
+            "_calculateChangedBits": null,
+            "_currentRenderer": Object {},
+            "_currentRenderer2": null,
+            "_currentValue": null,
+            "_currentValue2": null,
+            "_threadCount": 0,
+          }
+        }
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        onLocationChanged={[Function]}
+      >
+        <ConnectedRouter
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": null,
+              "_currentValue2": null,
+              "_threadCount": 0,
+            }
+          }
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          onLocationChanged={[Function]}
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
+        >
+          <Router
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+          >
+            <AttachmentsModal
+              accessRequestId="00000000-0000-0000-0000-000000000000"
+              isVisible={true}
+            >
+              <Modal
+                isVisible={true}
+                shouldBeCentered={true}
+                shouldCloseOnEscape={true}
+                shouldCloseOnOutsideClick={true}
+                shouldStretchButtons={false}
+                textTitle="Attachments"
+                viewportScrolling={true}
+                withFooter={false}
+                withHeader={true}
+              >
+                <Overlay
+                  isScrollable={true}
+                  isVisible={true}
+                  onClose={[Function]}
+                  shouldCloseOnClick={true}
+                  transparent={false}
+                >
+                  <CSSTransition
+                    classNames="luk-fade"
+                    in={true}
+                    mountOnEnter={true}
+                    timeout={200}
+                    unmountOnExit={true}
+                  >
+                    <Transition
+                      appear={false}
+                      enter={true}
+                      exit={true}
+                      in={true}
+                      mountOnEnter={true}
+                      onEnter={[Function]}
+                      onEntered={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      onExiting={[Function]}
+                      timeout={200}
+                      unmountOnExit={true}
+                    >
+                      <Portal>
+                        <Portal
+                          containerInfo={
+                            <div
+                              lattice-portal-inner-container=""
+                            >
+                              <div
+                                class="sc-eCImvq glPGwC"
+                              >
+                                <div
+                                  class="sc-jRQAMF bkxjKC"
+                                >
+                                  <div
+                                    class="sc-ieebsP lbvPnu"
+                                  >
+                                    <div
+                                      class="sc-dJjZJu bdXRbJ"
+                                    >
+                                      <div
+                                        class="sc-hGPAah sc-fKVsgm kfxqxV bNUhwg"
+                                      >
+                                        <h1
+                                          class="sc-cxpRKc RDqKt"
+                                        >
+                                          Attachments
+                                        </h1>
+                                        <button
+                                          class="sc-llYToB kDRMhL"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            class="svg-inline--fa fa-times fa-w-10 fa-lg "
+                                            data-icon="times"
+                                            data-prefix="fal"
+                                            focusable="false"
+                                            role="img"
+                                            viewBox="0 0 320 512"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"
+                                              fill="currentColor"
+                                            />
+                                          </svg>
+                                        </button>
+                                      </div>
+                                      <div
+                                        class="sc-hGPAah sc-dlVyqM kfxqxV jyWcQC"
+                                      >
+                                        <div
+                                          class="styled__ModalBody-sc-1ycpsik-1 dRJUMe"
+                                        >
+                                          <div
+                                            class="MuiTabs-root"
+                                          >
+                                            <div
+                                              class="MuiTabs-scroller MuiTabs-fixed"
+                                              style="overflow: hidden;"
+                                            >
+                                              <div
+                                                class="MuiTabs-flexContainer"
+                                                role="tablist"
+                                              >
+                                                <button
+                                                  aria-selected="true"
+                                                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected"
+                                                  role="tab"
+                                                  tabindex="0"
+                                                  type="button"
+                                                >
+                                                  <span
+                                                    class="MuiTab-wrapper"
+                                                  >
+                                                    Manage
+                                                  </span>
+                                                  <span
+                                                    class="MuiTouchRipple-root"
+                                                  />
+                                                </button>
+                                                <button
+                                                  aria-selected="false"
+                                                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary"
+                                                  role="tab"
+                                                  tabindex="-1"
+                                                  type="button"
+                                                >
+                                                  <span
+                                                    class="MuiTab-wrapper"
+                                                  >
+                                                    Upload
+                                                  </span>
+                                                  <span
+                                                    class="MuiTouchRipple-root"
+                                                  />
+                                                </button>
+                                              </div>
+                                              <span
+                                                class="jss1 jss2 MuiTabs-indicator"
+                                                style="left: 0px; width: 0px;"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-controls="tabpanel-0"
+                                            aria-labelledby="tab-0"
+                                            id="tabpanel-0"
+                                            role="tabpanel"
+                                          >
+                                            <div
+                                              class="MuiBox-root jss5"
+                                            >
+                                              <ul
+                                                class="MuiList-root MuiList-padding"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-controls="tabpanel-1"
+                                            aria-labelledby="tab-1"
+                                            hidden=""
+                                            id="tabpanel-1"
+                                            role="tabpanel"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          }
+                        >
+                          <LockToggle
+                            accountForScrollbars={true}
+                            isActive={true}
+                          >
+                            <SheetProvider
+                              accountForScrollbars={true}
+                              isActive={true}
+                            >
+                              <TouchProvider
+                                accountForScrollbars={true}
+                                isActive={true}
+                              >
+                                <ScrollLock
+                                  accountForScrollbars={true}
+                                  isActive={true}
+                                >
+                                  <TouchScrollable>
+                                    <OverlayOuterContainer
+                                      transparent={false}
+                                    >
+                                      <div
+                                        className="sc-eCImvq glPGwC"
+                                      >
+                                        <OverlayInnerContainer
+                                          isScrollable={true}
+                                          onClick={[Function]}
+                                        >
+                                          <div
+                                            className="sc-jRQAMF bkxjKC"
+                                            onClick={[Function]}
+                                          >
+                                            <styled.div
+                                              onClick={[Function]}
+                                              viewportScrolling={true}
+                                            >
+                                              <div
+                                                className="sc-ieebsP lbvPnu"
+                                                onClick={[Function]}
+                                              >
+                                                <styled.div
+                                                  center={true}
+                                                  viewportScrolling={true}
+                                                >
+                                                  <div
+                                                    className="sc-dJjZJu bdXRbJ"
+                                                  >
+                                                    <ModalHeader
+                                                      onClickClose={[Function]}
+                                                      textTitle="Attachments"
+                                                      withHeader={true}
+                                                    >
+                                                      <Styled(styled.div)>
+                                                        <div
+                                                          className="sc-hGPAah sc-fKVsgm kfxqxV bNUhwg"
+                                                        >
+                                                          <styled.h1>
+                                                            <h1
+                                                              className="sc-cxpRKc RDqKt"
+                                                            >
+                                                              Attachments
+                                                            </h1>
+                                                          </styled.h1>
+                                                          <styled.button
+                                                            onClick={[Function]}
+                                                          >
+                                                            <button
+                                                              className="sc-llYToB kDRMhL"
+                                                              onClick={[Function]}
+                                                            >
+                                                              <FontAwesomeIcon
+                                                                border={false}
+                                                                className=""
+                                                                fixedWidth={false}
+                                                                flip={null}
+                                                                icon={
+                                                                  Object {
+                                                                    "icon": Array [
+                                                                      320,
+                                                                      512,
+                                                                      Array [],
+                                                                      "f00d",
+                                                                      "M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z",
+                                                                    ],
+                                                                    "iconName": "times",
+                                                                    "prefix": "fal",
+                                                                  }
+                                                                }
+                                                                inverse={false}
+                                                                listItem={false}
+                                                                mask={null}
+                                                                pull={null}
+                                                                pulse={false}
+                                                                rotation={null}
+                                                                size="lg"
+                                                                spin={false}
+                                                                swapOpacity={false}
+                                                                symbol={false}
+                                                                title=""
+                                                                transform={null}
+                                                              >
+                                                                <svg
+                                                                  aria-hidden="true"
+                                                                  className="svg-inline--fa fa-times fa-w-10 fa-lg "
+                                                                  data-icon="times"
+                                                                  data-prefix="fal"
+                                                                  focusable="false"
+                                                                  role="img"
+                                                                  style={Object {}}
+                                                                  viewBox="0 0 320 512"
+                                                                  xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                  <path
+                                                                    d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"
+                                                                    fill="currentColor"
+                                                                    style={Object {}}
+                                                                  />
+                                                                </svg>
+                                                              </FontAwesomeIcon>
+                                                            </button>
+                                                          </styled.button>
+                                                        </div>
+                                                      </Styled(styled.div)>
+                                                    </ModalHeader>
+                                                    <ModalBody
+                                                      viewportScrolling={true}
+                                                    >
+                                                      <Styled(styled.div)
+                                                        viewportScrolling={true}
+                                                      >
+                                                        <div
+                                                          className="sc-hGPAah sc-dlVyqM kfxqxV jyWcQC"
+                                                        >
+                                                          <AttachmentsBody
+                                                            accessRequestId="00000000-0000-0000-0000-000000000000"
+                                                          >
+                                                            <styled__ModalBody>
+                                                              <div
+                                                                className="styled__ModalBody-sc-1ycpsik-1 dRJUMe"
+                                                              >
+                                                                <ForwardRef(WithStyles)
+                                                                  indicatorColor="primary"
+                                                                  onChange={[Function]}
+                                                                  textColor="primary"
+                                                                  value={0}
+                                                                >
+                                                                  <ForwardRef(Tabs)
+                                                                    classes={
+                                                                      Object {
+                                                                        "centered": "MuiTabs-centered",
+                                                                        "fixed": "MuiTabs-fixed",
+                                                                        "flexContainer": "MuiTabs-flexContainer",
+                                                                        "flexContainerVertical": "MuiTabs-flexContainerVertical",
+                                                                        "indicator": "MuiTabs-indicator",
+                                                                        "root": "MuiTabs-root",
+                                                                        "scrollButtons": "MuiTabs-scrollButtons",
+                                                                        "scrollButtonsDesktop": "MuiTabs-scrollButtonsDesktop",
+                                                                        "scrollable": "MuiTabs-scrollable",
+                                                                        "scroller": "MuiTabs-scroller",
+                                                                        "vertical": "MuiTabs-vertical",
+                                                                      }
+                                                                    }
+                                                                    indicatorColor="primary"
+                                                                    onChange={[Function]}
+                                                                    textColor="primary"
+                                                                    value={0}
+                                                                  >
+                                                                    <div
+                                                                      className="MuiTabs-root"
+                                                                    >
+                                                                      <div
+                                                                        className="MuiTabs-scroller MuiTabs-fixed"
+                                                                        onScroll={[Function]}
+                                                                        style={
+                                                                          Object {
+                                                                            "marginBottom": null,
+                                                                            "overflow": "hidden",
+                                                                          }
+                                                                        }
+                                                                      >
+                                                                        <div
+                                                                          className="MuiTabs-flexContainer"
+                                                                          onKeyDown={[Function]}
+                                                                          role="tablist"
+                                                                        >
+                                                                          <ForwardRef(WithStyles)
+                                                                            fullWidth={false}
+                                                                            indicator={false}
+                                                                            key=".0"
+                                                                            label="Manage"
+                                                                            onChange={[Function]}
+                                                                            selected={true}
+                                                                            textColor="primary"
+                                                                            value={0}
+                                                                          >
+                                                                            <ForwardRef(Tab)
+                                                                              classes={
+                                                                                Object {
+                                                                                  "disabled": "Mui-disabled",
+                                                                                  "fullWidth": "MuiTab-fullWidth",
+                                                                                  "labelIcon": "MuiTab-labelIcon",
+                                                                                  "root": "MuiTab-root",
+                                                                                  "selected": "Mui-selected",
+                                                                                  "textColorInherit": "MuiTab-textColorInherit",
+                                                                                  "textColorPrimary": "MuiTab-textColorPrimary",
+                                                                                  "textColorSecondary": "MuiTab-textColorSecondary",
+                                                                                  "wrapped": "MuiTab-wrapped",
+                                                                                  "wrapper": "MuiTab-wrapper",
+                                                                                }
+                                                                              }
+                                                                              fullWidth={false}
+                                                                              indicator={false}
+                                                                              label="Manage"
+                                                                              onChange={[Function]}
+                                                                              selected={true}
+                                                                              textColor="primary"
+                                                                              value={0}
+                                                                            >
+                                                                              <ForwardRef(WithStyles)
+                                                                                aria-selected={true}
+                                                                                className="MuiTab-root MuiTab-textColorPrimary Mui-selected"
+                                                                                disabled={false}
+                                                                                focusRipple={true}
+                                                                                onClick={[Function]}
+                                                                                onFocus={[Function]}
+                                                                                role="tab"
+                                                                                tabIndex={0}
+                                                                              >
+                                                                                <ForwardRef(ButtonBase)
+                                                                                  aria-selected={true}
+                                                                                  className="MuiTab-root MuiTab-textColorPrimary Mui-selected"
+                                                                                  classes={
+                                                                                    Object {
+                                                                                      "disabled": "Mui-disabled",
+                                                                                      "focusVisible": "Mui-focusVisible",
+                                                                                      "root": "MuiButtonBase-root",
+                                                                                    }
+                                                                                  }
+                                                                                  disabled={false}
+                                                                                  focusRipple={true}
+                                                                                  onClick={[Function]}
+                                                                                  onFocus={[Function]}
+                                                                                  role="tab"
+                                                                                  tabIndex={0}
+                                                                                >
+                                                                                  <button
+                                                                                    aria-selected={true}
+                                                                                    className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected"
+                                                                                    disabled={false}
+                                                                                    onBlur={[Function]}
+                                                                                    onClick={[Function]}
+                                                                                    onDragLeave={[Function]}
+                                                                                    onFocus={[Function]}
+                                                                                    onKeyDown={[Function]}
+                                                                                    onKeyUp={[Function]}
+                                                                                    onMouseDown={[Function]}
+                                                                                    onMouseLeave={[Function]}
+                                                                                    onMouseUp={[Function]}
+                                                                                    onTouchEnd={[Function]}
+                                                                                    onTouchMove={[Function]}
+                                                                                    onTouchStart={[Function]}
+                                                                                    role="tab"
+                                                                                    tabIndex={0}
+                                                                                    type="button"
+                                                                                  >
+                                                                                    <span
+                                                                                      className="MuiTab-wrapper"
+                                                                                    >
+                                                                                      Manage
+                                                                                    </span>
+                                                                                    <ForwardRef(WithStyles)
+                                                                                      center={false}
+                                                                                    >
+                                                                                      <ForwardRef(TouchRipple)
+                                                                                        center={false}
+                                                                                        classes={
+                                                                                          Object {
+                                                                                            "child": "MuiTouchRipple-child",
+                                                                                            "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                                            "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                                            "ripple": "MuiTouchRipple-ripple",
+                                                                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                                            "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                                            "root": "MuiTouchRipple-root",
+                                                                                          }
+                                                                                        }
+                                                                                      >
+                                                                                        <span
+                                                                                          className="MuiTouchRipple-root"
+                                                                                        >
+                                                                                          <TransitionGroup
+                                                                                            childFactory={[Function]}
+                                                                                            component={null}
+                                                                                            exit={true}
+                                                                                          />
+                                                                                        </span>
+                                                                                      </ForwardRef(TouchRipple)>
+                                                                                    </ForwardRef(WithStyles)>
+                                                                                  </button>
+                                                                                </ForwardRef(ButtonBase)>
+                                                                              </ForwardRef(WithStyles)>
+                                                                            </ForwardRef(Tab)>
+                                                                          </ForwardRef(WithStyles)>
+                                                                          <ForwardRef(WithStyles)
+                                                                            fullWidth={false}
+                                                                            indicator={false}
+                                                                            key=".1"
+                                                                            label="Upload"
+                                                                            onChange={[Function]}
+                                                                            selected={false}
+                                                                            textColor="primary"
+                                                                            value={1}
+                                                                          >
+                                                                            <ForwardRef(Tab)
+                                                                              classes={
+                                                                                Object {
+                                                                                  "disabled": "Mui-disabled",
+                                                                                  "fullWidth": "MuiTab-fullWidth",
+                                                                                  "labelIcon": "MuiTab-labelIcon",
+                                                                                  "root": "MuiTab-root",
+                                                                                  "selected": "Mui-selected",
+                                                                                  "textColorInherit": "MuiTab-textColorInherit",
+                                                                                  "textColorPrimary": "MuiTab-textColorPrimary",
+                                                                                  "textColorSecondary": "MuiTab-textColorSecondary",
+                                                                                  "wrapped": "MuiTab-wrapped",
+                                                                                  "wrapper": "MuiTab-wrapper",
+                                                                                }
+                                                                              }
+                                                                              fullWidth={false}
+                                                                              indicator={false}
+                                                                              label="Upload"
+                                                                              onChange={[Function]}
+                                                                              selected={false}
+                                                                              textColor="primary"
+                                                                              value={1}
+                                                                            >
+                                                                              <ForwardRef(WithStyles)
+                                                                                aria-selected={false}
+                                                                                className="MuiTab-root MuiTab-textColorPrimary"
+                                                                                disabled={false}
+                                                                                focusRipple={true}
+                                                                                onClick={[Function]}
+                                                                                onFocus={[Function]}
+                                                                                role="tab"
+                                                                                tabIndex={-1}
+                                                                              >
+                                                                                <ForwardRef(ButtonBase)
+                                                                                  aria-selected={false}
+                                                                                  className="MuiTab-root MuiTab-textColorPrimary"
+                                                                                  classes={
+                                                                                    Object {
+                                                                                      "disabled": "Mui-disabled",
+                                                                                      "focusVisible": "Mui-focusVisible",
+                                                                                      "root": "MuiButtonBase-root",
+                                                                                    }
+                                                                                  }
+                                                                                  disabled={false}
+                                                                                  focusRipple={true}
+                                                                                  onClick={[Function]}
+                                                                                  onFocus={[Function]}
+                                                                                  role="tab"
+                                                                                  tabIndex={-1}
+                                                                                >
+                                                                                  <button
+                                                                                    aria-selected={false}
+                                                                                    className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary"
+                                                                                    disabled={false}
+                                                                                    onBlur={[Function]}
+                                                                                    onClick={[Function]}
+                                                                                    onDragLeave={[Function]}
+                                                                                    onFocus={[Function]}
+                                                                                    onKeyDown={[Function]}
+                                                                                    onKeyUp={[Function]}
+                                                                                    onMouseDown={[Function]}
+                                                                                    onMouseLeave={[Function]}
+                                                                                    onMouseUp={[Function]}
+                                                                                    onTouchEnd={[Function]}
+                                                                                    onTouchMove={[Function]}
+                                                                                    onTouchStart={[Function]}
+                                                                                    role="tab"
+                                                                                    tabIndex={-1}
+                                                                                    type="button"
+                                                                                  >
+                                                                                    <span
+                                                                                      className="MuiTab-wrapper"
+                                                                                    >
+                                                                                      Upload
+                                                                                    </span>
+                                                                                    <ForwardRef(WithStyles)
+                                                                                      center={false}
+                                                                                    >
+                                                                                      <ForwardRef(TouchRipple)
+                                                                                        center={false}
+                                                                                        classes={
+                                                                                          Object {
+                                                                                            "child": "MuiTouchRipple-child",
+                                                                                            "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                                            "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                                            "ripple": "MuiTouchRipple-ripple",
+                                                                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                                            "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                                            "root": "MuiTouchRipple-root",
+                                                                                          }
+                                                                                        }
+                                                                                      >
+                                                                                        <span
+                                                                                          className="MuiTouchRipple-root"
+                                                                                        >
+                                                                                          <TransitionGroup
+                                                                                            childFactory={[Function]}
+                                                                                            component={null}
+                                                                                            exit={true}
+                                                                                          />
+                                                                                        </span>
+                                                                                      </ForwardRef(TouchRipple)>
+                                                                                    </ForwardRef(WithStyles)>
+                                                                                  </button>
+                                                                                </ForwardRef(ButtonBase)>
+                                                                              </ForwardRef(WithStyles)>
+                                                                            </ForwardRef(Tab)>
+                                                                          </ForwardRef(WithStyles)>
+                                                                        </div>
+                                                                        <ForwardRef(WithStyles)
+                                                                          className="MuiTabs-indicator"
+                                                                          color="primary"
+                                                                          orientation="horizontal"
+                                                                          style={
+                                                                            Object {
+                                                                              "left": 0,
+                                                                              "width": 0,
+                                                                            }
+                                                                          }
+                                                                        >
+                                                                          <ForwardRef(TabIndicator)
+                                                                            className="MuiTabs-indicator"
+                                                                            classes={
+                                                                              Object {
+                                                                                "colorPrimary": "jss2",
+                                                                                "colorSecondary": "jss3",
+                                                                                "root": "jss1",
+                                                                                "vertical": "jss4",
+                                                                              }
+                                                                            }
+                                                                            color="primary"
+                                                                            orientation="horizontal"
+                                                                            style={
+                                                                              Object {
+                                                                                "left": 0,
+                                                                                "width": 0,
+                                                                              }
+                                                                            }
+                                                                          >
+                                                                            <span
+                                                                              className="jss1 jss2 MuiTabs-indicator"
+                                                                              style={
+                                                                                Object {
+                                                                                  "left": 0,
+                                                                                  "width": 0,
+                                                                                }
+                                                                              }
+                                                                            />
+                                                                          </ForwardRef(TabIndicator)>
+                                                                        </ForwardRef(WithStyles)>
+                                                                      </div>
+                                                                    </div>
+                                                                  </ForwardRef(Tabs)>
+                                                                </ForwardRef(WithStyles)>
+                                                                <TabPanel
+                                                                  index={0}
+                                                                  value={0}
+                                                                >
+                                                                  <div
+                                                                    aria-controls="tabpanel-0"
+                                                                    aria-labelledby="tab-0"
+                                                                    hidden={false}
+                                                                    id="tabpanel-0"
+                                                                    role="tabpanel"
+                                                                  >
+                                                                    <ForwardRef(StyledComponent)
+                                                                      paddingBottom={3}
+                                                                      paddingTop={3}
+                                                                    >
+                                                                      <div
+                                                                        className="MuiBox-root jss5"
+                                                                      >
+                                                                        <ManageAttachmentsContainer
+                                                                          accessRequestId="00000000-0000-0000-0000-000000000000"
+                                                                        >
+                                                                          <ForwardRef(WithStyles)>
+                                                                            <ForwardRef(List)
+                                                                              classes={
+                                                                                Object {
+                                                                                  "dense": "MuiList-dense",
+                                                                                  "padding": "MuiList-padding",
+                                                                                  "root": "MuiList-root",
+                                                                                  "subheader": "MuiList-subheader",
+                                                                                }
+                                                                              }
+                                                                            >
+                                                                              <ul
+                                                                                className="MuiList-root MuiList-padding"
+                                                                              />
+                                                                            </ForwardRef(List)>
+                                                                          </ForwardRef(WithStyles)>
+                                                                        </ManageAttachmentsContainer>
+                                                                      </div>
+                                                                    </ForwardRef(StyledComponent)>
+                                                                  </div>
+                                                                </TabPanel>
+                                                                <TabPanel
+                                                                  index={1}
+                                                                  value={0}
+                                                                >
+                                                                  <div
+                                                                    aria-controls="tabpanel-1"
+                                                                    aria-labelledby="tab-1"
+                                                                    hidden={true}
+                                                                    id="tabpanel-1"
+                                                                    role="tabpanel"
+                                                                  />
+                                                                </TabPanel>
+                                                              </div>
+                                                            </styled__ModalBody>
+                                                          </AttachmentsBody>
+                                                        </div>
+                                                      </Styled(styled.div)>
+                                                    </ModalBody>
+                                                  </div>
+                                                </styled.div>
+                                              </div>
+                                            </styled.div>
+                                          </div>
+                                        </OverlayInnerContainer>
+                                      </div>
+                                    </OverlayOuterContainer>
+                                  </TouchScrollable>
+                                </ScrollLock>
+                              </TouchProvider>
+                            </SheetProvider>
+                          </LockToggle>
+                        </Portal>
+                      </Portal>
+                    </Transition>
+                  </CSSTransition>
+                </Overlay>
+              </Modal>
+            </AttachmentsModal>
+          </Router>
+        </ConnectedRouter>
+      </ConnectedRouterWithContext>
+    </Connect(ConnectedRouterWithContext)>
+  </Provider>
+</ModuleProvider>
+`;

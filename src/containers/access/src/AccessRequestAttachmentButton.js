@@ -29,8 +29,9 @@ const AccessRequestAttachmentButton = ({ accessRequestId } :Props) => {
           aria-controls={menuOpen ? 'access-request-attachment-menu' : undefined}
           aria-expanded={menuOpen ? 'true' : undefined}
           aria-haspopup="menu"
-          aria-label="access request attachment button">
-        <FontAwesomeIcon fixedWidth icon={faPaperclip} onClick={handleOpenAttachments} />
+          aria-label="access request attachment button"
+          onClick={handleOpenAttachments}>
+        <FontAwesomeIcon fixedWidth icon={faPaperclip} />
       </IconButton>
       <AttachmentsModal
           accessRequestId={accessRequestId}
