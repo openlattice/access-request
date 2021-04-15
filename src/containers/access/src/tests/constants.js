@@ -78,31 +78,38 @@ const MOCK_ATTACHMENTS = fromJS(
 
 const MOCK_FILE_ENTITY_ENTITY_ID = NIL;
 
-const MOCK_PDF_FILE = {
+const MOCK_PDF_PAYLOAD = {
   name: 'test.pdf',
   type: PDF_MIME_TYPE,
   base64: 'test'
 };
 
-const MOCK_DOCX_FILE = {
+const MOCK_DOCX_PAYLOAD = {
   name: 'test.docx',
   type: DOCX_MIME_TYPE,
   base64: 'test'
 };
 
-const MOCK_IMAGE_FILE = {
+const MOCK_IMAGE_PAYLOAD = {
   name: 'test.png',
   type: `${IMAGE_TYPE_PREFIX}/png`,
-  base64: 'test'
+  base64: 'test',
 };
+
+const MOCK_PDF_FILE = new File([''], 'test.pdf', { type: PDF_MIME_TYPE });
+const MOCK_DOCX_FILE = new File([''], 'test.pdf', { type: DOCX_MIME_TYPE });
+const MOCK_PNG_FILE = new File([''], 'test.pdf', { type: `${IMAGE_TYPE_PREFIX}png` });
 
 export {
   MOCK_ATTACHMENTS,
   MOCK_DOCX_FILE,
   MOCK_DOCX_FILE_ENTITY,
+  MOCK_DOCX_PAYLOAD,
   MOCK_FILE_ENTITY,
   MOCK_FILE_ENTITY_ENTITY_ID,
-  MOCK_IMAGE_FILE,
+  MOCK_IMAGE_PAYLOAD,
   MOCK_PDF_FILE,
   MOCK_PDF_FILE_ENTITY,
+  MOCK_PDF_PAYLOAD,
+  MOCK_PNG_FILE,
 };

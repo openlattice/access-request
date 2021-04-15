@@ -1,0 +1,479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UploadAttachmentsContainer match snapshot 1`] = `
+<ModuleProvider>
+  <Provider
+    context={
+      Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": Object {
+          "$$typeof": Symbol(react.context),
+          "_calculateChangedBits": null,
+          "_context": [Circular],
+        },
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": Object {},
+        "_currentRenderer2": null,
+        "_currentValue": null,
+        "_currentValue2": null,
+        "_threadCount": 0,
+      }
+    }
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <Connect(ConnectedRouterWithContext)
+      context={
+        Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": Object {
+            "$$typeof": Symbol(react.context),
+            "_calculateChangedBits": null,
+            "_context": [Circular],
+          },
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": Object {},
+          "_currentRenderer2": null,
+          "_currentValue": null,
+          "_currentValue2": null,
+          "_threadCount": 0,
+        }
+      }
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <ConnectedRouterWithContext
+        context={
+          Object {
+            "$$typeof": Symbol(react.context),
+            "Consumer": Object {
+              "$$typeof": Symbol(react.context),
+              "_calculateChangedBits": null,
+              "_context": [Circular],
+            },
+            "Provider": Object {
+              "$$typeof": Symbol(react.provider),
+              "_context": [Circular],
+            },
+            "_calculateChangedBits": null,
+            "_currentRenderer": Object {},
+            "_currentRenderer2": null,
+            "_currentValue": null,
+            "_currentValue2": null,
+            "_threadCount": 0,
+          }
+        }
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        onLocationChanged={[Function]}
+      >
+        <ConnectedRouter
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": null,
+              "_currentValue2": null,
+              "_threadCount": 0,
+            }
+          }
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          onLocationChanged={[Function]}
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
+        >
+          <Router
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+          >
+            <Connect(UploadAttachmentsContainer)
+              accessRequestId="00000000-0000-0000-0000-000000000000"
+              onSuccess={[MockFunction]}
+            >
+              <UploadAttachmentsContainer
+                accessRequestId="00000000-0000-0000-0000-000000000000"
+                actions={
+                  Object {
+                    "resetRequestState": [Function],
+                    "uploadAttachments": [Function],
+                  }
+                }
+                onSuccess={[MockFunction]}
+                requestState="STANDBY"
+              >
+                <div>
+                  <FileUpload
+                    onChange={[Function]}
+                  >
+                    <Dropzone
+                      onDrop={[Function]}
+                    >
+                      <Dropzone__DropzoneWrapper
+                        isDragAccept={false}
+                        isDragActive={false}
+                        isDragReject={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragEnter={[Function]}
+                        onDragLeave={[Function]}
+                        onDragOver={[Function]}
+                        onDrop={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        tabIndex={0}
+                      >
+                        <div
+                          className="Dropzone__DropzoneWrapper-j9e9j-0 fpLcaF"
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onDragEnter={[Function]}
+                          onDragLeave={[Function]}
+                          onDragOver={[Function]}
+                          onDrop={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          tabIndex={0}
+                        >
+                          <input
+                            accept="image/*,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            autoComplete="off"
+                            multiple={true}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "display": "none",
+                              }
+                            }
+                            tabIndex={-1}
+                            type="file"
+                          />
+                          <ForwardRef(WithStyles)
+                            component="span"
+                          >
+                            <ForwardRef(WithStyles)
+                              classes={
+                                Object {
+                                  "body1": "jss9",
+                                  "body2": "jss10",
+                                  "button": "jss12",
+                                  "caption": "jss11",
+                                  "h1": "jss1",
+                                  "h2": "jss2",
+                                  "h3": "jss3",
+                                  "h4": "jss4",
+                                  "h5": "jss5",
+                                  "h6": "jss6",
+                                  "overline": "jss13",
+                                  "subtitle1": "jss7",
+                                  "subtitle2": "jss8",
+                                }
+                              }
+                              component="span"
+                            >
+                              <ForwardRef(Typography)
+                                classes={
+                                  Object {
+                                    "alignCenter": "MuiTypography-alignCenter",
+                                    "alignJustify": "MuiTypography-alignJustify",
+                                    "alignLeft": "MuiTypography-alignLeft",
+                                    "alignRight": "MuiTypography-alignRight",
+                                    "body1": "MuiTypography-body1 jss9",
+                                    "body2": "MuiTypography-body2 jss10",
+                                    "button": "MuiTypography-button jss12",
+                                    "caption": "MuiTypography-caption jss11",
+                                    "colorError": "MuiTypography-colorError",
+                                    "colorInherit": "MuiTypography-colorInherit",
+                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                    "displayBlock": "MuiTypography-displayBlock",
+                                    "displayInline": "MuiTypography-displayInline",
+                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                    "h1": "MuiTypography-h1 jss1",
+                                    "h2": "MuiTypography-h2 jss2",
+                                    "h3": "MuiTypography-h3 jss3",
+                                    "h4": "MuiTypography-h4 jss4",
+                                    "h5": "MuiTypography-h5 jss5",
+                                    "h6": "MuiTypography-h6 jss6",
+                                    "noWrap": "MuiTypography-noWrap",
+                                    "overline": "MuiTypography-overline jss13",
+                                    "paragraph": "MuiTypography-paragraph",
+                                    "root": "MuiTypography-root",
+                                    "srOnly": "MuiTypography-srOnly",
+                                    "subtitle1": "MuiTypography-subtitle1 jss7",
+                                    "subtitle2": "MuiTypography-subtitle2 jss8",
+                                  }
+                                }
+                                component="span"
+                              >
+                                <span
+                                  className="MuiTypography-root MuiTypography-body1 jss9"
+                                >
+                                  Drop files here or click to select.
+                                </span>
+                              </ForwardRef(Typography)>
+                            </ForwardRef(WithStyles)>
+                          </ForwardRef(WithStyles)>
+                        </div>
+                      </Dropzone__DropzoneWrapper>
+                    </Dropzone>
+                  </FileUpload>
+                  <ForwardRef(WithStyles)>
+                    <ForwardRef(List)
+                      classes={
+                        Object {
+                          "dense": "MuiList-dense",
+                          "padding": "MuiList-padding",
+                          "root": "MuiList-root",
+                          "subheader": "MuiList-subheader",
+                        }
+                      }
+                    >
+                      <ul
+                        className="MuiList-root MuiList-padding"
+                      />
+                    </ForwardRef(List)>
+                  </ForwardRef(WithStyles)>
+                  <ForwardRef
+                    color="primary"
+                    disabled={true}
+                    fullWidth={true}
+                    isLoading={false}
+                    onClick={[Function]}
+                  >
+                    <Button
+                      color="primary"
+                      disabled={true}
+                      forwardRef={null}
+                      fullWidth={true}
+                      isLoading={false}
+                      onClick={[Function]}
+                    >
+                      <ForwardRef(WithStyles)
+                        className="jss26"
+                        color="default"
+                        disableElevation={false}
+                        disableRipple={true}
+                        disabled={true}
+                        fullWidth={true}
+                        onClick={[Function]}
+                        variant="contained"
+                      >
+                        <ForwardRef(Button)
+                          className="jss26"
+                          classes={
+                            Object {
+                              "colorInherit": "MuiButton-colorInherit",
+                              "contained": "MuiButton-contained",
+                              "containedPrimary": "MuiButton-containedPrimary",
+                              "containedSecondary": "MuiButton-containedSecondary",
+                              "containedSizeLarge": "MuiButton-containedSizeLarge",
+                              "containedSizeSmall": "MuiButton-containedSizeSmall",
+                              "disableElevation": "MuiButton-disableElevation",
+                              "disabled": "Mui-disabled",
+                              "endIcon": "MuiButton-endIcon",
+                              "focusVisible": "Mui-focusVisible",
+                              "fullWidth": "MuiButton-fullWidth",
+                              "iconSizeLarge": "MuiButton-iconSizeLarge",
+                              "iconSizeMedium": "MuiButton-iconSizeMedium",
+                              "iconSizeSmall": "MuiButton-iconSizeSmall",
+                              "label": "MuiButton-label",
+                              "outlined": "MuiButton-outlined",
+                              "outlinedPrimary": "MuiButton-outlinedPrimary",
+                              "outlinedSecondary": "MuiButton-outlinedSecondary",
+                              "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                              "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                              "root": "MuiButton-root",
+                              "sizeLarge": "MuiButton-sizeLarge",
+                              "sizeSmall": "MuiButton-sizeSmall",
+                              "startIcon": "MuiButton-startIcon",
+                              "text": "MuiButton-text",
+                              "textPrimary": "MuiButton-textPrimary",
+                              "textSecondary": "MuiButton-textSecondary",
+                              "textSizeLarge": "MuiButton-textSizeLarge",
+                              "textSizeSmall": "MuiButton-textSizeSmall",
+                            }
+                          }
+                          color="default"
+                          disableElevation={false}
+                          disableRipple={true}
+                          disabled={true}
+                          fullWidth={true}
+                          onClick={[Function]}
+                          variant="contained"
+                        >
+                          <ForwardRef(WithStyles)
+                            className="MuiButton-root MuiButton-contained jss26 Mui-disabled MuiButton-fullWidth"
+                            component="button"
+                            disableRipple={true}
+                            disabled={true}
+                            focusRipple={true}
+                            focusVisibleClassName="Mui-focusVisible"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <ForwardRef(ButtonBase)
+                              className="MuiButton-root MuiButton-contained jss26 Mui-disabled MuiButton-fullWidth"
+                              classes={
+                                Object {
+                                  "disabled": "Mui-disabled",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "root": "MuiButtonBase-root",
+                                }
+                              }
+                              component="button"
+                              disableRipple={true}
+                              disabled={true}
+                              focusRipple={true}
+                              focusVisibleClassName="Mui-focusVisible"
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <button
+                                className="MuiButtonBase-root MuiButton-root MuiButton-contained jss26 Mui-disabled MuiButton-fullWidth Mui-disabled"
+                                disabled={true}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onDragLeave={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                tabIndex={-1}
+                                type="button"
+                              >
+                                <span
+                                  className="MuiButton-label"
+                                >
+                                  Upload
+                                </span>
+                              </button>
+                            </ForwardRef(ButtonBase)>
+                          </ForwardRef(WithStyles)>
+                        </ForwardRef(Button)>
+                      </ForwardRef(WithStyles)>
+                    </Button>
+                  </ForwardRef>
+                </div>
+              </UploadAttachmentsContainer>
+            </Connect(UploadAttachmentsContainer)>
+          </Router>
+        </ConnectedRouter>
+      </ConnectedRouterWithContext>
+    </Connect(ConnectedRouterWithContext)>
+  </Provider>
+</ModuleProvider>
+`;
