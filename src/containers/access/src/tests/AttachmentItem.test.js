@@ -9,10 +9,10 @@ import { act } from 'react-dom/test-utils';
 import { NIL } from 'uuid';
 
 import {
-  MOCK_DOCX_FILE,
-  MOCK_FILE,
-  MOCK_FILE_ID,
-  MOCK_PDF_FILE
+  MOCK_DOCX_FILE_ENTITY,
+  MOCK_FILE_ENTITY,
+  MOCK_FILE_ENTITY_ENTITY_ID,
+  MOCK_PDF_FILE_ENTITY
 } from './constants';
 
 import AttachmentItem from '../AttachmentItem';
@@ -41,7 +41,7 @@ describe('AttachmentItem', () => {
   test('match snapshot', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <AttachmentItem divider file={MOCK_FILE} onDelete={mockOnDelete} />
+        <AttachmentItem divider file={MOCK_FILE_ENTITY} onDelete={mockOnDelete} />
       </ModuleProvider>
     );
 
@@ -51,7 +51,7 @@ describe('AttachmentItem', () => {
   test('toggle edit should toggle SelectTags', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <AttachmentItem divider file={MOCK_FILE} onDelete={mockOnDelete} />
+        <AttachmentItem divider file={MOCK_FILE_ENTITY} onDelete={mockOnDelete} />
       </ModuleProvider>
     );
 
@@ -68,19 +68,19 @@ describe('AttachmentItem', () => {
   test('invoke onDelete with fileId when clicked', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <AttachmentItem divider file={MOCK_FILE} onDelete={mockOnDelete} />
+        <AttachmentItem divider file={MOCK_FILE_ENTITY} onDelete={mockOnDelete} />
       </ModuleProvider>
     );
 
     wrapper.find('button[aria-label="Delete"]').simulate('click');
     expect(mockOnDelete).toHaveBeenCalledTimes(1);
-    expect(mockOnDelete).toHaveBeenCalledWith(MOCK_FILE_ID);
+    expect(mockOnDelete).toHaveBeenCalledWith(MOCK_FILE_ENTITY_ENTITY_ID);
   });
 
   test('show docx icon for .docx files', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <AttachmentItem divider file={MOCK_DOCX_FILE} onDelete={mockOnDelete} />
+        <AttachmentItem divider file={MOCK_DOCX_FILE_ENTITY} onDelete={mockOnDelete} />
       </ModuleProvider>
     );
 
@@ -91,7 +91,7 @@ describe('AttachmentItem', () => {
   test('show pdf icon for .pdf files', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <AttachmentItem divider file={MOCK_PDF_FILE} onDelete={mockOnDelete} />
+        <AttachmentItem divider file={MOCK_PDF_FILE_ENTITY} onDelete={mockOnDelete} />
       </ModuleProvider>
     );
 
@@ -102,7 +102,7 @@ describe('AttachmentItem', () => {
   test('dispatch UPDATE_ATTACHMENT_TAG and set editing to false onTagChange', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <AttachmentItem divider file={MOCK_FILE} onDelete={mockOnDelete} />
+        <AttachmentItem divider file={MOCK_FILE_ENTITY} onDelete={mockOnDelete} />
       </ModuleProvider>
     );
 
@@ -126,7 +126,7 @@ describe('AttachmentItem', () => {
   test('dispatch UPDATE_ATTACHMENT_TAG with empty string as default', () => {
     const wrapper = mount(
       <ModuleProvider>
-        <AttachmentItem divider file={MOCK_FILE} onDelete={mockOnDelete} />
+        <AttachmentItem divider file={MOCK_FILE_ENTITY} onDelete={mockOnDelete} />
       </ModuleProvider>
     );
 

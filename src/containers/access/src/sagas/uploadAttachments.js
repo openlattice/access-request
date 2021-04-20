@@ -83,6 +83,7 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
       [namePTID]: [name],
       [fileDataPTID]: [{
         'content-type': type,
+        'content-disposition': `attachment; filename="${name}"`,
         data: cleanBase64ForUpload(base64)
       }]
     }));
