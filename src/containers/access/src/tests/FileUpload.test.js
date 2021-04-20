@@ -27,7 +27,7 @@ describe('FileUpload', () => {
       inputWrapper.simulate('change', {
         target: { files: [MOCK_PDF_FILE] }
       });
-      await new Promise((resolve) => setTimeout(resolve));
+      await new Promise((resolve) => setTimeout(resolve, 100));
       wrapper.update();
     });
     expect(readAsDataURLSpy).toHaveBeenCalledTimes(1);
