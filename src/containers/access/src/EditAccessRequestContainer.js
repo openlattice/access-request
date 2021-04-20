@@ -35,10 +35,6 @@ const PrintButton = styled(IconButton)`
   margin-left: auto;
 `;
 
-const PrintButton = styled(IconButton)`
-  margin-left: auto;
-`;
-
 const EditAccessRequestContainer = () => {
   const dispatch = useDispatch();
   const componentRef = useRef();
