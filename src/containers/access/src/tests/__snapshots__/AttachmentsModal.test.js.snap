@@ -495,21 +495,21 @@ exports[`AttachmentsModal match snapshot when open 1`] = `
                                   class="sc-jRQAMF bkxjKC"
                                 >
                                   <div
-                                    class="sc-ieebsP lbvPnu"
+                                    class="sc-dJjZJu kaTIOH"
                                   >
                                     <div
-                                      class="sc-dJjZJu bdXRbJ"
+                                      class="sc-hGPAah JZVRf"
                                     >
                                       <div
-                                        class="sc-hGPAah sc-fKVsgm kfxqxV bNUhwg"
+                                        class="sc-dlVyqM sc-bBHwJV jwHOsp cwgzAx"
                                       >
                                         <h1
-                                          class="sc-cxpRKc RDqKt"
+                                          class="sc-llYToB iuUjjo"
                                         >
                                           Attachments
                                         </h1>
                                         <button
-                                          class="sc-llYToB kDRMhL"
+                                          class="sc-iJKOzS lchjfl"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -529,7 +529,7 @@ exports[`AttachmentsModal match snapshot when open 1`] = `
                                         </button>
                                       </div>
                                       <div
-                                        class="sc-hGPAah sc-dlVyqM kfxqxV jyWcQC"
+                                        class="sc-dlVyqM sc-kfPtPH jwHOsp jdykCE"
                                       >
                                         <div
                                           class="styled__ModalBody-sc-1ycpsik-1 dRJUMe"
@@ -650,7 +650,7 @@ exports[`AttachmentsModal match snapshot when open 1`] = `
                                               viewportScrolling={true}
                                             >
                                               <div
-                                                className="sc-ieebsP lbvPnu"
+                                                className="sc-dJjZJu kaTIOH"
                                                 onClick={[Function]}
                                               >
                                                 <styled.div
@@ -658,7 +658,7 @@ exports[`AttachmentsModal match snapshot when open 1`] = `
                                                   viewportScrolling={true}
                                                 >
                                                   <div
-                                                    className="sc-dJjZJu bdXRbJ"
+                                                    className="sc-hGPAah JZVRf"
                                                   >
                                                     <ModalHeader
                                                       onClickClose={[Function]}
@@ -667,11 +667,11 @@ exports[`AttachmentsModal match snapshot when open 1`] = `
                                                     >
                                                       <Styled(styled.div)>
                                                         <div
-                                                          className="sc-hGPAah sc-fKVsgm kfxqxV bNUhwg"
+                                                          className="sc-dlVyqM sc-bBHwJV jwHOsp cwgzAx"
                                                         >
                                                           <styled.h1>
                                                             <h1
-                                                              className="sc-cxpRKc RDqKt"
+                                                              className="sc-llYToB iuUjjo"
                                                             >
                                                               Attachments
                                                             </h1>
@@ -680,7 +680,7 @@ exports[`AttachmentsModal match snapshot when open 1`] = `
                                                             onClick={[Function]}
                                                           >
                                                             <button
-                                                              className="sc-llYToB kDRMhL"
+                                                              className="sc-iJKOzS lchjfl"
                                                               onClick={[Function]}
                                                             >
                                                               <FontAwesomeIcon
@@ -744,7 +744,7 @@ exports[`AttachmentsModal match snapshot when open 1`] = `
                                                         viewportScrolling={true}
                                                       >
                                                         <div
-                                                          className="sc-hGPAah sc-dlVyqM kfxqxV jyWcQC"
+                                                          className="sc-dlVyqM sc-kfPtPH jwHOsp jdykCE"
                                                         >
                                                           <AttachmentsBody
                                                             accessRequestId="00000000-0000-0000-0000-000000000000"
