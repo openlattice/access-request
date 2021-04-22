@@ -43,7 +43,10 @@ class UploadAttachmentsContainer extends Component<Props, State> {
 
   constructor(props :Props) {
     super(props);
-    this.state = this.getInitialState();
+    this.state = {
+      files: [],
+      tags: [],
+    };
   }
 
   componentDidUpdate() {
@@ -57,11 +60,6 @@ class UploadAttachmentsContainer extends Component<Props, State> {
     const { actions } = this.props;
     actions.resetRequestState([UPLOAD_ATTACHMENTS]);
   }
-
-  getInitialState = () => ({
-    files: [],
-    tags: [],
-  })
 
   onDrop = ({ file } :{ file :any }) => {
     const { files } = this.state;
