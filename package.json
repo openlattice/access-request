@@ -1,6 +1,6 @@
 {
   "name": "@openlattice/access-request",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "homepage": "https://github.com/openlattice/access-request",
   "description": "OpenLattice module for access request workflows",
   "author": {
