@@ -6,6 +6,7 @@ export const page10Schema = {
     protectedHealthInformation: {
       type: 'object',
       title: 'Protected Health Information',
+      attachments: true,
       properties: {
         involveProtectedHealthInformation: {
           type: 'boolean',

@@ -6,6 +6,7 @@ export const page22Schema = {
     dataSecurityLetter: {
       type: 'object',
       title: 'Data Security Letter',
+      attachments: true,
       properties: {
         dataSecurityLetter: {
           type: 'string',

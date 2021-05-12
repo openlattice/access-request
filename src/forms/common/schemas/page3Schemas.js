@@ -6,6 +6,7 @@ export const page3Schema = {
     projectUtilization: {
       type: 'object',
       title: 'Project Utilization',
+      attachments: true,
       properties: {
         projectUtilizationType: {
           type: 'array',
