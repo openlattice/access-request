@@ -12,14 +12,12 @@ import type { WorkerResponse } from 'lattice-sagas';
 import type { SequenceAction } from 'redux-reqseq';
 
 import { deleteAttachmentsWorker } from './deleteAttachments';
-import { getAttachmentsWorker } from './getAttachments';
 import { updateAccessRequestWorker } from './updateAccessRequest';
 
 import {
   DELETE_FIELD_ATTACHMENT,
   deleteAttachments,
   deleteFieldAttachment,
-  getAttachments,
   updateAccessRequest
 } from '../actions';
 
