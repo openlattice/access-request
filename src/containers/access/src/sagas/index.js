@@ -1,4 +1,5 @@
 export * from './deleteAttachments';
+export * from './deleteFieldAttachment';
 export * from './getAccessRequest';
 export * from './getAllAccessRequests';
 export * from './getAttachments';
@@ -8,3 +9,4 @@ export * from './submitAccessRequest';
 export * from './updateAccessRequest';
 export * from './updateAttachmentTag';
 export * from './uploadAttachments';
+export * from './uploadFieldAttachment';

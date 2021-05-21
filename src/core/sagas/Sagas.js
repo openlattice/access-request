@@ -31,15 +31,17 @@ export default function* sagas() :Saga<*> {
     fork(RoutingSagas.goToRootWatcher),
     fork(RoutingSagas.goToRouteWatcher),
 
+    fork(AccessSagas.deleteAttachmentsWatcher),
+    fork(AccessSagas.deleteFieldAttachmentWatcher),
     fork(AccessSagas.getAccessRequestWatcher),
-    fork(AccessSagas.getAttachmentsWatcher),
     fork(AccessSagas.getAllAccessRequestsWatcher),
+    fork(AccessSagas.getAttachmentsWatcher),
+    fork(AccessSagas.getFormsWatcher),
+    fork(AccessSagas.saveNewFormTemplateWatcher),
     fork(AccessSagas.submitAccessRequestWatcher),
     fork(AccessSagas.updateAccessRequestWatcher),
-    fork(AccessSagas.uploadAttachmentsWatcher),
-    fork(AccessSagas.deleteAttachmentsWatcher),
-    fork(AccessSagas.saveNewFormTemplateWatcher),
-    fork(AccessSagas.getFormsWatcher),
     fork(AccessSagas.updateAttachmentTagWatcher),
+    fork(AccessSagas.uploadAttachmentsWatcher),
+    fork(AccessSagas.uploadFieldAttachmentWatcher),
   ]);
 }

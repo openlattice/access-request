@@ -6,6 +6,7 @@ export const page21Schema = {
     departmentSupportDataReleaseLetter: {
       type: 'object',
       title: 'Department Support/Data Release Letter',
+      attachments: true,
       properties: {
         departmentSupportDataReleaseLetter: {
           type: 'string',

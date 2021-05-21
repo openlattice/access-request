@@ -6,6 +6,7 @@ export const page2Schema = {
     funding: {
       type: 'object',
       title: 'Funding',
+      attachments: true,
       properties: {
         typeOfFunding: {
           type: 'array',

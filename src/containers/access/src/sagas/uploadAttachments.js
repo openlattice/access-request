@@ -32,6 +32,7 @@ const {
 const {
   DATE_TIME,
   FILE_DATA,
+  GROUP_ID,
   LABEL,
   NAME,
   TYPE,
@@ -47,8 +48,9 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
 
     const {
       accessRequestId,
-      files,
-      tags,
+      files = [],
+      tags = [],
+      groupId = '',
     } = action.value;
 
     const config = yield select(selectAppConfig());
@@ -59,6 +61,7 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
     const propertyTypesByFQN = yield select(selectPropertyTypeIDsByFQN([
       DATE_TIME,
       FILE_DATA,
+      GROUP_ID,
       LABEL,
       NAME,
       TYPE,
@@ -69,6 +72,7 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
     const namePTID = propertyTypesByFQN.get(NAME);
     const typePTID = propertyTypesByFQN.get(TYPE);
     const tagPTID = propertyTypesByFQN.get(LABEL);
+    const groupIdPTID = propertyTypesByFQN.get(GROUP_ID);
 
     const now = DateTime.local().toISO();
 
@@ -77,15 +81,16 @@ function* uploadAttachmentsWorker(action :SequenceAction) :Saga<WorkerResponse> 
       name,
       type,
     }, index) => ({
-      [tagPTID]: [tags[index]],
       [dateTimePTID]: [now],
-      [typePTID]: [type],
-      [namePTID]: [name],
       [fileDataPTID]: [{
         'content-type': type,
         'content-disposition': `attachment; filename="${name}"`,
         data: cleanBase64ForUpload(base64)
-      }]
+      }],
+      [groupIdPTID]: [groupId],
+      [namePTID]: [name],
+      [tagPTID]: [tags[index]],
+      [typePTID]: [type],
     }));
 
     const attachedTo = { [dateTimePTID]: [now] };

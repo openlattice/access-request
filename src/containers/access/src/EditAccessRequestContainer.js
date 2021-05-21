@@ -23,7 +23,7 @@ import { CenterWrapper } from './styled';
 import { useDispatch, useSelector } from '../../../core/redux';
 import { resetRequestState } from '../../../core/redux/actions';
 import { ACCESS, REQUEST_STATE } from '../../../core/redux/constants';
-import { selectAccessRequestData } from '../../../core/redux/selectors';
+import { selectAccessRequestData, selectAttachments } from '../../../core/redux/selectors';
 
 const { isPending, isStandby } = ReduxUtils;
 
@@ -39,6 +39,7 @@ const EditAccessRequestContainer = () => {
   const dispatch = useDispatch();
   const componentRef = useRef();
   const data = useSelector(selectAccessRequestData());
+  const attachments = useSelector(selectAttachments());
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
@@ -78,6 +79,7 @@ const EditAccessRequestContainer = () => {
           : (
             <AccessRequestEditor
                 accessRequestId={accessRequestId}
+                attachments={attachments}
                 data={data}
                 isSubmitting={isSubmitting}
                 ref={componentRef} />
