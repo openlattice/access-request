@@ -29,6 +29,11 @@ const clearAccessRequest = () => ({
   type: CLEAR_ACCESS_REQUEST
 });
 
+const CLEAR_ATTACHMENTS :'CLEAR_ATTACHMENTS' = 'CLEAR_ATTACHMENTS';
+const clearAttachments = () => ({
+  type: CLEAR_ATTACHMENTS
+});
+
 const UPDATE_ACCESS_REQUEST :'UPDATE_ACCESS_REQUEST' = 'UPDATE_ACCESS_REQUEST';
 const updateAccessRequest :RequestSequence = newRequestSequence(UPDATE_ACCESS_REQUEST);
 
@@ -55,6 +60,7 @@ const deleteFieldAttachment :RequestSequence = newRequestSequence(DELETE_FIELD_A
 
 export {
   CLEAR_ACCESS_REQUEST,
+  CLEAR_ATTACHMENTS,
   DELETE_ATTACHMENTS,
   DELETE_FIELD_ATTACHMENT,
   GET_ACCESS_REQUEST,
@@ -69,6 +75,7 @@ export {
   UPLOAD_ATTACHMENTS,
   UPLOAD_FIELD_ATTACHMENT,
   clearAccessRequest,
+  clearAttachments,
   deleteAttachments,
   deleteFieldAttachment,
   getAccessRequest,
