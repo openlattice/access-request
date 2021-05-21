@@ -21,6 +21,7 @@ import { RS_INITIAL_STATE } from '../../../../core/redux/constants';
 import { resetRequestStateReducer } from '../../../../core/redux/reducers';
 import {
   CLEAR_ACCESS_REQUEST,
+  CLEAR_ATTACHMENTS,
   GET_ALL_ACCESS_REQUESTS,
   GET_ATTACHMENTS,
   GET_FORMS,
@@ -68,6 +69,10 @@ export default function reducer(state :Map<*, *> = INITIAL_STATE, action :Object
 
     case CLEAR_ACCESS_REQUEST: {
       return state.set(ACCESS_REQUEST, INITIAL_STATE.get(ACCESS_REQUEST));
+    }
+
+    case CLEAR_ATTACHMENTS: {
+      return state.set(ATTACHMENTS, INITIAL_STATE.get(ATTACHMENTS));
     }
 
     case getForms.case(action.type): {

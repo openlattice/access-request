@@ -16,7 +16,9 @@ import {
   GET_ACCESS_REQUEST,
   UPDATE_ACCESS_REQUEST,
   clearAccessRequest,
-  getAccessRequest
+  clearAttachments,
+  getAccessRequest,
+  getAttachments,
 } from './actions';
 import { CenterWrapper } from './styled';
 
@@ -52,10 +54,12 @@ const EditAccessRequestContainer = () => {
 
   useEffect(() => {
     dispatch(getAccessRequest(accessRequestId));
+    dispatch(getAttachments(accessRequestId));
     return () => {
       dispatch(resetRequestState([UPDATE_ACCESS_REQUEST]));
       dispatch(resetRequestState([GET_ACCESS_REQUEST]));
       dispatch(clearAccessRequest());
+      dispatch(clearAttachments());
     };
   }, [accessRequestId, dispatch]);
 
