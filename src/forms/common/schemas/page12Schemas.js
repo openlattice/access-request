@@ -6,6 +6,7 @@ export const page12Schema = {
     dataUseAgreement: {
       type: 'object',
       title: 'Data Use Agreement',
+      attachments: true,
       properties: {
         obtainDataUseAgreement: {
           type: 'boolean',

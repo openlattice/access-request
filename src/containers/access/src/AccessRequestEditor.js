@@ -7,9 +7,10 @@ import { Form } from 'lattice-fabricate';
 import { DataUtils } from 'lattice-utils';
 import type { UUID } from 'lattice';
 
-import { updateAccessRequest } from './actions';
+import { deleteFieldAttachment, updateAccessRequest, uploadFieldAttachment } from './actions';
 
 import generateReviewSchema from '../../../utils/generateReviewSchema';
+import transformAttachments from '../../../utils/transformAttachments';
 import { EdgelessForm } from '../../../components/styled';
 import { PropertyTypes } from '../../../core/edm/constants';
 import { useDispatch } from '../../../core/redux';
@@ -24,6 +25,7 @@ const {
 
 type Props = {
   accessRequestId :UUID;
+  attachments :Map;
   data :Map;
   isSubmitting :boolean;
 };
@@ -35,6 +37,7 @@ type AccessRequestEditorProps = {
 
 const AccessRequestEditor = ({
   accessRequestId,
+  attachments,
   data,
   isSubmitting,
   fRef,
@@ -51,6 +54,8 @@ const AccessRequestEditor = ({
     let schema = JSON.parse(schemaStr);
     let uiSchema = JSON.parse(uiSchemaStr);
 
+    const attachmentsByGroupId = transformAttachments(attachments);
+
     if (Array.isArray(schema) && Array.isArray(uiSchema)) {
       const reviewSchemas = generateReviewSchema(schema, uiSchema);
       schema = reviewSchemas.schema;
@@ -65,10 +70,35 @@ const AccessRequestEditor = ({
       }));
     };
 
+    const onDrop = (file, groupId, newFormData) => {
+      dispatch(uploadFieldAttachment({
+        accessRequestId,
+        file,
+        formData: newFormData,
+        groupId,
+      }));
+    };
+
+    const onDeleteAttachment = (attachment, currentFormData) => {
+      dispatch(deleteFieldAttachment({
+        accessRequestId,
+        attachment,
+        formData: currentFormData,
+      }));
+    };
+
+    const formContext = {
+      attachments: attachmentsByGroupId,
+      formRef: fRef,
+      onDrop,
+      onDeleteAttachment,
+    };
+
     return (
       <EdgelessForm
           ref={fRef}
           formData={formData}
+          formContext={formContext}
           isSubmitting={isSubmitting}
           onSubmit={handleSubmit}
           schema={schema}

@@ -6,6 +6,7 @@ export const page4Schema = {
     institutionalAffiliation: {
       type: 'object',
       title: 'Institutional Affiliation',
+      attachments: true,
       properties: {
         institutionName: {
           type: 'string',

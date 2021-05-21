@@ -11,6 +11,7 @@ const PROPERTY_TYPE_FQNS = {
   DESCRIPTION: FQN.of('ol.description'),
   FILE_DATA: FQN.of('ol.filedata'),
   FORM_DATA: FQN.of('ol.formdata'),
+  GROUP_ID: FQN.of('ol.groupid'),
   ID: FQN.of('ol.id'),
   LABEL: FQN.of('ol.label'),
   NAME: FQN.of('ol.name'),

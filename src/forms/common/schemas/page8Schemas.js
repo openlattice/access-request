@@ -6,6 +6,7 @@ export const page8Schema = {
     humanSubjects: {
       type: 'object',
       title: 'Human Subjects',
+      attachments: true,
       properties: {
         humanSubjectInvolvement: {
           type: 'boolean',

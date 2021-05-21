@@ -47,9 +47,16 @@ const saveNewFormTemplate :RequestSequence = newRequestSequence(SAVE_NEW_FORM_TE
 const UPDATE_ATTACHMENT_TAG :'UPDATE_ATTACHMENT_TAG' = 'UPDATE_ATTACHMENT_TAG';
 const updateAttachmentTag :RequestSequence = newRequestSequence(UPDATE_ATTACHMENT_TAG);
 
+const UPLOAD_FIELD_ATTACHMENT :'UPLOAD_FIELD_ATTACHMENT' = 'UPLOAD_FIELD_ATTACHMENT';
+const uploadFieldAttachment :RequestSequence = newRequestSequence(UPLOAD_FIELD_ATTACHMENT);
+
+const DELETE_FIELD_ATTACHMENT :'DELETE_FIELD_ATTACHMENT' = 'DELETE_FIELD_ATTACHMENT';
+const deleteFieldAttachment :RequestSequence = newRequestSequence(DELETE_FIELD_ATTACHMENT);
+
 export {
   CLEAR_ACCESS_REQUEST,
   DELETE_ATTACHMENTS,
+  DELETE_FIELD_ATTACHMENT,
   GET_ACCESS_REQUEST,
   GET_ALL_ACCESS_REQUESTS,
   GET_ATTACHMENTS,
@@ -60,8 +67,10 @@ export {
   UPDATE_ACCESS_REQUEST,
   UPDATE_ATTACHMENT_TAG,
   UPLOAD_ATTACHMENTS,
+  UPLOAD_FIELD_ATTACHMENT,
   clearAccessRequest,
   deleteAttachments,
+  deleteFieldAttachment,
   getAccessRequest,
   getAllAccessRequests,
   getAttachments,
@@ -72,4 +81,5 @@ export {
   updateAccessRequest,
   updateAttachmentTag,
   uploadAttachments,
+  uploadFieldAttachment,
 };

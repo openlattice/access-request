@@ -6,22 +6,28 @@ import { Paged } from 'lattice-fabricate';
 import { Button } from 'lattice-ui-kit';
 import { DataUtils, ReduxUtils, ValidationUtils } from 'lattice-utils';
 
+import transformAttachments from '../../utils/transformAttachments';
 import { EdgelessForm } from '../../components/styled';
 import {
   SUBMIT_ACCESS_REQUEST,
   clearAccessRequest,
+  deleteFieldAttachment,
   submitAccessRequest,
-  updateAccessRequest
+  updateAccessRequest,
+  uploadFieldAttachment
 } from '../../containers/access/src/actions';
+import { PropertyTypes } from '../../core/edm/constants';
 import { useDispatch, useSelector } from '../../core/redux';
 import { resetRequestState } from '../../core/redux/actions';
 import { ACCESS, REQUEST_STATE } from '../../core/redux/constants';
-import { selectAccessRequestData } from '../../core/redux/selectors';
+import { selectAccessRequestData, selectAttachments } from '../../core/redux/selectors';
 import { goToRoot } from '../../core/router/actions';
 
 const { isPending } = ReduxUtils;
-const { getEntityKeyId } = DataUtils;
+const { getEntityKeyId, getPropertyValue } = DataUtils;
 const { isValidUUID } = ValidationUtils;
+
+const { FORM_DATA } = PropertyTypes;
 
 const ActionRow = styled.div`
   align-items: center;
@@ -38,16 +44,26 @@ type Props = {
 const CommonApplicationForm = ({ schemas, uiSchemas } :Props) => {
   const dispatch = useDispatch();
   const accessRequest = useSelector(selectAccessRequestData());
+  const attachments = useSelector(selectAttachments());
   const requestState = useSelector((s) => s.getIn([ACCESS, SUBMIT_ACCESS_REQUEST, REQUEST_STATE]));
-
-  const pending = isPending(requestState);
-
-  const accessRequestId = getEntityKeyId(accessRequest) || '';
 
   useEffect(() => () => {
     dispatch(resetRequestState([SUBMIT_ACCESS_REQUEST]));
     dispatch(clearAccessRequest());
   }, [dispatch]);
+
+  const pending = isPending(requestState);
+  const accessRequestId = getEntityKeyId(accessRequest) || '';
+  const initialFormDataStr = getPropertyValue(accessRequest, [FORM_DATA, 0]) || '{}';
+  const attachmentsByGroupId = transformAttachments(attachments);
+
+  let parsedFormData;
+  try {
+    parsedFormData = JSON.parse(initialFormDataStr);
+  }
+  catch (error) {
+    return (<div>An error has occured. Please contact support.</div>);
+  }
 
   const onPageChange = (pageNumber, formData) => {
     if (isValidUUID(accessRequestId)) {
@@ -67,6 +83,23 @@ const CommonApplicationForm = ({ schemas, uiSchemas } :Props) => {
     }
   };
 
+  const onDrop = (file, groupId, newFormData) => {
+    dispatch(uploadFieldAttachment({
+      accessRequestId,
+      file,
+      formData: newFormData,
+      groupId,
+    }));
+  };
+
+  const onDeleteAttachment = (attachment, currentFormData) => {
+    dispatch(deleteFieldAttachment({
+      accessRequestId,
+      attachment,
+      formData: currentFormData,
+    }));
+  };
+
   return (
     <Paged
         onPageChange={onPageChange}
@@ -76,7 +109,6 @@ const CommonApplicationForm = ({ schemas, uiSchemas } :Props) => {
             onBack,
             onNext,
             page,
-            pagedData,
             validateAndSubmit,
           } = props;
 
@@ -91,10 +123,18 @@ const CommonApplicationForm = ({ schemas, uiSchemas } :Props) => {
             ? handleSubmit
             : validateAndSubmit;
 
+          const formContext = {
+            attachments: attachmentsByGroupId,
+            formRef,
+            onDrop,
+            onDeleteAttachment,
+          };
+
           return (
             <>
               <EdgelessForm
-                  formData={pagedData}
+                  formData={parsedFormData}
+                  formContext={formContext}
                   hideSubmit
                   isSubmitting={pending}
                   onSubmit={onNext}
