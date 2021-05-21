@@ -108,7 +108,7 @@
     "webpack-cli": "~4.6.0",
     "webpack-dev-server": "~3.11.0",
     "webpack-hot-middleware": "~2.25.0",
-    "webpack-node-externals": "~2.5.0"
+    "webpack-node-externals": "~3.0.0"
   },
   "peerDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
