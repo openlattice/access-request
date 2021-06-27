@@ -47,7 +47,7 @@
     "@fortawesome/react-fontawesome": "~0.1.14",
     "@redux-saga/core": "~1.1.0",
     "@storybook/addon-actions": "~6.2.8",
-    "@storybook/addon-docs": "~6.2.8",
+    "@storybook/addon-docs": "~6.3.0",
     "@storybook/addon-essentials": "~6.2.8",
     "@storybook/addon-links": "~6.2.8",
     "@storybook/builder-webpack5": "~6.2.8",
