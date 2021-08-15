@@ -85,7 +85,7 @@
     "lattice-ui-kit": "~0.43.1",
     "lattice-utils": "~0.11.0",
     "lodash": "~4.17.21",
-    "luxon": "~1.26.0",
+    "luxon": "~2.0.2",
     "npm-run-all": "~4.1.0",
     "react": "~16.14.0",
     "react-dom": "~16.14.0",
