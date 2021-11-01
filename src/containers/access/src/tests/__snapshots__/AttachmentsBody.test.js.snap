@@ -25,11 +25,11 @@ exports[`AttachmentsBody match snapshot 1`] = `
     }
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
   >
@@ -162,11 +162,11 @@ exports[`AttachmentsBody match snapshot 1`] = `
           onLocationChanged={[Function]}
           store={
             Object {
+              "@@observable": [Function],
               "dispatch": [Function],
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
-              Symbol(observable): [Function],
             }
           }
         >
@@ -197,15 +197,15 @@ exports[`AttachmentsBody match snapshot 1`] = `
             >
               <styled__ModalBody>
                 <div
-                  className="styled__ModalBody-sc-1ycpsik-1 dRJUMe"
+                  className="styled__ModalBody-sc-1ycpsik-1 jhOLIL"
                 >
-                  <ForwardRef(WithStyles)
+                  <ForwardRef
                     indicatorColor="primary"
                     onChange={[Function]}
                     textColor="primary"
                     value={0}
                   >
-                    <ForwardRef(Tabs)
+                    <ForwardRef
                       classes={
                         Object {
                           "centered": "MuiTabs-centered",
@@ -244,7 +244,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                             onKeyDown={[Function]}
                             role="tablist"
                           >
-                            <ForwardRef(WithStyles)
+                            <ForwardRef
                               fullWidth={false}
                               indicator={false}
                               key=".0"
@@ -254,7 +254,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                               textColor="primary"
                               value={0}
                             >
-                              <ForwardRef(Tab)
+                              <ForwardRef
                                 classes={
                                   Object {
                                     "disabled": "Mui-disabled",
@@ -277,7 +277,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                 textColor="primary"
                                 value={0}
                               >
-                                <ForwardRef(WithStyles)
+                                <ForwardRef
                                   aria-selected={true}
                                   className="MuiTab-root MuiTab-textColorPrimary Mui-selected"
                                   disabled={false}
@@ -287,7 +287,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                   role="tab"
                                   tabIndex={0}
                                 >
-                                  <ForwardRef(ButtonBase)
+                                  <ForwardRef
                                     aria-selected={true}
                                     className="MuiTab-root MuiTab-textColorPrimary Mui-selected"
                                     classes={
@@ -329,10 +329,10 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                       >
                                         Manage
                                       </span>
-                                      <ForwardRef(WithStyles)
+                                      <ForwardRef
                                         center={false}
                                       >
-                                        <ForwardRef(TouchRipple)
+                                        <ForwardRef
                                           center={false}
                                           classes={
                                             Object {
@@ -349,20 +349,20 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                           <span
                                             className="MuiTouchRipple-root"
                                           >
-                                            <TransitionGroup
+                                            <t
                                               childFactory={[Function]}
                                               component={null}
                                               exit={true}
                                             />
                                           </span>
-                                        </ForwardRef(TouchRipple)>
-                                      </ForwardRef(WithStyles)>
+                                        </ForwardRef>
+                                      </ForwardRef>
                                     </button>
-                                  </ForwardRef(ButtonBase)>
-                                </ForwardRef(WithStyles)>
-                              </ForwardRef(Tab)>
-                            </ForwardRef(WithStyles)>
-                            <ForwardRef(WithStyles)
+                                  </ForwardRef>
+                                </ForwardRef>
+                              </ForwardRef>
+                            </ForwardRef>
+                            <ForwardRef
                               fullWidth={false}
                               indicator={false}
                               key=".1"
@@ -372,7 +372,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                               textColor="primary"
                               value={1}
                             >
-                              <ForwardRef(Tab)
+                              <ForwardRef
                                 classes={
                                   Object {
                                     "disabled": "Mui-disabled",
@@ -395,7 +395,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                 textColor="primary"
                                 value={1}
                               >
-                                <ForwardRef(WithStyles)
+                                <ForwardRef
                                   aria-selected={false}
                                   className="MuiTab-root MuiTab-textColorPrimary"
                                   disabled={false}
@@ -405,7 +405,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                   role="tab"
                                   tabIndex={-1}
                                 >
-                                  <ForwardRef(ButtonBase)
+                                  <ForwardRef
                                     aria-selected={false}
                                     className="MuiTab-root MuiTab-textColorPrimary"
                                     classes={
@@ -447,10 +447,10 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                       >
                                         Upload
                                       </span>
-                                      <ForwardRef(WithStyles)
+                                      <ForwardRef
                                         center={false}
                                       >
-                                        <ForwardRef(TouchRipple)
+                                        <ForwardRef
                                           center={false}
                                           classes={
                                             Object {
@@ -467,21 +467,21 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                           <span
                                             className="MuiTouchRipple-root"
                                           >
-                                            <TransitionGroup
+                                            <t
                                               childFactory={[Function]}
                                               component={null}
                                               exit={true}
                                             />
                                           </span>
-                                        </ForwardRef(TouchRipple)>
-                                      </ForwardRef(WithStyles)>
+                                        </ForwardRef>
+                                      </ForwardRef>
                                     </button>
-                                  </ForwardRef(ButtonBase)>
-                                </ForwardRef(WithStyles)>
-                              </ForwardRef(Tab)>
-                            </ForwardRef(WithStyles)>
+                                  </ForwardRef>
+                                </ForwardRef>
+                              </ForwardRef>
+                            </ForwardRef>
                           </div>
-                          <ForwardRef(WithStyles)
+                          <ForwardRef
                             className="MuiTabs-indicator"
                             color="primary"
                             orientation="horizontal"
@@ -492,7 +492,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                               }
                             }
                           >
-                            <ForwardRef(TabIndicator)
+                            <ForwardRef
                               className="MuiTabs-indicator"
                               classes={
                                 Object {
@@ -520,12 +520,12 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                   }
                                 }
                               />
-                            </ForwardRef(TabIndicator)>
-                          </ForwardRef(WithStyles)>
+                            </ForwardRef>
+                          </ForwardRef>
                         </div>
                       </div>
-                    </ForwardRef(Tabs)>
-                  </ForwardRef(WithStyles)>
+                    </ForwardRef>
+                  </ForwardRef>
                   <TabPanel
                     index={0}
                     value={0}
@@ -537,7 +537,7 @@ exports[`AttachmentsBody match snapshot 1`] = `
                       id="tabpanel-0"
                       role="tabpanel"
                     >
-                      <ForwardRef(StyledComponent)
+                      <ForwardRef
                         paddingBottom={3}
                         paddingTop={3}
                       >
@@ -547,8 +547,8 @@ exports[`AttachmentsBody match snapshot 1`] = `
                           <ManageAttachmentsContainer
                             accessRequestId="00000000-0000-0000-0000-000000000000"
                           >
-                            <ForwardRef(WithStyles)>
-                              <ForwardRef(List)
+                            <ForwardRef>
+                              <ForwardRef
                                 classes={
                                   Object {
                                     "dense": "MuiList-dense",
@@ -561,11 +561,11 @@ exports[`AttachmentsBody match snapshot 1`] = `
                                 <ul
                                   className="MuiList-root MuiList-padding"
                                 />
-                              </ForwardRef(List)>
-                            </ForwardRef(WithStyles)>
+                              </ForwardRef>
+                            </ForwardRef>
                           </ManageAttachmentsContainer>
                         </div>
-                      </ForwardRef(StyledComponent)>
+                      </ForwardRef>
                     </div>
                   </TabPanel>
                   <TabPanel
