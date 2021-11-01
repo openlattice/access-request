@@ -30,7 +30,6 @@ module.exports = {
         transform: (importName) => `@fortawesome/pro-solid-svg-icons/${importName}`,
       },
     }],
-    '@babel/plugin-proposal-class-properties',
     'babel-plugin-styled-components',
   ],
   presets: [
