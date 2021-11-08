@@ -15,10 +15,10 @@ exports[`DocumentItem match snapshot 1`] = `
   onTagChange={[MockFunction]}
   tag="test"
 >
-  <ForwardRef(WithStyles)
+  <ForwardRef
     divider={true}
   >
-    <ForwardRef(ListItem)
+    <ForwardRef
       classes={
         Object {
           "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
@@ -43,10 +43,10 @@ exports[`DocumentItem match snapshot 1`] = `
           className="MuiListItem-root MuiListItem-gutters MuiListItem-divider MuiListItem-secondaryAction"
           disabled={false}
         >
-          <ForwardRef(WithStyles)
+          <ForwardRef
             key=".0"
           >
-            <ForwardRef(ListItemAvatar)
+            <ForwardRef
               classes={
                 Object {
                   "alignItemsFlexStart": "MuiListItemAvatar-alignItemsFlexStart",
@@ -61,23 +61,23 @@ exports[`DocumentItem match snapshot 1`] = `
                   src="test"
                 >
                   <img
-                    className="DocumentItem__ImagePreview-sc-15vefxs-0 jToGZC"
+                    className="DocumentItem__ImagePreview-sc-15vefxs-0 jHHQhn"
                     src="test"
                   />
                 </DocumentItem__ImagePreview>
               </div>
-            </ForwardRef(ListItemAvatar)>
-          </ForwardRef(WithStyles)>
+            </ForwardRef>
+          </ForwardRef>
           <styled__ItemTextWrapper
             key=".1"
           >
             <div
-              className="styled__ItemTextWrapper-sc-6qf0vq-1 iMwkkP"
+              className="styled__ItemTextWrapper-sc-6qf0vq-1 kXgsZu"
             >
-              <ForwardRef(WithStyles)
+              <ForwardRef
                 primary="test.png"
               >
-                <ForwardRef(ListItemText)
+                <ForwardRef
                   classes={
                     Object {
                       "dense": "MuiListItemText-dense",
@@ -93,13 +93,13 @@ exports[`DocumentItem match snapshot 1`] = `
                   <div
                     className="MuiListItemText-root"
                   >
-                    <ForwardRef(WithStyles)
+                    <ForwardRef
                       className="MuiListItemText-primary"
                       component="span"
                       display="block"
                       variant="body1"
                     >
-                      <ForwardRef(Typography)
+                      <ForwardRef
                         className="MuiListItemText-primary"
                         classes={
                           Object {
@@ -144,17 +144,17 @@ exports[`DocumentItem match snapshot 1`] = `
                         >
                           test.png
                         </span>
-                      </ForwardRef(Typography)>
-                    </ForwardRef(WithStyles)>
+                      </ForwardRef>
+                    </ForwardRef>
                   </div>
-                </ForwardRef(ListItemText)>
-              </ForwardRef(WithStyles)>
+                </ForwardRef>
+              </ForwardRef>
               <SelectTags
                 index={0}
                 onTagChange={[MockFunction]}
                 value="test"
               >
-                <Creatable
+                <Dw
                   isClearable={true}
                   onChange={[Function]}
                   options={
@@ -197,7 +197,7 @@ exports[`DocumentItem match snapshot 1`] = `
                   useRawValues={true}
                   value="test"
                 >
-                  <SelectController
+                  <i
                     hideDropdownIcon={false}
                     isClearable={true}
                     onChange={[Function]}
@@ -242,7 +242,7 @@ exports[`DocumentItem match snapshot 1`] = `
                     useRawValues={true}
                     value="test"
                   >
-                    <StateManager
+                    <r
                       components={
                         Object {
                           "DropdownIndicator": [Function],
@@ -318,7 +318,7 @@ exports[`DocumentItem match snapshot 1`] = `
                         }
                       }
                     >
-                      <Creatable
+                      <n
                         allowCreateWhileLoading={false}
                         components={
                           Object {
@@ -331,6 +331,8 @@ exports[`DocumentItem match snapshot 1`] = `
                         filterOption={[Function]}
                         formatCreateLabel={[Function]}
                         getNewOptionData={[Function]}
+                        getOptionLabel={[Function]}
+                        getOptionValue={[Function]}
                         hideDropdownIcon={false}
                         inputValue=""
                         isClearable={true}
@@ -401,8 +403,9 @@ exports[`DocumentItem match snapshot 1`] = `
                           }
                         }
                       >
-                        <Select
+                        <n
                           allowCreateWhileLoading={false}
+                          aria-live="polite"
                           backspaceRemovesValue={true}
                           blurInputOnSelect={true}
                           captureMenuScroll={false}
@@ -569,6 +572,7 @@ exports[`DocumentItem match snapshot 1`] = `
                             selectProps={
                               Object {
                                 "allowCreateWhileLoading": false,
+                                "aria-live": "polite",
                                 "backspaceRemovesValue": true,
                                 "blurInputOnSelect": true,
                                 "captureMenuScroll": false,
@@ -725,6 +729,230 @@ exports[`DocumentItem match snapshot 1`] = `
                                 className=" css-gprrux-container"
                                 onKeyDown={[Function]}
                               >
+                                <rA
+                                  ariaSelection={null}
+                                  clearValue={[Function]}
+                                  cx={[Function]}
+                                  focusableOptions={Array []}
+                                  focusedOption={null}
+                                  focusedValue={null}
+                                  getStyles={[Function]}
+                                  getValue={[Function]}
+                                  hasValue={true}
+                                  isFocused={false}
+                                  isMulti={false}
+                                  isRtl={false}
+                                  options={
+                                    Array [
+                                      Object {
+                                        "label": "Consent Form",
+                                        "value": "Consent Form",
+                                      },
+                                      Object {
+                                        "label": "CPHS Review",
+                                        "value": "CPHS Review",
+                                      },
+                                      Object {
+                                        "label": "Data Release Letter",
+                                        "value": "Data Release Letter",
+                                      },
+                                      Object {
+                                        "label": "Data Security Letter",
+                                        "value": "Data Security Letter",
+                                      },
+                                      Object {
+                                        "label": "Data Use Agreement",
+                                        "value": "Data Use Agreement",
+                                      },
+                                      Object {
+                                        "label": "Department Support Letter",
+                                        "value": "Department Support Letter",
+                                      },
+                                      Object {
+                                        "label": "IRB Approval",
+                                        "value": "IRB Approval",
+                                      },
+                                      Object {
+                                        "label": "Participant's Bill of Rights",
+                                        "value": "Participant's Bill of Rights",
+                                      },
+                                    ]
+                                  }
+                                  selectOption={[Function]}
+                                  selectProps={
+                                    Object {
+                                      "allowCreateWhileLoading": false,
+                                      "aria-live": "polite",
+                                      "backspaceRemovesValue": true,
+                                      "blurInputOnSelect": true,
+                                      "captureMenuScroll": false,
+                                      "closeMenuOnScroll": false,
+                                      "closeMenuOnSelect": true,
+                                      "components": Object {
+                                        "DropdownIndicator": [Function],
+                                        "Option": [Function],
+                                        "ValueContainer": [Function],
+                                      },
+                                      "controlShouldRenderValue": true,
+                                      "createOptionPosition": "last",
+                                      "dropdownIcon": undefined,
+                                      "escapeClearsValue": false,
+                                      "filterOption": [Function],
+                                      "formatCreateLabel": [Function],
+                                      "formatGroupLabel": [Function],
+                                      "getNewOptionData": [Function],
+                                      "getOptionLabel": [Function],
+                                      "getOptionValue": [Function],
+                                      "hideDropdownIcon": false,
+                                      "inputIcon": undefined,
+                                      "inputValue": "",
+                                      "isClearable": true,
+                                      "isDisabled": false,
+                                      "isLoading": false,
+                                      "isMulti": false,
+                                      "isOptionDisabled": [Function],
+                                      "isRtl": false,
+                                      "isSearchable": true,
+                                      "isValidNewOption": [Function],
+                                      "loadingMessage": [Function],
+                                      "maxMenuHeight": 300,
+                                      "menuIsOpen": false,
+                                      "menuPlacement": "auto",
+                                      "menuPosition": "absolute",
+                                      "menuShouldBlockScroll": false,
+                                      "menuShouldScrollIntoView": true,
+                                      "minMenuHeight": 140,
+                                      "noOptionsMessage": [Function],
+                                      "onChange": [Function],
+                                      "onInputChange": [Function],
+                                      "onMenuClose": [Function],
+                                      "onMenuOpen": [Function],
+                                      "openMenuOnClick": true,
+                                      "openMenuOnFocus": false,
+                                      "options": Array [
+                                        Object {
+                                          "label": "Consent Form",
+                                          "value": "Consent Form",
+                                        },
+                                        Object {
+                                          "label": "CPHS Review",
+                                          "value": "CPHS Review",
+                                        },
+                                        Object {
+                                          "label": "Data Release Letter",
+                                          "value": "Data Release Letter",
+                                        },
+                                        Object {
+                                          "label": "Data Security Letter",
+                                          "value": "Data Security Letter",
+                                        },
+                                        Object {
+                                          "label": "Data Use Agreement",
+                                          "value": "Data Use Agreement",
+                                        },
+                                        Object {
+                                          "label": "Department Support Letter",
+                                          "value": "Department Support Letter",
+                                        },
+                                        Object {
+                                          "label": "IRB Approval",
+                                          "value": "IRB Approval",
+                                        },
+                                        Object {
+                                          "label": "Participant's Bill of Rights",
+                                          "value": "Participant's Bill of Rights",
+                                        },
+                                      ],
+                                      "pageSize": 5,
+                                      "placeholder": "Select or create tag",
+                                      "screenReaderStatus": [Function],
+                                      "styles": Object {
+                                        "clearIndicator": [Function],
+                                        "container": [Function],
+                                        "control": [Function],
+                                        "dropdownIndicator": [Function],
+                                        "indicatorSeparator": [Function],
+                                        "indicatorsContainer": [Function],
+                                        "menu": [Function],
+                                        "menuList": [Function],
+                                        "menuPortal": [Function],
+                                        "option": [Function],
+                                        "singleValue": [Function],
+                                        "valueContainer": [Function],
+                                      },
+                                      "tabIndex": "0",
+                                      "tabSelectsValue": true,
+                                      "value": Object {
+                                        "label": "test",
+                                        "value": "test",
+                                      },
+                                    }
+                                  }
+                                  selectValue={
+                                    Array [
+                                      Object {
+                                        "label": "test",
+                                        "value": "test",
+                                      },
+                                    ]
+                                  }
+                                  setValue={[Function]}
+                                  theme={
+                                    Object {
+                                      "borderRadius": 4,
+                                      "colors": Object {
+                                        "danger": "#DE350B",
+                                        "dangerLight": "#FFBDAD",
+                                        "neutral0": "hsl(0, 0%, 100%)",
+                                        "neutral10": "hsl(0, 0%, 90%)",
+                                        "neutral20": "hsl(0, 0%, 80%)",
+                                        "neutral30": "hsl(0, 0%, 70%)",
+                                        "neutral40": "hsl(0, 0%, 60%)",
+                                        "neutral5": "hsl(0, 0%, 95%)",
+                                        "neutral50": "hsl(0, 0%, 50%)",
+                                        "neutral60": "hsl(0, 0%, 40%)",
+                                        "neutral70": "hsl(0, 0%, 30%)",
+                                        "neutral80": "hsl(0, 0%, 20%)",
+                                        "neutral90": "hsl(0, 0%, 10%)",
+                                        "primary": "#2684FF",
+                                        "primary25": "#DEEBFF",
+                                        "primary50": "#B2D4FF",
+                                        "primary75": "#4C9AFF",
+                                      },
+                                      "spacing": Object {
+                                        "baseUnit": 4,
+                                        "controlHeight": 38,
+                                        "menuGutter": 8,
+                                      },
+                                    }
+                                  }
+                                >
+                                  <tA
+                                    aria-atomic="false"
+                                    aria-live="polite"
+                                    aria-relevant="additions text"
+                                  >
+                                    <ForwardRef
+                                      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+                                      aria-atomic="false"
+                                      aria-live="polite"
+                                      aria-relevant="additions text"
+                                      css={
+                                        Object {
+                                          "name": "7pg0cj-a11yText",
+                                          "styles": "label:a11yText;z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap",
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        aria-atomic="false"
+                                        aria-live="polite"
+                                        aria-relevant="additions text"
+                                        className="css-7pg0cj-a11yText"
+                                      />
+                                    </ForwardRef>
+                                  </tA>
+                                </rA>
                                 <Control
                                   clearValue={[Function]}
                                   cx={[Function]}
@@ -783,6 +1011,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                   selectProps={
                                     Object {
                                       "allowCreateWhileLoading": false,
+                                      "aria-live": "polite",
                                       "backspaceRemovesValue": true,
                                       "blurInputOnSelect": true,
                                       "captureMenuScroll": false,
@@ -962,7 +1191,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                       onMouseDown={[Function]}
                                       onTouchEnd={[Function]}
                                     >
-                                      <ValueContainer
+                                      <dw
                                         clearValue={[Function]}
                                         cx={[Function]}
                                         getStyles={[Function]}
@@ -1012,6 +1241,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                         selectProps={
                                           Object {
                                             "allowCreateWhileLoading": false,
+                                            "aria-live": "polite",
                                             "backspaceRemovesValue": true,
                                             "blurInputOnSelect": true,
                                             "captureMenuScroll": false,
@@ -1198,6 +1428,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                           selectProps={
                                             Object {
                                               "allowCreateWhileLoading": false,
+                                              "aria-live": "polite",
                                               "backspaceRemovesValue": true,
                                               "blurInputOnSelect": true,
                                               "captureMenuScroll": false,
@@ -1409,6 +1640,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                                 selectProps={
                                                   Object {
                                                     "allowCreateWhileLoading": false,
+                                                    "aria-live": "polite",
                                                     "backspaceRemovesValue": true,
                                                     "blurInputOnSelect": true,
                                                     "captureMenuScroll": false,
@@ -1577,18 +1809,61 @@ exports[`DocumentItem match snapshot 1`] = `
                                                 autoCapitalize="none"
                                                 autoComplete="off"
                                                 autoCorrect="off"
+                                                clearValue={[Function]}
                                                 cx={[Function]}
                                                 getStyles={[Function]}
+                                                getValue={[Function]}
+                                                hasValue={true}
                                                 id="react-select-2-input"
                                                 innerRef={[Function]}
                                                 isDisabled={false}
                                                 isHidden={false}
+                                                isMulti={false}
+                                                isRtl={false}
                                                 onBlur={[Function]}
                                                 onChange={[Function]}
                                                 onFocus={[Function]}
+                                                options={
+                                                  Array [
+                                                    Object {
+                                                      "label": "Consent Form",
+                                                      "value": "Consent Form",
+                                                    },
+                                                    Object {
+                                                      "label": "CPHS Review",
+                                                      "value": "CPHS Review",
+                                                    },
+                                                    Object {
+                                                      "label": "Data Release Letter",
+                                                      "value": "Data Release Letter",
+                                                    },
+                                                    Object {
+                                                      "label": "Data Security Letter",
+                                                      "value": "Data Security Letter",
+                                                    },
+                                                    Object {
+                                                      "label": "Data Use Agreement",
+                                                      "value": "Data Use Agreement",
+                                                    },
+                                                    Object {
+                                                      "label": "Department Support Letter",
+                                                      "value": "Department Support Letter",
+                                                    },
+                                                    Object {
+                                                      "label": "IRB Approval",
+                                                      "value": "IRB Approval",
+                                                    },
+                                                    Object {
+                                                      "label": "Participant's Bill of Rights",
+                                                      "value": "Participant's Bill of Rights",
+                                                    },
+                                                  ]
+                                                }
+                                                selectOption={[Function]}
                                                 selectProps={
                                                   Object {
                                                     "allowCreateWhileLoading": false,
+                                                    "aria-live": "polite",
                                                     "backspaceRemovesValue": true,
                                                     "blurInputOnSelect": true,
                                                     "captureMenuScroll": false,
@@ -1694,6 +1969,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                                     },
                                                   }
                                                 }
+                                                setValue={[Function]}
                                                 spellCheck="false"
                                                 tabIndex="0"
                                                 theme={
@@ -1744,7 +2020,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                                   <div
                                                     className="css-1g6gooi"
                                                   >
-                                                    <AutosizeInput
+                                                    <t
                                                       aria-autocomplete="list"
                                                       autoCapitalize="none"
                                                       autoComplete="off"
@@ -1826,14 +2102,14 @@ exports[`DocumentItem match snapshot 1`] = `
                                                           }
                                                         />
                                                       </div>
-                                                    </AutosizeInput>
+                                                    </t>
                                                   </div>
                                                 </ForwardRef>
                                               </Input>
                                             </div>
                                           </ForwardRef>
                                         </ValueContainer>
-                                      </ValueContainer>
+                                      </dw>
                                       <IndicatorsContainer
                                         clearValue={[Function]}
                                         cx={[Function]}
@@ -1883,6 +2159,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                         selectProps={
                                           Object {
                                             "allowCreateWhileLoading": false,
+                                            "aria-live": "polite",
                                             "backspaceRemovesValue": true,
                                             "blurInputOnSelect": true,
                                             "captureMenuScroll": false,
@@ -2093,6 +2370,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                               selectProps={
                                                 Object {
                                                   "allowCreateWhileLoading": false,
+                                                  "aria-live": "polite",
                                                   "backspaceRemovesValue": true,
                                                   "blurInputOnSelect": true,
                                                   "captureMenuScroll": false,
@@ -2256,8 +2534,8 @@ exports[`DocumentItem match snapshot 1`] = `
                                                   onMouseDown={[Function]}
                                                   onTouchEnd={[Function]}
                                                 >
-                                                  <CrossIcon>
-                                                    <Svg
+                                                  <BR>
+                                                    <FR
                                                       size={20}
                                                     >
                                                       <ForwardRef
@@ -2287,8 +2565,8 @@ exports[`DocumentItem match snapshot 1`] = `
                                                           />
                                                         </svg>
                                                       </ForwardRef>
-                                                    </Svg>
-                                                  </CrossIcon>
+                                                    </FR>
+                                                  </BR>
                                                 </div>
                                               </ForwardRef>
                                             </ClearIndicator>
@@ -2342,6 +2620,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                               selectProps={
                                                 Object {
                                                   "allowCreateWhileLoading": false,
+                                                  "aria-live": "polite",
                                                   "backspaceRemovesValue": true,
                                                   "blurInputOnSelect": true,
                                                   "captureMenuScroll": false,
@@ -2492,7 +2771,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                                 />
                                               </ForwardRef>
                                             </IndicatorSeparator>
-                                            <LUKDropdownIndicator
+                                            <JA
                                               clearValue={[Function]}
                                               cx={[Function]}
                                               getStyles={[Function]}
@@ -2549,6 +2828,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                               selectProps={
                                                 Object {
                                                   "allowCreateWhileLoading": false,
+                                                  "aria-live": "polite",
                                                   "backspaceRemovesValue": true,
                                                   "blurInputOnSelect": true,
                                                   "captureMenuScroll": false,
@@ -2742,6 +3022,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                                 selectProps={
                                                   Object {
                                                     "allowCreateWhileLoading": false,
+                                                    "aria-live": "polite",
                                                     "backspaceRemovesValue": true,
                                                     "blurInputOnSelect": true,
                                                     "captureMenuScroll": false,
@@ -2899,8 +3180,8 @@ exports[`DocumentItem match snapshot 1`] = `
                                                     onMouseDown={[Function]}
                                                     onTouchEnd={[Function]}
                                                   >
-                                                    <DownChevron>
-                                                      <Svg
+                                                    <UR>
+                                                      <FR
                                                         size={20}
                                                       >
                                                         <ForwardRef
@@ -2930,12 +3211,12 @@ exports[`DocumentItem match snapshot 1`] = `
                                                             />
                                                           </svg>
                                                         </ForwardRef>
-                                                      </Svg>
-                                                    </DownChevron>
+                                                      </FR>
+                                                    </UR>
                                                   </div>
                                                 </ForwardRef>
                                               </DropdownIndicator>
-                                            </LUKDropdownIndicator>
+                                            </JA>
                                           </div>
                                         </ForwardRef>
                                       </IndicatorsContainer>
@@ -2945,19 +3226,19 @@ exports[`DocumentItem match snapshot 1`] = `
                               </div>
                             </ForwardRef>
                           </SelectContainer>
-                        </Select>
-                      </Creatable>
-                    </StateManager>
-                  </SelectController>
-                </Creatable>
+                        </n>
+                      </n>
+                    </r>
+                  </i>
+                </Dw>
               </SelectTags>
             </div>
           </styled__ItemTextWrapper>
         </div>
-        <ForwardRef(WithStyles)
+        <ForwardRef
           key=".2"
         >
-          <ForwardRef(ListItemSecondaryAction)
+          <ForwardRef
             classes={
               Object {
                 "root": "MuiListItemSecondaryAction-root",
@@ -2972,13 +3253,13 @@ exports[`DocumentItem match snapshot 1`] = `
                 onClick={[Function]}
                 title="Remove"
               >
-                <IconButton
+                <ME
                   aria-label="Remove"
                   forwardRef={null}
                   onClick={[Function]}
                   title="Remove"
                 >
-                  <ForwardRef(WithStyles)
+                  <ForwardRef
                     aria-label="Remove"
                     className=""
                     color="default"
@@ -2986,7 +3267,7 @@ exports[`DocumentItem match snapshot 1`] = `
                     onClick={[Function]}
                     title="Remove"
                   >
-                    <ForwardRef(IconButton)
+                    <ForwardRef
                       aria-label="Remove"
                       className=""
                       classes={
@@ -3007,7 +3288,7 @@ exports[`DocumentItem match snapshot 1`] = `
                       onClick={[Function]}
                       title="Remove"
                     >
-                      <ForwardRef(WithStyles)
+                      <ForwardRef
                         aria-label="Remove"
                         centerRipple={true}
                         className="MuiIconButton-root"
@@ -3016,7 +3297,7 @@ exports[`DocumentItem match snapshot 1`] = `
                         onClick={[Function]}
                         title="Remove"
                       >
-                        <ForwardRef(ButtonBase)
+                        <ForwardRef
                           aria-label="Remove"
                           centerRipple={true}
                           className="MuiIconButton-root"
@@ -3059,7 +3340,7 @@ exports[`DocumentItem match snapshot 1`] = `
                                 isLoading={false}
                               >
                                 <div
-                                  className="sc-jrQzUz kZKQay"
+                                  className="sc-jrQzAO bmPzoq"
                                 >
                                   <FontAwesomeIcon
                                     border={false}
@@ -3113,10 +3394,10 @@ exports[`DocumentItem match snapshot 1`] = `
                                 </div>
                               </styled.div>
                             </span>
-                            <ForwardRef(WithStyles)
+                            <ForwardRef
                               center={true}
                             >
-                              <ForwardRef(TouchRipple)
+                              <ForwardRef
                                 center={true}
                                 classes={
                                   Object {
@@ -3133,26 +3414,26 @@ exports[`DocumentItem match snapshot 1`] = `
                                 <span
                                   className="MuiTouchRipple-root"
                                 >
-                                  <TransitionGroup
+                                  <t
                                     childFactory={[Function]}
                                     component={null}
                                     exit={true}
                                   />
                                 </span>
-                              </ForwardRef(TouchRipple)>
-                            </ForwardRef(WithStyles)>
+                              </ForwardRef>
+                            </ForwardRef>
                           </button>
-                        </ForwardRef(ButtonBase)>
-                      </ForwardRef(WithStyles)>
-                    </ForwardRef(IconButton)>
-                  </ForwardRef(WithStyles)>
-                </IconButton>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </ForwardRef>
+                  </ForwardRef>
+                </ME>
               </ForwardRef>
             </div>
-          </ForwardRef(ListItemSecondaryAction)>
-        </ForwardRef(WithStyles)>
+          </ForwardRef>
+        </ForwardRef>
       </li>
-    </ForwardRef(ListItem)>
-  </ForwardRef(WithStyles)>
+    </ForwardRef>
+  </ForwardRef>
 </DocumentItem>
 `;

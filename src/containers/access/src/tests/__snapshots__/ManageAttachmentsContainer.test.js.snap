@@ -25,11 +25,11 @@ exports[`ManageAttachmentsContainer match snapshot 1`] = `
     }
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
   >
@@ -162,11 +162,11 @@ exports[`ManageAttachmentsContainer match snapshot 1`] = `
           onLocationChanged={[Function]}
           store={
             Object {
+              "@@observable": [Function],
               "dispatch": [Function],
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
-              Symbol(observable): [Function],
             }
           }
         >
@@ -195,8 +195,8 @@ exports[`ManageAttachmentsContainer match snapshot 1`] = `
             <ManageAttachmentsContainer
               accessRequestId="00000000-0000-0000-0000-000000000000"
             >
-              <ForwardRef(WithStyles)>
-                <ForwardRef(List)
+              <ForwardRef>
+                <ForwardRef
                   classes={
                     Object {
                       "dense": "MuiList-dense",
@@ -209,8 +209,8 @@ exports[`ManageAttachmentsContainer match snapshot 1`] = `
                   <ul
                     className="MuiList-root MuiList-padding"
                   />
-                </ForwardRef(List)>
-              </ForwardRef(WithStyles)>
+                </ForwardRef>
+              </ForwardRef>
             </ManageAttachmentsContainer>
           </Router>
         </ConnectedRouter>

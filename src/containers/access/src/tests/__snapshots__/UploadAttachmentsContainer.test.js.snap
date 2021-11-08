@@ -25,11 +25,11 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
     }
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
   >
@@ -162,11 +162,11 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
           onLocationChanged={[Function]}
           store={
             Object {
+              "@@observable": [Function],
               "dispatch": [Function],
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
-              Symbol(observable): [Function],
             }
           }
         >
@@ -229,7 +229,7 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                         tabIndex={0}
                       >
                         <div
-                          className="Dropzone__DropzoneWrapper-j9e9j-0 fpLcaF"
+                          className="Dropzone__DropzoneWrapper-j9e9j-0 lkvecw"
                           onBlur={[Function]}
                           onClick={[Function]}
                           onDragEnter={[Function]}
@@ -254,10 +254,10 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                             tabIndex={-1}
                             type="file"
                           />
-                          <ForwardRef(WithStyles)
+                          <ForwardRef
                             component="span"
                           >
-                            <ForwardRef(WithStyles)
+                            <ForwardRef
                               classes={
                                 Object {
                                   "body1": "jss9",
@@ -277,7 +277,7 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                               }
                               component="span"
                             >
-                              <ForwardRef(Typography)
+                              <ForwardRef
                                 classes={
                                   Object {
                                     "alignCenter": "MuiTypography-alignCenter",
@@ -319,15 +319,15 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                                 >
                                   Drop files here or click to select.
                                 </span>
-                              </ForwardRef(Typography)>
-                            </ForwardRef(WithStyles)>
-                          </ForwardRef(WithStyles)>
+                              </ForwardRef>
+                            </ForwardRef>
+                          </ForwardRef>
                         </div>
                       </Dropzone__DropzoneWrapper>
                     </Dropzone>
                   </FileUpload>
-                  <ForwardRef(WithStyles)>
-                    <ForwardRef(List)
+                  <ForwardRef>
+                    <ForwardRef
                       classes={
                         Object {
                           "dense": "MuiList-dense",
@@ -340,8 +340,8 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                       <ul
                         className="MuiList-root MuiList-padding"
                       />
-                    </ForwardRef(List)>
-                  </ForwardRef(WithStyles)>
+                    </ForwardRef>
+                  </ForwardRef>
                   <ForwardRef
                     color="primary"
                     disabled={true}
@@ -349,7 +349,7 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                     isLoading={false}
                     onClick={[Function]}
                   >
-                    <Button
+                    <NE
                       color="primary"
                       disabled={true}
                       forwardRef={null}
@@ -357,7 +357,7 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                       isLoading={false}
                       onClick={[Function]}
                     >
-                      <ForwardRef(WithStyles)
+                      <ForwardRef
                         className="jss26"
                         color="default"
                         disableElevation={false}
@@ -367,7 +367,7 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                         onClick={[Function]}
                         variant="contained"
                       >
-                        <ForwardRef(Button)
+                        <ForwardRef
                           className="jss26"
                           classes={
                             Object {
@@ -410,7 +410,7 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                           onClick={[Function]}
                           variant="contained"
                         >
-                          <ForwardRef(WithStyles)
+                          <ForwardRef
                             className="MuiButton-root MuiButton-contained jss26 Mui-disabled MuiButton-fullWidth"
                             component="button"
                             disableRipple={true}
@@ -420,7 +420,7 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                             onClick={[Function]}
                             type="button"
                           >
-                            <ForwardRef(ButtonBase)
+                            <ForwardRef
                               className="MuiButton-root MuiButton-contained jss26 Mui-disabled MuiButton-fullWidth"
                               classes={
                                 Object {
@@ -461,11 +461,11 @@ exports[`UploadAttachmentsContainer match snapshot 1`] = `
                                   Upload
                                 </span>
                               </button>
-                            </ForwardRef(ButtonBase)>
-                          </ForwardRef(WithStyles)>
-                        </ForwardRef(Button)>
-                      </ForwardRef(WithStyles)>
-                    </Button>
+                            </ForwardRef>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </NE>
                   </ForwardRef>
                 </div>
               </UploadAttachmentsContainer>

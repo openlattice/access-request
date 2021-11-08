@@ -22,7 +22,7 @@ exports[`FileUpload match snapshot 1`] = `
       tabIndex={0}
     >
       <div
-        className="Dropzone__DropzoneWrapper-j9e9j-0 fpLcaF"
+        className="Dropzone__DropzoneWrapper-j9e9j-0 lkvecw"
         onBlur={[Function]}
         onClick={[Function]}
         onDragEnter={[Function]}
@@ -47,10 +47,10 @@ exports[`FileUpload match snapshot 1`] = `
           tabIndex={-1}
           type="file"
         />
-        <ForwardRef(WithStyles)
+        <ForwardRef
           component="span"
         >
-          <ForwardRef(WithStyles)
+          <ForwardRef
             classes={
               Object {
                 "body1": "jss9",
@@ -70,7 +70,7 @@ exports[`FileUpload match snapshot 1`] = `
             }
             component="span"
           >
-            <ForwardRef(Typography)
+            <ForwardRef
               classes={
                 Object {
                   "alignCenter": "MuiTypography-alignCenter",
@@ -112,9 +112,9 @@ exports[`FileUpload match snapshot 1`] = `
               >
                 Drop files here or click to select.
               </span>
-            </ForwardRef(Typography)>
-          </ForwardRef(WithStyles)>
-        </ForwardRef(WithStyles)>
+            </ForwardRef>
+          </ForwardRef>
+        </ForwardRef>
       </div>
     </Dropzone__DropzoneWrapper>
   </Dropzone>
