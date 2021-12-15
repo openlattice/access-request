@@ -75,7 +75,7 @@
     "html-webpack-plugin": "~5.3.1",
     "immutable": "4.0.0-rc.10",
     "import-sort-style-openlattice": "~0.1.0",
-    "jest": "~26.6.2",
+    "jest": "~27.4.5",
     "jest-styled-components": "~7.0.4",
     "lattice": "~0.95.0",
     "lattice-auth": "~0.28.0",
