@@ -25,11 +25,11 @@ exports[`AttachmentItem match snapshot 1`] = `
     }
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
   >
@@ -162,11 +162,11 @@ exports[`AttachmentItem match snapshot 1`] = `
           onLocationChanged={[Function]}
           store={
             Object {
+              "@@observable": [Function],
               "dispatch": [Function],
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
-              Symbol(observable): [Function],
             }
           }
         >
@@ -218,10 +218,10 @@ exports[`AttachmentItem match snapshot 1`] = `
               }
               onDelete={[MockFunction]}
             >
-              <ForwardRef(WithStyles)
+              <ForwardRef
                 divider={true}
               >
-                <ForwardRef(ListItem)
+                <ForwardRef
                   classes={
                     Object {
                       "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
@@ -246,10 +246,10 @@ exports[`AttachmentItem match snapshot 1`] = `
                       className="MuiListItem-root MuiListItem-gutters MuiListItem-divider MuiListItem-secondaryAction"
                       disabled={false}
                     >
-                      <ForwardRef(WithStyles)
+                      <ForwardRef
                         key=".0"
                       >
-                        <ForwardRef(ListItemAvatar)
+                        <ForwardRef
                           classes={
                             Object {
                               "alignItemsFlexStart": "MuiListItemAvatar-alignItemsFlexStart",
@@ -264,21 +264,21 @@ exports[`AttachmentItem match snapshot 1`] = `
                               src="test"
                             >
                               <img
-                                className="AttachmentItem__ImagePreview-olj6j0-0 eIAMMu"
+                                className="AttachmentItem__ImagePreview-olj6j0-0 iDmbhr"
                                 src="test"
                               />
                             </AttachmentItem__ImagePreview>
                           </div>
-                        </ForwardRef(ListItemAvatar)>
-                      </ForwardRef(WithStyles)>
+                        </ForwardRef>
+                      </ForwardRef>
                       <styled__ItemTextWrapper
                         key=".1"
                         paddingRight="96px"
                       >
                         <div
-                          className="styled__ItemTextWrapper-sc-6qf0vq-1 dDKgoH"
+                          className="styled__ItemTextWrapper-sc-6qf0vq-1 fOupdm"
                         >
-                          <ForwardRef(WithStyles)
+                          <ForwardRef
                             primary="openlattice-logo.svg"
                             secondary={
                               <SecondaryText
@@ -287,7 +287,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                               />
                             }
                           >
-                            <ForwardRef(ListItemText)
+                            <ForwardRef
                               classes={
                                 Object {
                                   "dense": "MuiListItemText-dense",
@@ -309,13 +309,13 @@ exports[`AttachmentItem match snapshot 1`] = `
                               <div
                                 className="MuiListItemText-root MuiListItemText-multiline"
                               >
-                                <ForwardRef(WithStyles)
+                                <ForwardRef
                                   className="MuiListItemText-primary"
                                   component="span"
                                   display="block"
                                   variant="body1"
                                 >
-                                  <ForwardRef(Typography)
+                                  <ForwardRef
                                     className="MuiListItemText-primary"
                                     classes={
                                       Object {
@@ -360,15 +360,15 @@ exports[`AttachmentItem match snapshot 1`] = `
                                     >
                                       openlattice-logo.svg
                                     </span>
-                                  </ForwardRef(Typography)>
-                                </ForwardRef(WithStyles)>
-                                <ForwardRef(WithStyles)
+                                  </ForwardRef>
+                                </ForwardRef>
+                                <ForwardRef
                                   className="MuiListItemText-secondary"
                                   color="textSecondary"
                                   display="block"
                                   variant="body2"
                                 >
-                                  <ForwardRef(Typography)
+                                  <ForwardRef
                                     className="MuiListItemText-secondary"
                                     classes={
                                       Object {
@@ -420,7 +420,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                           mode="secondary"
                                         >
                                           <span
-                                            className="sc-pVTma inPcgW"
+                                            className="sc-pVTFL jXonht"
                                             mode="secondary"
                                           >
                                             Other
@@ -428,18 +428,18 @@ exports[`AttachmentItem match snapshot 1`] = `
                                         </styled.span>
                                       </SecondaryText>
                                     </p>
-                                  </ForwardRef(Typography)>
-                                </ForwardRef(WithStyles)>
+                                  </ForwardRef>
+                                </ForwardRef>
                               </div>
-                            </ForwardRef(ListItemText)>
-                          </ForwardRef(WithStyles)>
+                            </ForwardRef>
+                          </ForwardRef>
                         </div>
                       </styled__ItemTextWrapper>
                     </div>
-                    <ForwardRef(WithStyles)
+                    <ForwardRef
                       key=".2"
                     >
-                      <ForwardRef(ListItemSecondaryAction)
+                      <ForwardRef
                         classes={
                           Object {
                             "root": "MuiListItemSecondaryAction-root",
@@ -454,13 +454,13 @@ exports[`AttachmentItem match snapshot 1`] = `
                             onClick={[Function]}
                             title="Edit Tag"
                           >
-                            <IconButton
+                            <ME
                               aria-label="Edit Tag"
                               forwardRef={null}
                               onClick={[Function]}
                               title="Edit Tag"
                             >
-                              <ForwardRef(WithStyles)
+                              <ForwardRef
                                 aria-label="Edit Tag"
                                 className=""
                                 color="default"
@@ -468,7 +468,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                 onClick={[Function]}
                                 title="Edit Tag"
                               >
-                                <ForwardRef(IconButton)
+                                <ForwardRef
                                   aria-label="Edit Tag"
                                   className=""
                                   classes={
@@ -489,7 +489,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                   onClick={[Function]}
                                   title="Edit Tag"
                                 >
-                                  <ForwardRef(WithStyles)
+                                  <ForwardRef
                                     aria-label="Edit Tag"
                                     centerRipple={true}
                                     className="MuiIconButton-root"
@@ -498,7 +498,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                     onClick={[Function]}
                                     title="Edit Tag"
                                   >
-                                    <ForwardRef(ButtonBase)
+                                    <ForwardRef
                                       aria-label="Edit Tag"
                                       centerRipple={true}
                                       className="MuiIconButton-root"
@@ -541,7 +541,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                             isLoading={false}
                                           >
                                             <div
-                                              className="sc-jrQzUz kZKQay"
+                                              className="sc-jrQzAO bmPzoq"
                                             >
                                               <FontAwesomeIcon
                                                 border={false}
@@ -595,10 +595,10 @@ exports[`AttachmentItem match snapshot 1`] = `
                                             </div>
                                           </styled.div>
                                         </span>
-                                        <ForwardRef(WithStyles)
+                                        <ForwardRef
                                           center={true}
                                         >
-                                          <ForwardRef(TouchRipple)
+                                          <ForwardRef
                                             center={true}
                                             classes={
                                               Object {
@@ -615,20 +615,20 @@ exports[`AttachmentItem match snapshot 1`] = `
                                             <span
                                               className="MuiTouchRipple-root"
                                             >
-                                              <TransitionGroup
+                                              <t
                                                 childFactory={[Function]}
                                                 component={null}
                                                 exit={true}
                                               />
                                             </span>
-                                          </ForwardRef(TouchRipple)>
-                                        </ForwardRef(WithStyles)>
+                                          </ForwardRef>
+                                        </ForwardRef>
                                       </button>
-                                    </ForwardRef(ButtonBase)>
-                                  </ForwardRef(WithStyles)>
-                                </ForwardRef(IconButton)>
-                              </ForwardRef(WithStyles)>
-                            </IconButton>
+                                    </ForwardRef>
+                                  </ForwardRef>
+                                </ForwardRef>
+                              </ForwardRef>
+                            </ME>
                           </ForwardRef>
                           <a
                             aria-label="Download"
@@ -639,15 +639,15 @@ exports[`AttachmentItem match snapshot 1`] = `
                             title="Download"
                           >
                             <ForwardRef>
-                              <IconButton
+                              <ME
                                 forwardRef={null}
                               >
-                                <ForwardRef(WithStyles)
+                                <ForwardRef
                                   className=""
                                   color="default"
                                   disabled={false}
                                 >
-                                  <ForwardRef(IconButton)
+                                  <ForwardRef
                                     className=""
                                     classes={
                                       Object {
@@ -665,13 +665,13 @@ exports[`AttachmentItem match snapshot 1`] = `
                                     color="default"
                                     disabled={false}
                                   >
-                                    <ForwardRef(WithStyles)
+                                    <ForwardRef
                                       centerRipple={true}
                                       className="MuiIconButton-root"
                                       disabled={false}
                                       focusRipple={true}
                                     >
-                                      <ForwardRef(ButtonBase)
+                                      <ForwardRef
                                         centerRipple={true}
                                         className="MuiIconButton-root"
                                         classes={
@@ -708,7 +708,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                               isLoading={false}
                                             >
                                               <div
-                                                className="sc-jrQzUz kZKQay"
+                                                className="sc-jrQzAO bmPzoq"
                                               >
                                                 <FontAwesomeIcon
                                                   border={false}
@@ -762,10 +762,10 @@ exports[`AttachmentItem match snapshot 1`] = `
                                               </div>
                                             </styled.div>
                                           </span>
-                                          <ForwardRef(WithStyles)
+                                          <ForwardRef
                                             center={true}
                                           >
-                                            <ForwardRef(TouchRipple)
+                                            <ForwardRef
                                               center={true}
                                               classes={
                                                 Object {
@@ -782,20 +782,20 @@ exports[`AttachmentItem match snapshot 1`] = `
                                               <span
                                                 className="MuiTouchRipple-root"
                                               >
-                                                <TransitionGroup
+                                                <t
                                                   childFactory={[Function]}
                                                   component={null}
                                                   exit={true}
                                                 />
                                               </span>
-                                            </ForwardRef(TouchRipple)>
-                                          </ForwardRef(WithStyles)>
+                                            </ForwardRef>
+                                          </ForwardRef>
                                         </button>
-                                      </ForwardRef(ButtonBase)>
-                                    </ForwardRef(WithStyles)>
-                                  </ForwardRef(IconButton)>
-                                </ForwardRef(WithStyles)>
-                              </IconButton>
+                                      </ForwardRef>
+                                    </ForwardRef>
+                                  </ForwardRef>
+                                </ForwardRef>
+                              </ME>
                             </ForwardRef>
                           </a>
                           <ForwardRef
@@ -803,13 +803,13 @@ exports[`AttachmentItem match snapshot 1`] = `
                             onClick={[Function]}
                             title="Delete"
                           >
-                            <IconButton
+                            <ME
                               aria-label="Delete"
                               forwardRef={null}
                               onClick={[Function]}
                               title="Delete"
                             >
-                              <ForwardRef(WithStyles)
+                              <ForwardRef
                                 aria-label="Delete"
                                 className=""
                                 color="default"
@@ -817,7 +817,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                 onClick={[Function]}
                                 title="Delete"
                               >
-                                <ForwardRef(IconButton)
+                                <ForwardRef
                                   aria-label="Delete"
                                   className=""
                                   classes={
@@ -838,7 +838,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                   onClick={[Function]}
                                   title="Delete"
                                 >
-                                  <ForwardRef(WithStyles)
+                                  <ForwardRef
                                     aria-label="Delete"
                                     centerRipple={true}
                                     className="MuiIconButton-root"
@@ -847,7 +847,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                     onClick={[Function]}
                                     title="Delete"
                                   >
-                                    <ForwardRef(ButtonBase)
+                                    <ForwardRef
                                       aria-label="Delete"
                                       centerRipple={true}
                                       className="MuiIconButton-root"
@@ -890,7 +890,7 @@ exports[`AttachmentItem match snapshot 1`] = `
                                             isLoading={false}
                                           >
                                             <div
-                                              className="sc-jrQzUz kZKQay"
+                                              className="sc-jrQzAO bmPzoq"
                                             >
                                               <FontAwesomeIcon
                                                 border={false}
@@ -944,10 +944,10 @@ exports[`AttachmentItem match snapshot 1`] = `
                                             </div>
                                           </styled.div>
                                         </span>
-                                        <ForwardRef(WithStyles)
+                                        <ForwardRef
                                           center={true}
                                         >
-                                          <ForwardRef(TouchRipple)
+                                          <ForwardRef
                                             center={true}
                                             classes={
                                               Object {
@@ -964,27 +964,27 @@ exports[`AttachmentItem match snapshot 1`] = `
                                             <span
                                               className="MuiTouchRipple-root"
                                             >
-                                              <TransitionGroup
+                                              <t
                                                 childFactory={[Function]}
                                                 component={null}
                                                 exit={true}
                                               />
                                             </span>
-                                          </ForwardRef(TouchRipple)>
-                                        </ForwardRef(WithStyles)>
+                                          </ForwardRef>
+                                        </ForwardRef>
                                       </button>
-                                    </ForwardRef(ButtonBase)>
-                                  </ForwardRef(WithStyles)>
-                                </ForwardRef(IconButton)>
-                              </ForwardRef(WithStyles)>
-                            </IconButton>
+                                    </ForwardRef>
+                                  </ForwardRef>
+                                </ForwardRef>
+                              </ForwardRef>
+                            </ME>
                           </ForwardRef>
                         </div>
-                      </ForwardRef(ListItemSecondaryAction)>
-                    </ForwardRef(WithStyles)>
+                      </ForwardRef>
+                    </ForwardRef>
                   </li>
-                </ForwardRef(ListItem)>
-              </ForwardRef(WithStyles)>
+                </ForwardRef>
+              </ForwardRef>
             </AttachmentItem>
           </Router>
         </ConnectedRouter>
